@@ -1,18 +1,25 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { EditProfilePage } from '../edit-profile/edit-profile';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the ProfilePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
   selector: 'page-profile',
-  templateUrl: 'profile.html'
+  templateUrl: 'profile.html',
 })
 export class ProfilePage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  constructor(public navCtrl: NavController) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  goToEditProfile(params){
-    if (!params) params = {};
-    this.navCtrl.push(EditProfilePage);
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad ProfilePage');
   }
+
 }

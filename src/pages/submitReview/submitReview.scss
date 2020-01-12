@@ -1,0 +1,50 @@
+page-submitReview {
+    .body{
+        overflow-y:hidden;
+    }
+    
+    .fullwidth{
+        width: 100%;
+        size:12;
+        
+    }
+    
+    .center{
+        text-align: center !important;
+        width:100%;
+    }
+    
+    .text{
+        margin-right:5px;
+        margin-left:5px;
+        margin-top:25px;
+    }
+    
+    .margin{
+        margin-right:5px;
+        margin-left:5px;
+        margin-top:0px;
+    }
+    .margintext{
+        margin-right:5px;
+        margin-left:5px;
+        margin-top:15px;
+        margin-bottom:0px;
+    }
+    .right{
+        text-align: right !important;
+        width:90%;
+        font-size:14px;
+        margin-top:0px;
+        
+    }
+    .border{
+        border:1px solid black;
+    }
+    .button{
+        margin-top:5px;
+    
+        height:35px;
+    }
+    
+}

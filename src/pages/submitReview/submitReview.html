@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Rate this menu
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+    <ion-label class="text">Hygenie</ion-label>
+    <ion-item class="margin border">
+      <ionic3-star-rating [(ngModel)]="rating1" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"
+        defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px">
+      </ionic3-star-rating>
+    </ion-item>
+    <ion-label class="text">Food Quality</ion-label>
+    <ion-item class="margin border">
+      <ionic3-star-rating [(ngModel)]="rating2" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"
+        defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px">
+      </ionic3-star-rating>
+    </ion-item>
+    <ion-label class="text">Price</ion-label>
+    <ion-item class="margin border ">
+      <ionic3-star-rating [(ngModel)]="rating3" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"
+        defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px">
+      </ionic3-star-rating>
+    </ion-item>
+
+    <ion-item class="margintext border">
+      Share your experience
+      <ion-textarea [(ngModel)]="myText" [maxlength]="200" autoGrow="true" placeholder="(optional)"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label class="right">Characters Remaining: {{myText?.length || 0}}/200</ion-label>
+    </ion-item>
+    <ion-item>
+      <button class="center button" (click)="submitReview()">Submit Review</button>
+    </ion-item>
+</ion-content>

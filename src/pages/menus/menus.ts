@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MenuPage } from '../menu/menu';
+import { MenuPage } from '../cust_menu/menu';
 import { NewDishPage } from '../new-dish/new-dish';
 import { EditDishPage } from '../edit-dish/edit-dish';
 

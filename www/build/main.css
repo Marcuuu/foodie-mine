@@ -25695,3 +25695,119 @@ ion-navbar.toolbar {
   padding-bottom: 4px;
   min-height: 46px;
 }
+
+page-menu .wholebutton {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: column !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  background-color: transparent;
+  height: 100% !important;
+}
+
+page-menu .photoframe {
+  height: 100px;
+  width: 100px;
+  padding: 5px 5px 5px 5px;
+}
+
+page-menu .fulllabel {
+  width: 100%;
+  height: 100%;
+  padding: 2px 2px 0px 0px;
+}
+
+page-menuinfo .wholebutton {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: column !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  background-color: transparent !important;
+  padding-left: 15px;
+}
+
+page-menuinfo .heartbutton {
+  width: auto;
+  height: auto;
+  background-color: transparent !important;
+}
+
+page-menuinfo .rate {
+  background-color: transparent !important;
+  border: none;
+}
+
+page-reviews .wholebutton {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: column !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  background-color: transparent;
+  height: 100% !important;
+}
+
+page-reviews .photoframe {
+  height: 100px;
+  width: 100px;
+  padding: 5px 5px 5px 5px;
+}
+
+page-reviews .fulllabel {
+  width: 100%;
+  height: 100%;
+  padding: 2px 2px 0px 0px;
+}
+
+page-submitReview .body {
+  overflow-y: hidden;
+}
+
+page-submitReview .fullwidth {
+  width: 100%;
+  size: 12;
+}
+
+page-submitReview .center {
+  text-align: center !important;
+  width: 100%;
+}
+
+page-submitReview .text {
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 25px;
+}
+
+page-submitReview .margin {
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+
+page-submitReview .margintext {
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+page-submitReview .right {
+  text-align: right !important;
+  width: 90%;
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+page-submitReview .border {
+  border: 1px solid black;
+}
+
+page-submitReview .button {
+  margin-top: 5px;
+  height: 35px;
+}

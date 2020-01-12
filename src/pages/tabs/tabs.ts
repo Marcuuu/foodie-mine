@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BookingDetailsPage } from '../booking-details/booking-details';
-import { MenuPage } from '../menu/menu';
+import { MenuPage } from '../cust_menu/menu';
 import { NewDishPage } from '../new-dish/new-dish';
 import { EditDishPage } from '../edit-dish/edit-dish';
 import { DashboardPage } from '../dashboard/dashboard';
 import { BookingsPage } from '../bookings/bookings';
 import { MenusPage } from '../menus/menus';
 import { ProfilePage } from '../profile/profile';
+import { FavouritesPage} from '../favourites/favourites';
 
 @Component({
   selector: 'page-tabs',
@@ -20,6 +21,7 @@ export class TabsPage {
   tab2Root: any = BookingsPage;
   tab3Root: any = MenusPage;
   tab4Root: any = ProfilePage;
+  tab5Root: any = FavouritesPage;
   constructor(public navCtrl: NavController) {
   }
   goToBookings(params){

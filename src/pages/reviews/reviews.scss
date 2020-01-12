@@ -1,0 +1,19 @@
+page-reviews {
+    .wholebutton{
+        flex-direction:column !important;
+        width:100% !important;
+        background-color:transparent;
+        height:100% !important; 
+    }
+    .photoframe{
+        height:100px;
+        width:100px;
+        padding: 5px 5px 5px 5px;
+    }
+    .fulllabel{
+        width:100%;
+        height:100%;
+        padding: 2px 2px 0px 0px;
+    }
+    
+}
