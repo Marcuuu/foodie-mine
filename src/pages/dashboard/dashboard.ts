@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { BookingDetailsPage } from '../booking-details/booking-details';
 import { BookingsData } from '../../providers/bookingData';
@@ -12,14 +12,25 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DashboardPage {
   errorMessage: string;
-  bookings: any;
+  @Input() bookings: any;
   loading: any;
+  monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+  ];
+  today = new Date().getDate()+"/"+new Date().getMonth()+1+"/"+new Date().getFullYear();
+  tomorrow = new Date().getDate()+1+"/"+new Date().getMonth()+1+"/"+new Date().getFullYear();
+  todayDate = this.dateOrdinal(new Date().getDate());
+  tomorrowDate = this.dateOrdinal(new Date().getDate()+1);
+  monthDate = this.monthNames[new Date().getMonth()];
+  dateOrdinal(date) {
+    return date+(31==date||21==date||1==date?"st":22==date||2==date?"nd":23==date||3==date?"rd":"th")
+  };
   // bookings: any[];
 
   // this tells the tabs component which Pages
   // should be each tab's root Page
   constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public http: HttpClient) {
-
+    
     // this.bookingsData.getDashboardBookings()
     // .subscribe(
     //   data => this.bookings = data,
