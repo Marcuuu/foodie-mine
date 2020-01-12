@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { BookingDetailsPage } from '../booking-details/booking-details';
 
 @Component({
   selector: 'page-bookings',
@@ -11,8 +10,5 @@ export class BookingsPage {
   // should be each tab's root Page
   constructor(public navCtrl: NavController) {
   }
-  goToBookingDetails(params){
-    if (!params) params = {};
-    this.navCtrl.push(BookingDetailsPage);
-  }
+  
 }

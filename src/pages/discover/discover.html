@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Discover
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page2">
+  <form id="discover-form1">
+    <ion-searchbar
+      placeholder="Search"
+      name="search"
+      id="discover-search1"
+      (ionInput)="getItems($event)"
+    ></ion-searchbar>
+    <ion-item id="discover-select1" class="discover-filter">
+      <ion-label>
+        Filter by:
+      </ion-label>
+      <ion-select name="filter">
+        <ion-option>Distance (Closest)</ion-option>
+        <ion-option>Distance (Furthest)</ion-option>
+        <ion-option>Price (Low to High)</ion-option>
+        <ion-option>Price (High to Low)</ion-option>
+      </ion-select>
+    </ion-item>
+  </form>
+  <h4 id="discover-heading1" class="header-m">
+    Discover around <span class="color-darkyellow">Kovan</span>
+  </h4>
+  <ion-card
+    id="discover-card21"
+    class="discover-card-each"
+    *ngFor="let profile of profileList"
+  >
+    <ion-list>
+      <ion-item color="none" id="discover-list-item3">
+        <ion-avatar item-left>
+          <img src="{{profile.img}}" />
+        </ion-avatar>
+        <h2
+          style="margin-bottom:0;font-weight:500;"
+          (click)="goToMenuDetailsPage($event, profile)"
+        >
+          {{profile.fName}}
+        </h2>
+      </ion-item>
+      <div class="discover-image">
+        <img src="{{profile.menu_image}}" alt="" />
+      </div>
+      <div class="discover-info">
+        <h5
+          id="discover-heading2"
+          class="discover-menuname"
+          style="color:#000000;font-weight:600;"
+          (click)="goToMenuDetailsPage($event, profile)"
+        >
+          {{profile.menuName}}
+        </h5>
+        <div id="discover-markdown3" class="show-list-numbers-and-dots">
+          <p style="color:#000000;">
+            {{profile.location}}
+          </p>
+        </div>
+        <div id="discover-markdown4" class="show-list-numbers-and-dots">
+          <p style="color:#000000;font-size:1.3rem;">
+            {{profile.menu_tags}}
+          </p>
+        </div>
+        <div class="discover-ratings">
+          <span
+            class="each-star"
+            [ngClass]="{'active' : profile.menu_ratings > 0}"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"
+              />
+            </svg>
+          </span>
+          <span
+            class="each-star"
+            [ngClass]="{'active' : profile.menu_ratings > 1}"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"
+              />
+            </svg>
+          </span>
+          <span
+            class="each-star"
+            [ngClass]="{'active' : profile.menu_ratings > 2}"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"
+              />
+            </svg>
+          </span>
+          <span
+            class="each-star"
+            [ngClass]="{'active' : profile.menu_ratings > 3}"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"
+              />
+            </svg>
+          </span>
+          <span
+            class="each-star"
+            [ngClass]="{'active' : profile.menu_ratings > 4}"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"
+              />
+            </svg>
+          </span>
+          <span class="rating-amount">{{profile.menu_rating_amt}} reviews</span>
+        </div>
+      </div>
+    </ion-list>
+  </ion-card>
+</ion-content>
