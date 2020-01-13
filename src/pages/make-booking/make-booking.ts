@@ -18,6 +18,6 @@ export class MakeBookingPage {
   }
 
   cancelBooking() {
-    this.navCtrl.pop(MakeBookingPage)
+    this.navCtrl.pop();
   }
 }
