@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page2">
+  <form id="loginPage-form1">
+    <img src="../../assets/imgs/logo-foodie.jpg"/>
+    <ion-item id="loginPage-input1" class="markdown">
+      <ion-label>
+        Username : 
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone:true}" placeholder=""></ion-input>
+    </ion-item>
+  </form>
+  <button id="loginPage-button1" ion-button color="positive" block (click)="login(this.username)">
+    Login
+  </button>
+</ion-content>

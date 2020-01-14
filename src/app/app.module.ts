@@ -15,11 +15,13 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { NewDishPage } from '../pages/new-dish/new-dish';
 import { EditDishPage } from '../pages/edit-dish/edit-dish';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpClientModule } from '@angular/common/http';
 import { BookingsData } from '../providers/bookingData';
+import { IonicStorageModule } from '@ionic/storage';
+import { NewMenuPage } from '../pages/new-menu/new-menu';
+import { LoginPage } from '../pages/login-page/login-page';
 
 @NgModule({
   declarations: [
@@ -35,12 +37,15 @@ import { BookingsData } from '../providers/bookingData';
     EditMenuPage,
     EditProfilePage,
     NewDishPage,
-    EditDishPage
+    EditDishPage,
+    NewMenuPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,7 +61,9 @@ import { BookingsData } from '../providers/bookingData';
     EditMenuPage,
     EditProfilePage,
     NewDishPage,
-    EditDishPage
+    EditDishPage,
+    NewMenuPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
