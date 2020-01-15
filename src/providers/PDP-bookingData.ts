@@ -16,6 +16,7 @@ export class BookingsData {
       this.data = this.http.get(url);
       this.data.subscribe(data => {
       this.result = data;
+      console.log(this.result);
       for(var i = 0; i < this.result.length; i++){
         booking.push(new Booking(
           this.result[i].custName,

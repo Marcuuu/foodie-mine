@@ -22,6 +22,8 @@ import { BookingsData } from '../providers/PDP-bookingData';
 import { IonicStorageModule } from '@ionic/storage';
 import { NewMenuPage } from '../pages/PDP-new-menu/PDP-new-menu';
 import { LoginPage } from '../pages/login-page/login-page';
+import { MenusData } from '../providers/PDP-menuData';
+import { ProfileData } from '../providers/PDP-profileData';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,8 @@ import { LoginPage } from '../pages/login-page/login-page';
     StatusBar,
     SplashScreen,
     BookingsData,
+    ProfileData,
+    MenusData,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

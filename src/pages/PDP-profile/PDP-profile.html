@@ -16,17 +16,17 @@
     <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
   </div>
   <h1 id="profile-heading10" style="color:#000000;">
-    Tony's Cafe
+  {{ profile?.fName }}
   </h1>
   <div id="profile-markdown19">
     <h5>Description</h5>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    {{ profile?.desc }}
     <h5>Location</h5>
-      Serangoon
+    {{ profile?.add }}
     <h5>Mobile</h5>
-      91234567
+    {{ profile?.phone }}
     <h5>Email</h5>
-      tony.cafe@gmail.com
+    {{ profile?.email }}
   </div>
   <button id="profile-button10" ion-button color="positive" block on-click="goToEditProfile()">
     Edit Profile
