@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MenuPage } from '../menu/menu';
-import { NewMenuPage } from '../new-menu/new-menu';
+import { MenuPage } from '../PDP-menu/PDP-menu';
+import { NewMenuPage } from '../PDP-new-menu/PDP-new-menu';
 
 @Component({
-  selector: 'page-menus',
-  templateUrl: 'menus.html'
+  selector: 'page-PDP-menus',
+  templateUrl: 'PDP-menus.html'
 })
 export class MenusPage {
   // this tells the tabs component which Pages

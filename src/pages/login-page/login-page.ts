@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
-import { DashboardPage } from '../dashboard/dashboard';
-import { TabsPage } from '../tabs/tabs';
+import { DashboardPage } from '../PDP-dashboard/PDP-dashboard';
+import { TabsPage } from '../PDP-tabs/PDP-tabs';
 
 @Component({
   selector: 'page-login-page',

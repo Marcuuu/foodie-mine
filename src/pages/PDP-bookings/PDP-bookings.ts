@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { BookingDetailsPage } from '../booking-details/booking-details';
-import { BookingsData } from '../../providers/bookingData';
-import { Booking } from '../../models/Bookings';
+import { BookingDetailsPage } from '../PDP-booking-details/PDP-booking-details';
+import { BookingsData } from '../../providers/PDP-bookingData';
+import { Booking } from '../../models/PDP-Bookings';
 import { Storage } from '@ionic/storage';
 
 @Component({
-  selector: 'page-bookings',
-  templateUrl: 'bookings.html'
+  selector: 'page-PDP-bookings',
+  templateUrl: 'PDP-bookings.html'
 })
 export class BookingsPage {
   bookings: Booking[];

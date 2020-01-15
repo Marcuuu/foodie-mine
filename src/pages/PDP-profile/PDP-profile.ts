@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { EditProfilePage } from '../edit-profile/edit-profile';
+import { EditProfilePage } from '../PDP-edit-profile/PDP-edit-profile';
 
 @Component({
-  selector: 'page-profile',
-  templateUrl: 'profile.html'
+  selector: 'page-PDP-profile',
+  templateUrl: 'PDP-profile.html'
 })
 export class ProfilePage {
   // this tells the tabs component which Pages

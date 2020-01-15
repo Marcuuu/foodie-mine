@@ -1,32 +1,31 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Booking } from '../models/PDP-Bookings';
 import { Storage } from '@ionic/storage';
-import { Profile } from '../models/Profile';
 
 @Injectable()
-export class ProfileData {
+export class BookingsData {
     result: any;
     data: Observable<any>;
 
     constructor(private http: HttpClient, private storage: Storage) {
-      let profile = [];
-      console.log("In /getProfile");
-      var url = 'https://foodie1234.herokuapp.com/getProfile';
+      let booking = [];
+      console.log("In /getBookings");
+      var url = 'https://foodie1234.herokuapp.com/getBookings';
       this.data = this.http.get(url);
       this.data.subscribe(data => {
       this.result = data;
       for(var i = 0; i < this.result.length; i++){
-        profile.push(new Profile(
-          this.result[i].fName,
-          this.result[i].desc,
-          this.result[i].add,
-          this.result[i].phone,
-          this.result[i].email,
-          this.result[i].image
+        booking.push(new Booking(
+          this.result[i].custName,
+          this.result[i].bookDate,
+          this.result[i].bookTime,
+          this.result[i].bookPax,
+          this.result[i].bookNotes,
          ));
         }
-        storage.set('Profile', profile);
+        storage.set('Bookings', booking);
       });
     }
 }

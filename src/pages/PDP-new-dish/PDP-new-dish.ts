@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-new-dish',
-  templateUrl: 'new-dish.html'
+  selector: 'page-PDP-new-dish',
+  templateUrl: 'PDP-new-dish.html'
 })
 export class NewDishPage {
   // this tells the tabs component which Pages

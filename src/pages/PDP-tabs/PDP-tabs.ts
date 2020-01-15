@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { BookingDetailsPage } from '../booking-details/booking-details';
-import { MenuPage } from '../menu/menu';
-import { NewDishPage } from '../new-dish/new-dish';
-import { EditDishPage } from '../edit-dish/edit-dish';
-import { DashboardPage } from '../dashboard/dashboard';
-import { BookingsPage } from '../bookings/bookings';
-import { MenusPage } from '../menus/menus';
-import { ProfilePage } from '../profile/profile';
+import { BookingDetailsPage } from '../PDP-booking-details/PDP-booking-details';
+import { MenuPage } from '../PDP-menu/PDP-menu';
+import { NewDishPage } from '../PDP-new-dish/PDP-new-dish';
+import { EditDishPage } from '../PDP-edit-dish/PDP-edit-dish';
+import { DashboardPage } from '../PDP-dashboard/PDP-dashboard';
+import { BookingsPage } from '../PDP-bookings/PDP-bookings';
+import { MenusPage } from '../PDP-menus/PDP-menus';
+import { ProfilePage } from '../PDP-profile/PDP-profile';
 
 @Component({
-  selector: 'page-tabs',
-  templateUrl: 'tabs.html'
+  selector: 'page-PDP-tabs',
+  templateUrl: 'PDP-tabs.html'
 })
 export class TabsPage {
   // this tells the tabs component which Pages

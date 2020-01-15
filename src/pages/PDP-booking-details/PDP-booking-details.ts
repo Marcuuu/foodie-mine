@@ -3,8 +3,8 @@ import { NavController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 
 @Component({
-  selector: 'page-booking-details',
-  templateUrl: 'booking-details.html'
+  selector: 'page-PDP-booking-details',
+  templateUrl: 'PDP-booking-details.html'
 })
 
 export class BookingDetailsPage {
