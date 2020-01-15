@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { DashboardPage } from '../PDP-dashboard/PDP-dashboard';
 import { TabsPage } from '../PDP-tabs/PDP-tabs';
@@ -9,12 +9,18 @@ import { TabsPage } from '../PDP-tabs/PDP-tabs';
   templateUrl: 'login-page.html'
 })
 export class LoginPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  cust:any;
-  constructor(public navCtrl: NavController,public http: HttpClient) {
+  cust: any;
+  loading: any;
+
+  constructor(public navCtrl: NavController, public http: HttpClient, public loadingCtrl: LoadingController) {
+    this.loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Authenticating'
+    });
   }
+  
   login(custId){
+    this.loading.present();
     var url = 'https://foodie1234.herokuapp.com/custLogin';
     var postData = JSON.stringify({
       //these fields MUST match the server.js request.body.XXX;  
@@ -34,14 +40,17 @@ export class LoginPage {
         localStorage.setItem("loginid","3")
         this.navCtrl.setRoot(DashboardPage);
         this.navCtrl.setRoot(TabsPage);
+        this.loading.dismiss();
       } 
       //customer
       if (data[0].custID == 2) {
         localStorage.setItem("loginid","2")
         this.navCtrl.push('');
+        this.loading.dismiss();
       } 
       else if (data == false){
         console.log("Not authorized username");
+        this.loading.dismiss();
       }
      }, error => {
       console.log(error);
