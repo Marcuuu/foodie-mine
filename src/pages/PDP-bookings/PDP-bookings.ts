@@ -25,7 +25,7 @@ export class BookingsPage {
   bookingsFilter($ev){
     console.log($ev);
     for (var i=0; i<this.bookings.length; i++){
-      if ($ev == ){
+      if ($ev == ""){
 
       }
     }
