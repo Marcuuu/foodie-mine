@@ -12,5 +12,9 @@ export class BookingDetailsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.booking = navParams.get('data');
-  }  
+  }
+
+  bookingStatus(){
+    return this.booking.bookStatus.toLowerCase() == "ongoing".toLowerCase();
+  }
 }

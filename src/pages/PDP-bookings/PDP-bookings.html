@@ -9,11 +9,20 @@
   <form id="bookings-form1">
     <ion-item id="bookings-select2">
       <ion-label>
-        Month
+        Filter
       </ion-label>
-      <ion-select name="">
-        <ion-option>
-          January
+      <ion-select [(ngModel)]="default.option" [ngModelOptions]="{standalone: true}" (ionChange)="bookingsFilter($event)">
+        <ion-option value="none">
+          None
+        </ion-option>
+        <ion-option value="ongoing">
+          Ongoing
+        </ion-option>
+        <ion-option value="completed">
+          Completed
+        </ion-option>
+        <ion-option value="cancelled">
+          Cancelled
         </ion-option>
       </ion-select>
     </ion-item>

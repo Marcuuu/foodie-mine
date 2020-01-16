@@ -11,14 +11,24 @@ import { Storage } from '@ionic/storage';
 })
 export class BookingsPage {
   bookings: Booking[];
+  default = {option:null}; 
   
   constructor(public navCtrl: NavController, private storage: Storage, public bookingData: BookingsData) {
-
     storage.get('Bookings').then((val) => {
       this.bookings = val;
       console.log('Get Bookings completed');
     });
+
+    this.default.option = "none";
   }
+
+  bookingsFilter($ev){
+    console.log($ev);
+    for (var i=0; i<this.bookings.length; i++){
+      if ($ev == )
+    }
+  }
+
   goToBookingDetails(booking){
     this.navCtrl.push(BookingDetailsPage, {
       data: booking
