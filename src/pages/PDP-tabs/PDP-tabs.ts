@@ -9,7 +9,7 @@ import { ProfilePage } from '../PDP-profile/PDP-profile';
   selector: 'page-PDP-tabs',
   templateUrl: 'PDP-tabs.html'
 })
-export class TabsPage {
+export class PDPTabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
   tab1Root: any = DashboardPage;

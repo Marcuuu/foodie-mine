@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 import { DashboardPage } from '../pages/PDP-dashboard/PDP-dashboard';
 import { BookingsPage } from '../pages/PDP-bookings/PDP-bookings';
 import { MenusPage } from '../pages/PDP-menus/PDP-menus';
-import { TabsPage } from '../pages/PDP-tabs/PDP-tabs';
+import { PDPTabsPage } from '../pages/PDP-tabs/PDP-tabs';
 import { ProfilePage } from '../pages/PDP-profile/PDP-profile';
 import { BookingDetailsPage } from '../pages/PDP-booking-details/PDP-booking-details';
 import { MenuPage } from '../pages/PDP-menu/PDP-menu';
@@ -24,6 +24,7 @@ import { NewMenuPage } from '../pages/PDP-new-menu/PDP-new-menu';
 import { LoginPage } from '../pages/login-page/login-page';
 import { MenusData } from '../providers/PDP-menuData';
 import { ProfileData } from '../providers/PDP-profileData';
+import { DashboardData } from '../providers/PDP-dashboardData';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ProfileData } from '../providers/PDP-profileData';
     DashboardPage,
     BookingsPage,
     MenusPage,
-    TabsPage,
+    PDPTabsPage,
     ProfilePage,
     BookingDetailsPage,
     MenuPage,
@@ -55,7 +56,7 @@ import { ProfileData } from '../providers/PDP-profileData';
     DashboardPage,
     BookingsPage,
     MenusPage,
-    TabsPage,
+    PDPTabsPage,
     ProfilePage,
     BookingDetailsPage,
     MenuPage,
@@ -70,6 +71,7 @@ import { ProfileData } from '../providers/PDP-profileData';
   providers: [
     StatusBar,
     SplashScreen,
+    DashboardData,
     BookingsData,
     ProfileData,
     MenusData,

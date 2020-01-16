@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
-import { DashboardPage } from '../PDP-dashboard/PDP-dashboard';
-import { TabsPage } from '../PDP-tabs/PDP-tabs';
+import { PDPTabsPage } from '../PDP-tabs/PDP-tabs';
+import { ProfileData } from '../../providers/PDP-profileData';
+import { BookingsData } from '../../providers/PDP-bookingData';
+import { DashboardData } from '../../providers/PDP-dashboardData';
+
 
 @Component({
   selector: 'page-login-page',
@@ -12,7 +15,7 @@ export class LoginPage {
   cust: any;
   loading: any;
 
-  constructor(public navCtrl: NavController, public http: HttpClient, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public http: HttpClient, public loadingCtrl: LoadingController, public dashboardData: DashboardData, public bookingData: BookingsData, public profileData: ProfileData) {
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Authenticating'
@@ -37,9 +40,8 @@ export class LoginPage {
       console.log('postData:', postData);
       //pdp
       if (data[0].custID == 3) {
-        localStorage.setItem("loginid","3")
-        this.navCtrl.setRoot(DashboardPage);
-        this.navCtrl.setRoot(TabsPage);
+        localStorage.setItem("loginid","3");
+        this.navCtrl.setRoot(PDPTabsPage);
         this.loading.dismiss();
       } 
       //customer

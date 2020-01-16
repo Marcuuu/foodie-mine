@@ -5,14 +5,14 @@ import { Booking } from '../models/PDP-Bookings';
 import { Storage } from '@ionic/storage';
 
 @Injectable()
-export class BookingsData {
+export class DashboardData {
     result: any;
     data: Observable<any>;
 
     constructor(private http: HttpClient, private storage: Storage) {
       let booking = [];
-      console.log("In /getBookings");
-      var url = 'https://foodie1234.herokuapp.com/getBookings';
+      console.log("In /getBookingsDashboard");
+      var url = 'https://foodie1234.herokuapp.com/getBookingsDashboard';
       this.data = this.http.get(url);
       this.data.subscribe(data => {
       this.result = data;
@@ -27,7 +27,7 @@ export class BookingsData {
           this.result[i].bookStatus,
          ));
         }
-        storage.set('Bookings', booking);
+        storage.set('Dashboard', booking);
       });
     }
 }

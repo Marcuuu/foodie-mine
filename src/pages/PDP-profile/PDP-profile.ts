@@ -26,6 +26,7 @@ export class ProfilePage {
         }
       }
       console.log('Get Profile completed');
+      console.log(this.profile);
     });
   }
 
