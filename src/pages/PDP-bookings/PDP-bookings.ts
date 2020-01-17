@@ -11,24 +11,30 @@ import { Storage } from '@ionic/storage';
 })
 export class BookingsPage {
   bookings: Booking[];
-  default = {option:null}; 
+  default = {option:null};
+  filterBookings: any;
   
   constructor(public navCtrl: NavController, private storage: Storage, public bookingData: BookingsData) {
     storage.get('Bookings').then((val) => {
       this.bookings = val;
       console.log('Get Bookings completed');
+      this.filterBookings = this.bookings;
+      console.log(this.filterBookings);
     });
-
     this.default.option = "none";
   }
 
   bookingsFilter($ev){
     console.log($ev);
-    for (var i=0; i<this.bookings.length; i++){
-      if ($ev == ""){
-
-      }
-    }
+    if ($ev == "ongoing")
+      this.filterBookings = this.bookings.filter(val => val.bookStatus.toLowerCase() == "ongoing");
+    else if ($ev == "completed")
+      this.filterBookings = this.bookings.filter(val => val.bookStatus.toLowerCase() == "completed");
+    else if ($ev == "cancelled")
+      this.filterBookings = this.bookings.filter(val => val.bookStatus.toLowerCase() == "cancelled");
+    else
+      this.filterBookings = this.bookings;
+    console.log(this.filterBookings);
   }
 
   goToBookingDetails(booking){

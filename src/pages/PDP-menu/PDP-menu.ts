@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NewDishPage } from '../PDP-new-dish/PDP-new-dish';
-import { EditDishPage } from '../PDP-edit-dish/PDP-edit-dish';
+import { EditMenuPage } from '../PDP-edit-menu/PDP-edit-menu';
 
 @Component({
   selector: 'page-PDP-menu',
@@ -15,8 +15,8 @@ export class MenuPage {
   goToNewDish(params){
     if (!params) params = {};
     this.navCtrl.push(NewDishPage);
-  }goToEditDish(params){
+  }goToEditMenu(params){
     if (!params) params = {};
-    this.navCtrl.push(EditDishPage);
+    this.navCtrl.push(EditMenuPage);
   }
 }

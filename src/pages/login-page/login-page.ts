@@ -40,6 +40,9 @@ export class LoginPage {
       console.log('postData:', postData);
       //pdp
       if (data[0].custID == 3) {
+        var url = 'https://foodie1234.herokuapp.com/updateDashboard';
+        if (this.http.get(url).subscribe())          
+          console.log("In /updateDashboard");
         localStorage.setItem("loginid","3");
         this.navCtrl.setRoot(PDPTabsPage);
         this.loading.dismiss();
