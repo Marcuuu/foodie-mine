@@ -9,7 +9,9 @@ export class MenusData {
     result: any;
     data: Observable<any>;
 
-    constructor(private http: HttpClient, private storage: Storage) {
+    constructor(private http: HttpClient, private storage: Storage) {}
+
+    getMenusData(){      
       let menu = [];
       console.log("In /getMenus");
       var url = 'https://foodie1234.herokuapp.com/getMenus';
@@ -25,7 +27,7 @@ export class MenusData {
           this.result[i].bookNotes,
          ));
         }
-        storage.set('Menus', menu);
+        this.storage.set('Menus', menu);
       });
     }
 }

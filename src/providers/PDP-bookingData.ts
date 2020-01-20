@@ -9,7 +9,9 @@ export class BookingsData {
     result: any;
     data: Observable<any>;
 
-    constructor(private http: HttpClient, private storage: Storage) {
+    constructor(private http: HttpClient, private storage: Storage) {}
+
+    getBookingsData(){
       let booking = [];
       console.log("In /getBookings");
       var url = 'https://foodie1234.herokuapp.com/getBookings';
@@ -27,7 +29,7 @@ export class BookingsData {
           this.result[i].bookStatus,
          ));
         }
-        storage.set('Bookings', booking);
+        this.storage.set('Bookings', booking);
       });
     }
 }

@@ -9,7 +9,9 @@ export class ProfileData {
     result: any;
     data: Observable<any>;
 
-    constructor(private http: HttpClient, private storage: Storage) {      
+    constructor(private http: HttpClient, private storage: Storage) {}
+
+    getProfileData(){
       let profile = [];
       console.log("In /getProfile");
       var url = 'https://foodie1234.herokuapp.com/getProfile';
@@ -27,7 +29,7 @@ export class ProfileData {
           this.result[i].img
          ));
         }
-        storage.set('Profile', profile);
+        this.storage.set('Profile', profile);
       });
     }
 }

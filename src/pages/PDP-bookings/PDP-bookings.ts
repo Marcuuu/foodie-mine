@@ -14,8 +14,10 @@ export class BookingsPage {
   default = {option:null};
   filterBookings: any;
   
-  constructor(public navCtrl: NavController, private storage: Storage, public bookingData: BookingsData) {
-    storage.get('Bookings').then((val) => {
+  constructor(public navCtrl: NavController, private storage: Storage, public bookingData: BookingsData) {}
+
+  ionViewWillEnter(){
+    this.storage.get('Bookings').then((val) => {
       this.bookings = val;
       console.log('Get Bookings completed');
       this.filterBookings = this.bookings;

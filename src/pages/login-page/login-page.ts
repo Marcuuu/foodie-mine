@@ -20,6 +20,10 @@ export class LoginPage {
       spinner: 'crescent',
       content: 'Authenticating'
     });
+
+    dashboardData.getDashboardData();
+    bookingData.getBookingsData();
+    profileData.getProfileData();
   }
   
   login(custId){

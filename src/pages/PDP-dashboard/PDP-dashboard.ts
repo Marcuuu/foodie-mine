@@ -12,8 +12,10 @@ import { DashboardData } from '../../providers/PDP-dashboardData';
 export class DashboardPage {
   bookings: Booking[];
 
-  constructor(public navCtrl: NavController, private storage: Storage, public dashboardData: DashboardData) {
-    storage.get('Dashboard').then((val) => {
+  constructor(public navCtrl: NavController, private storage: Storage, public dashboardData: DashboardData) {}
+
+  ionViewWillEnter(){
+    this.storage.get('Dashboard').then((val) => {
       console.log(val);
       this.bookings = val;
       console.log('Get Dashboard completed');

@@ -3,6 +3,8 @@ import { NavController, LoadingController } from 'ionic-angular';
 import { NavParams } from 'ionic-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
+import { DashboardData } from '../../providers/PDP-dashboardData';
+import { BookingsData } from '../../providers/PDP-bookingData';
 
 @Component({
   selector: 'page-PDP-booking-details',
@@ -13,7 +15,7 @@ export class BookingDetailsPage {
   booking: any;
   loading: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public dashboardData: DashboardData, public bookingData: BookingsData) {
     this.booking = navParams.get('data');
     console.log(this.booking);
     this.loading = this.loadingCtrl.create({
@@ -51,6 +53,15 @@ export class BookingDetailsPage {
     alert.present();
   }
 
+  presentAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Confirmation',
+      subTitle: 'Booking has been cancelled',
+      buttons: ['Dismiss']
+    });
+    alert.present();
+  }
+
   cancelBooking(){
     var url = 'https://foodie1234.herokuapp.com/cancelBooking';
     var postData = JSON.stringify({
@@ -70,6 +81,10 @@ export class BookingDetailsPage {
       console.log("In /cancelBooking");
       console.log('postData:', postData);
       this.loading.dismiss();
+      this.presentAlert();
+      this.booking.bookStatus = "Cancelled";
+      this.dashboardData.getDashboardData();
+      this.bookingData.getBookingsData();
     });
   }
 }
