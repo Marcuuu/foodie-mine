@@ -25,6 +25,7 @@ import { LoginPage } from '../pages/login-page/login-page';
 import { MenusData } from '../providers/PDP-menuData';
 import { ProfileData } from '../providers/PDP-profileData';
 import { DashboardData } from '../providers/PDP-dashboardData';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { DashboardData } from '../providers/PDP-dashboardData';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     DashboardData,
     BookingsData,
     ProfileData,

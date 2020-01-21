@@ -15,9 +15,11 @@ export class ProfilePage {
   profiles: Profile[];
   profile: Profile;
 
-  constructor(public navCtrl: NavController, private storage: Storage, public profileData: ProfileData) {
+  constructor(public navCtrl: NavController, private storage: Storage, public profileData: ProfileData) {}
+
+  ionViewWillEnter(){
     let id = localStorage.getItem('loginid');
-    storage.get('Profile').then((val) => {
+    this.storage.get('Profile').then((val) => {
       console.log(val);
       this.profiles = val;
       for (var i=0;i<this.profiles.length;i++){ 
@@ -30,8 +32,9 @@ export class ProfilePage {
     });
   }
 
-  goToEditProfile(params){
-    if (!params) params = {};
-    this.navCtrl.push(EditProfilePage);
+  goToEditProfile(profile){
+    this.navCtrl.push(EditProfilePage, {
+      data: profile
+    });
   }
 }

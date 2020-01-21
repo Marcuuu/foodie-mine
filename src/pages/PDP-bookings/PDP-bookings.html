@@ -29,7 +29,7 @@
   </form>
   <ion-list id="bookings-list2">
     <ion-item color="none" id="bookings-list-item11" *ngFor="let booking of filterBookings" (click)="goToBookingDetails(booking)">
-      {{ booking?.bookDate }} - {{ booking?.bookTime }}
+    {{ booking?.bookDate }} - {{ booking?.bookTime }}
     <ion-icon name="arrow-forward" item-right></ion-icon>
     </ion-item>
   </ion-list>
