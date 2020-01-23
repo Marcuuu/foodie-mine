@@ -12,13 +12,13 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page4">
-  <ion-card id="menus-card28">
+  <ion-card id="menus-card28" *ngFor="let menu of menus">
     <ion-list>
       <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
         <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
       </div>
       <ion-item color="none" id="menus-list-item61">
-        Western Wednesday
+        {{ menu?.menuName }}
       </ion-item>
       <button id="menus-button4" ion-button clear color="positive" block on-click="goToMenu()">
         Manage Menu

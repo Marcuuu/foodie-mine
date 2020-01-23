@@ -1,10 +1,8 @@
 export class Menu {
 
     constructor(
+        public menuID: string,
         public menuName: string,
-        public bookDate: string,
-        public bookTime: string,
-        public bookPax: string,
-        public bookNotes: string
+        public menuImg: string
     ) { }
 }

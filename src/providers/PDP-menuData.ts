@@ -20,11 +20,9 @@ export class MenusData {
       this.result = data;
       for(var i = 0; i < this.result.length; i++){
         menu.push(new Menu(
-          this.result[i].custName,
-          this.result[i].bookDate,
-          this.result[i].bookTime,
-          this.result[i].bookPax,
-          this.result[i].bookNotes,
+          this.result[i].menuID,
+          this.result[i].menuName,
+          this.result[i].menuImg
          ));
         }
         this.storage.set('Menus', menu);

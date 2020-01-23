@@ -5,6 +5,7 @@ import { PDPTabsPage } from '../PDP-tabs/PDP-tabs';
 import { ProfileData } from '../../providers/PDP-profileData';
 import { BookingsData } from '../../providers/PDP-bookingData';
 import { DashboardData } from '../../providers/PDP-dashboardData';
+import { MenusData } from '../../providers/PDP-menuData';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class LoginPage {
   cust: any;
   loading: any;
 
-  constructor(public navCtrl: NavController, public http: HttpClient, public loadingCtrl: LoadingController, public dashboardData: DashboardData, public bookingData: BookingsData, public profileData: ProfileData) {
+  constructor(public navCtrl: NavController, public http: HttpClient, public loadingCtrl: LoadingController, public dashboardData: DashboardData, public bookingData: BookingsData, public menusData: MenusData, public profileData: ProfileData) {
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Authenticating'
@@ -24,6 +25,7 @@ export class LoginPage {
     dashboardData.getDashboardData();
     bookingData.getBookingsData();
     profileData.getProfileData();
+    menusData.getMenusData();
   }
   
   login(custId){
