@@ -22,6 +22,7 @@ export class MenusData {
         menu.push(new Menu(
           this.result[i].menuID,
           this.result[i].menuName,
+          this.result[i].menuCategory,
           this.result[i].menuImg
          ));
         }
