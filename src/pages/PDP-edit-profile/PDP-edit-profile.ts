@@ -56,6 +56,30 @@ export class EditProfilePage {
     alert.present();
   }
 
+  presentCancel() {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm cancel',
+      message: 'Would you like to cancel your changes and go back?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            console.log('No');
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            this.navCtrl.pop();
+            console.log('Yes');
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'Confirmation',

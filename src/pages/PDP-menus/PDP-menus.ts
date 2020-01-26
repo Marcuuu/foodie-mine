@@ -23,10 +23,12 @@ export class MenusPage {
     });
   }
 
-  goToMenu(params){
-    if (!params) params = {};
-    this.navCtrl.push(MenuPage);
-  }goToNewMenu(params){
+  goToMenu(menu){
+    this.navCtrl.push(MenuPage, {
+      data: menu
+    });
+  }
+  goToNewMenu(params){
     if (!params) params = {};
     this.navCtrl.push(NewMenuPage);
   }
