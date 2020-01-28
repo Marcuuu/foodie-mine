@@ -34,7 +34,7 @@ export class EditProfilePage {
   presentConfirm() {
     let alert = this.alertCtrl.create({
       title: 'Confirm save',
-      message: 'Do you want to save your changes?',
+      message: 'Would you like to save your changes?',
       buttons: [
         {
           text: 'No',
@@ -59,7 +59,7 @@ export class EditProfilePage {
   presentCancel() {
     let alert = this.alertCtrl.create({
       title: 'Confirm cancel',
-      message: 'Would you like to cancel your changes and go back?',
+      message: 'Would you like to discard your changes and go back?',
       buttons: [
         {
           text: 'No',
@@ -83,7 +83,7 @@ export class EditProfilePage {
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'Confirmation',
-      subTitle: 'Profile has been updated',
+      subTitle: 'Your profile has been updated',
       buttons: ['Dismiss']
     });
     alert.present();
