@@ -25,7 +25,8 @@ export class LoginPage {
     dashboardData.getDashboardData();
     bookingData.getBookingsData();
     profileData.getProfileData();
-    menusData.getMenusData();
+    menusData.getMenusData();    
+    menusData.getMenuItemsData();
   }
   
   login(custId){
