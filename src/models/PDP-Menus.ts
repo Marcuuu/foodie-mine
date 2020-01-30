@@ -4,6 +4,7 @@ export class Menu {
         public menuID: string,
         public menuName: string,
         public menuCategory: string,
-        public menuImg: string
+        public menuImg: string,
+        public pdpID: string,
     ) { }
 }

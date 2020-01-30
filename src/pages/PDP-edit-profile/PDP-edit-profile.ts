@@ -13,7 +13,9 @@ export class EditProfilePage {
   profile: any;
   loading: any;
   editProfile: FormGroup;
-  formInput = {fName: '', desc: '', add: '', phone: '', email: ''};
+  formInput = {fName: '', desc: '', add: '', phone: '', email: '',
+  //img: ''
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public camera: Camera, public profileData: ProfileData) {
     this.profile = navParams.get('data');
@@ -27,8 +29,9 @@ export class EditProfilePage {
       desc: new FormControl(),
       add: new FormControl(),
       phone: new FormControl(),
-      email: new FormControl()
-    })
+      email: new FormControl(),
+      //img: new FormControl() 
+    });
   }
   
   presentConfirm() {
@@ -99,7 +102,7 @@ export class EditProfilePage {
       profileDesc: this.editProfile.value['desc'],
       profilePhone: this.editProfile.value['phone'],
       profileEmail: this.editProfile.value['email'],
-      profileImg: this.profile.image
+      profileImg: this.profile.image // this.editProfile.value['img']
     });
 
     const httpOptions = {

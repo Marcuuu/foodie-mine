@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { EditProfilePage } from '../PDP-edit-profile/PDP-edit-profile';
 import { Profile } from '../../models/PDP-Profile';
 import { Storage } from '@ionic/storage';
-import { ProfileData } from '../../providers/PDP-profileData';
 
 @Component({
   selector: 'page-PDP-profile',
@@ -15,7 +14,7 @@ export class ProfilePage {
   profiles: Profile[];
   profile: Profile;
 
-  constructor(public navCtrl: NavController, private storage: Storage, public profileData: ProfileData) {}
+  constructor(public navCtrl: NavController, private storage: Storage) {}
 
   ionViewWillEnter(){
     let id = localStorage.getItem('loginid');

@@ -21,12 +21,6 @@ export class LoginPage {
       spinner: 'crescent',
       content: 'Authenticating'
     });
-
-    dashboardData.getDashboardData();
-    bookingData.getBookingsData();
-    profileData.getProfileData();
-    menusData.getMenusData();
-    menusData.getMenuItemsData();
   }
   
   login(custId){
@@ -53,6 +47,11 @@ export class LoginPage {
         localStorage.setItem("loginid","3");
         this.navCtrl.setRoot(PDPTabsPage);
         this.loading.dismiss();
+        this.dashboardData.getDashboardData();
+        this.bookingData.getBookingsData();
+        this.profileData.getProfileData();
+        this.menusData.getMenusData(data[0].custID);
+        this.menusData.getMenuItemsData();
       } 
       //customer
       if (data[0].custID == 2) {

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { BookingDetailsPage } from '../PDP-booking-details/PDP-booking-details';
-import { BookingsData } from '../../providers/PDP-bookingData';
 import { Booking } from '../../models/PDP-Bookings';
 import { Storage } from '@ionic/storage';
 
@@ -14,7 +13,7 @@ export class BookingsPage {
   default = {option:null};
   filterBookings: any;
   
-  constructor(public navCtrl: NavController, private storage: Storage, public bookingData: BookingsData) {}
+  constructor(public navCtrl: NavController, private storage: Storage) {}
 
   ionViewWillEnter(){
     this.storage.get('Bookings').then((val) => {

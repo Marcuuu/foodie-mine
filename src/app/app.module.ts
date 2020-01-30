@@ -9,7 +9,6 @@ import { PDPTabsPage } from '../pages/PDP-tabs/PDP-tabs';
 import { ProfilePage } from '../pages/PDP-profile/PDP-profile';
 import { BookingDetailsPage } from '../pages/PDP-booking-details/PDP-booking-details';
 import { MenuPage } from '../pages/PDP-menu/PDP-menu';
-import { CreateMenuPage } from '../pages/PDP-create-menu/PDP-create-menu';
 import { EditMenuPage } from '../pages/PDP-edit-menu/PDP-edit-menu';
 import { EditProfilePage } from '../pages/PDP-edit-profile/PDP-edit-profile';
 import { NewDishPage } from '../pages/PDP-new-dish/PDP-new-dish';
@@ -37,7 +36,6 @@ import { Camera } from '@ionic-native/camera/ngx';
     ProfilePage,
     BookingDetailsPage,
     MenuPage,
-    CreateMenuPage,
     EditMenuPage,
     EditProfilePage,
     NewDishPage,
@@ -61,7 +59,6 @@ import { Camera } from '@ionic-native/camera/ngx';
     ProfilePage,
     BookingDetailsPage,
     MenuPage,
-    CreateMenuPage,
     EditMenuPage,
     EditProfilePage,
     NewDishPage,

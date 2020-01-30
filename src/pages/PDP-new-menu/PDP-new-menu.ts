@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, LoadingController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, NavParams } from 'ionic-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -10,13 +10,15 @@ import { MenusData } from '../../providers/PDP-menuData';
   templateUrl: 'PDP-new-menu.html'
 })
 export class NewMenuPage {
+  pdp_id: any;
   loading: any;
   newMenu: FormGroup;
   formInput = {menuName: '', menuCategory: '',
   //  menuImg: ''
   };
   
-  constructor(public navCtrl: NavController, public http: HttpClient, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public camera: Camera, public menusData: MenusData) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public camera: Camera, public menusData: MenusData) {
+    this.pdp_id = navParams.get('data');
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Saving'
@@ -26,7 +28,7 @@ export class NewMenuPage {
       menuName: new FormControl(),
       menuCategory: new FormControl(),
       // menuImg: new FormControl()
-    })
+    });
   }
 
   presentConfirm() {
@@ -60,12 +62,13 @@ export class NewMenuPage {
       // post data MUSt match the request.body.userID;
       menuName: this.newMenu.value['menuName'],
       menuCategory: this.newMenu.value['menuCategory'],
-      menuImg: ''// this.newMenu.value['menuImg']
+      menuImg: '',// this.newMenu.value['menuImg'],      
+      pdpID: this.pdp_id
     });
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
+        'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
       })
@@ -76,7 +79,7 @@ export class NewMenuPage {
       console.log('postData:', postData);
       this.loading.dismiss();
       this.presentAlert();
-      this.menusData.getMenusData();
+      this.menusData.getMenusData(this.pdp_id);
     });
   }
 

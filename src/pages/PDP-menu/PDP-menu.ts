@@ -61,9 +61,10 @@ export class MenuPage {
   goToNewDish(params){
     if (!params) params = {};
     this.navCtrl.push(NewDishPage);
-  }goToEditMenu(params){
-    if (!params) params = {};
-    this.navCtrl.push(EditMenuPage);
+  }goToEditMenu(menu){
+    this.navCtrl.push(EditMenuPage, {
+      data: menu
+    });
   }goToEditDish(params){
     if (!params) params = {};
     this.navCtrl.push(EditDishPage);
