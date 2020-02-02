@@ -1,0 +1,47 @@
+<ion-header>
+  
+  <ion-toolbar>
+    <ion-title text-center>
+      PDP Menu Page
+    </ion-title>
+    <!-- <ion-buttons slot="end" >
+      <button [ngStyle]="" class="heartbutton" (click)="favmenu(friend)">
+      <ion-icon size="large" [name]="visible ? 'heart' : 'heart-empty'"></ion-icon>
+    </button>
+    </ion-buttons> -->
+    <ion-buttons end>
+      <button ion-button icon-only (click)="favmenu()">
+        <ion-icon [name]="visible ? 'heart' : 'heart-outline'"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+<ion-content>
+  <h3><Menu></Menu> INFO</h3>
+  <ion-list>
+    <ion-item *ngFor="let pdp of menuInfo">
+      <p>{{pdp.fName}}</p>
+      <p>{{pdp.menuName}}</p>
+    </ion-item>
+    <ion-item class="side-side">
+      <ionic3-star-rating [(ngModel)]="rating" style="width:auto;" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"
+        defaultColor="#aaaaaa" readonly="true" fontSize="32px" (ratingChanged)="logRatingChange($event)">
+      </ionic3-star-rating>
+      <input class="rate" [(ngModel)]="ratingNum" type="decimal" disabled="true" size="3"/>
+    </ion-item>
+  </ion-list>
+  <button class="wholebutton" (click)="navSubmitReview()">
+    <h3 style="color:lightgreen">Write a Review</h3>
+  </button>
+  <ion-label><h1 text-center>Reviews</h1></ion-label>
+  <ion-list>
+    <ion-item *ngFor="let rev of TopReview">
+      <ion-label style="white-space: normal;">{{rev.comments}}</ion-label>
+    </ion-item>
+
+  </ion-list>
+  <button class="wholebutton" (click)="allReviews()">
+    <h3 style="color:lightgreen">See all Reviews</h3>
+  </button>
+</ion-content>
