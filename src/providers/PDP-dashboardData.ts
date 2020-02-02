@@ -9,7 +9,9 @@ export class DashboardData {
     result: any;
     data: Observable<any>;
 
-    constructor(private http: HttpClient, private storage: Storage) {
+    constructor(private http: HttpClient, private storage: Storage) {}
+
+    getDashboardData(){
       let booking = [];
       console.log("In /getBookingsDashboard");
       var url = 'https://foodie1234.herokuapp.com/getBookingsDashboard';
@@ -27,7 +29,7 @@ export class DashboardData {
           this.result[i].bookStatus,
          ));
         }
-        storage.set('Dashboard', booking);
+        this.storage.set('Dashboard', booking);
       });
     }
 }

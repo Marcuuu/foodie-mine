@@ -6,48 +6,48 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page12">
-  <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
-    <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
-  </div>
-  <button id="editProfile-button12" ion-button color="positive" block>
-    Change Image
-  </button>
-  <form id="editProfile-form8">
+  <form id="editProfile-form8" [formGroup]="editProfile">
+    <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
+      <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
+    </div>
+    <button id="editProfile-button12" ion-button color="positive" block>
+      Change Image
+    </button>
     <ion-item id="editProfile-input7">
       <ion-label>
         Name
       </ion-label>
-      <ion-input type="text" placeholder="Tony&#039;s Cafe"></ion-input>
+      <ion-input type="text" value="{{ profile.fName }}" formControlName="fName"></ion-input>
     </ion-item>
     <ion-item id="editProfile-textarea1">
       <ion-label>
         Description
       </ion-label>
-      <ion-textarea placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry."></ion-textarea>
+      <ion-textarea value="{{ profile.desc }}" formControlName="desc"></ion-textarea>
     </ion-item>
     <ion-item id="editProfile-input7">
       <ion-label>
         Location
       </ion-label>
-      <ion-input type="text" placeholder="Serangoon"></ion-input>
+      <ion-input type="text" value="{{ profile.add }}" formControlName="add"></ion-input>
     </ion-item>
     <ion-item id="editProfile-input7">
       <ion-label>
         Mobile
       </ion-label>
-      <ion-input type="text" placeholder="91234567"></ion-input>
+      <ion-input type="text" value="{{ profile.phone }}" formControlName="phone"></ion-input>
     </ion-item>
     <ion-item id="editProfile-input7">
       <ion-label>
         Email
       </ion-label>
-      <ion-input type="text" placeholder="tony.cafe@gmail.com"></ion-input>
+      <ion-input type="text" value="{{ profile.email }}" formControlName="email"></ion-input>
     </ion-item>
   </form>
-  <button id="editProfile-button19" ion-button color="positive" block>
+  <button id="editProfile-button19" ion-button color="positive" block (click)="presentConfirm()">
     Save
   </button>
-  <button id="editProfile-button20" ion-button color="positive" block>
+  <button id="editProfile-button19" ion-button color="positive" block (click)="presentCancel()">
     Cancel
   </button>
 </ion-content>

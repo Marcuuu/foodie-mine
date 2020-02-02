@@ -6,6 +6,7 @@ import { ProfileData } from '../../providers/PDP-profileData';
 import { BookingsData } from '../../providers/PDP-bookingData';
 import { DashboardData } from '../../providers/PDP-dashboardData';
 import { CustTabsPage } from '../CUST-tabs/tabs2';
+import { MenusData } from '../../providers/PDP-menuData';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class LoginPage {
   cust: any;
   loading: any;
 
-  constructor(public navCtrl: NavController, public http: HttpClient, public loadingCtrl: LoadingController, public dashboardData: DashboardData, public bookingData: BookingsData, public profileData: ProfileData) {
+  constructor(public navCtrl: NavController, public http: HttpClient, public loadingCtrl: LoadingController, public dashboardData: DashboardData, public bookingData: BookingsData, public menusData: MenusData, public profileData: ProfileData) {
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Authenticating'
@@ -44,10 +45,14 @@ export class LoginPage {
         var url = 'https://foodie1234.herokuapp.com/updateDashboard';
         if (this.http.get(url).subscribe())          
           console.log("In /updateDashboard");
-        
         localStorage.setItem("loginid","3");
         this.navCtrl.setRoot(PDPTabsPage);
         this.loading.dismiss();
+        this.dashboardData.getDashboardData();
+        this.bookingData.getBookingsData();
+        this.profileData.getProfileData();
+        this.menusData.getMenusData(data[0].custID);
+        this.menusData.getMenuItemsData();
       } 
       //customer
       if (data[0].custID == 2) {
