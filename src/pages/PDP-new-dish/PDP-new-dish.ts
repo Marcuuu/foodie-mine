@@ -44,9 +44,9 @@ export class NewDishPage {
         {
           text: 'Yes',
           handler: () => {
-            this.createNewDish();
-            this.loading.present();
             console.log('Yes');
+            this.loading.present();
+            this.createNewDish();
           }
         }
       ]
@@ -75,9 +75,9 @@ export class NewDishPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /createNewDish");
       console.log('postData:', postData);
+      this.menusData.getMenuItemsData();
       this.loading.dismiss();
       this.presentAlert();
-      this.menusData.getMenuItemsData();
     });
   }
 

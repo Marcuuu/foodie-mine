@@ -54,6 +54,7 @@ export class MenusData {
       this.result = data;
       for(var i = 0; i < this.result.length; i++){
         menuItems.push(new MenuItems(
+          this.result[i].id,
           this.result[i].menuItem,
           this.result[i].price,
           this.result[i].menuImg,
