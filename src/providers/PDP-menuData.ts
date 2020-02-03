@@ -40,6 +40,7 @@ export class MenusData {
             this.result[i].pdp_id
            ));
           }
+        this.storage.remove('Menus');
         this.storage.set('Menus', menu);
       });
     }
@@ -59,6 +60,7 @@ export class MenusData {
           this.result[i].menuId
          ));
         }
+        this.storage.remove('MenuItems');
         this.storage.set('MenuItems', menuItems);
       });
     }

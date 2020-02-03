@@ -12,6 +12,7 @@ import { MenuItems } from '../../models/PDP-MenuItems';
   templateUrl: 'PDP-menu.html'
 })
 export class MenuPage {
+  menuData: any;
   menu: any;
   menuItems: MenuItems[];
   menuPrice: any;
@@ -20,8 +21,17 @@ export class MenuPage {
 
   ionViewWillEnter(){
     this.menuPrice = 0;
-    this.menu = this.navParams.get('data');
-    console.log(this.menu);
+    this.menuData = this.navParams.get('data');    
+    console.log(this.menuData.menuID);
+    this.storage.get('Menus').then((val) => {
+      for (var i=0;i<val.length;i++){ 
+        if (val[i].menuID == this.menuData.menuID){
+          this.menu = val[i];
+        }
+      }
+      console.log(this.menu);
+      console.log('Get Menu completed');
+    });
     this.storage.get('MenuItems').then((val) => {
       console.log(val);
       this.menuItems = val.filter(val => val.menuID == this.menu.menuID);
@@ -58,15 +68,17 @@ export class MenuPage {
     alert.present();
   }
 
-  goToNewDish(params){
-    if (!params) params = {};
-    this.navCtrl.push(NewDishPage);
-  }goToEditMenu(menu){
-    this.navCtrl.push(EditMenuPage, {
-      data: menu
+  goToNewDish(){
+    this.navCtrl.push(NewDishPage, {
+      data: this.menu.menuID
     });
-  }goToEditDish(params){
-    if (!params) params = {};
-    this.navCtrl.push(EditDishPage);
+  }goToEditMenu(){
+    this.navCtrl.push(EditMenuPage, {
+      data: this.menu
+    });
+  }goToEditDish(menuItem){
+    this.navCtrl.push(EditDishPage, {
+      data: menuItem
+    });
   }
 }

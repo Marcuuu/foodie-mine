@@ -4,6 +4,7 @@ import { ProfileData } from '../../providers/PDP-profileData';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FormGroup, FormControl } from '@angular/forms';
+import { ProfilePage } from '../PDP-profile/PDP-profile';
 
 @Component({
   selector: 'page-PDP-edit-profile',
@@ -87,7 +88,12 @@ export class EditProfilePage {
     let alert = this.alertCtrl.create({
       title: 'Confirmation',
       subTitle: 'Your profile has been updated',
-      buttons: ['Dismiss']
+      buttons: [{
+        text: 'Return',
+        handler: () => {
+          this.navCtrl.setRoot(ProfilePage);
+        }
+      }]
     });
     alert.present();
   }

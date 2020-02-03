@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page14">
-  <form id="newDish-form9" [formGroup]="newNenuItem">
+  <form id="newDish-form9" [formGroup]="newDish">
     <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
       <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
     </div>
@@ -23,7 +23,7 @@
       <ion-label>
         Price ($)
       </ion-label>
-      <ion-input type="text" placeholder="18" formControlName="menuItemPrice"></ion-input>
+      <ion-input type="text" placeholder="18.50" formControlName="menuItemPrice"></ion-input>
     </ion-item>
   </form>
   <button id="newDish-button25" ion-button color="positive" block (click)="presentConfirm()">

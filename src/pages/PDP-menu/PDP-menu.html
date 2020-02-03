@@ -37,7 +37,7 @@
       <ion-item color="none" id="menu-list-item66">
         {{ menuItem.menuItemName }} (${{ menuItem.menuItemPrice }})
       </ion-item>
-      <button id="menu-button6" ion-button color="positive" on-click="goToEditDish()">
+      <button id="menu-button6" ion-button color="positive" (click)="goToEditDish(menuItem)">
         Manage
       </button>
       <button id="menu-button7" ion-button color="danger" (click)="presentConfirm()">

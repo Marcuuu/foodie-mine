@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, LoadingController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, NavParams } from 'ionic-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -11,18 +11,18 @@ import { MenusData } from '../../providers/PDP-menuData';
 })
 export class NewDishPage {
   loading: any;
-  newNenuItem: FormGroup;
+  newDish: FormGroup;
   formInput = {menuItemName: '', menuItemPrice: '',
   //  menuImg: ''
   };
   
-  constructor(public navCtrl: NavController, public http: HttpClient, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public camera: Camera, public menusData: MenusData) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public camera: Camera, public menusData: MenusData) {
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Saving'
     });
 
-    this.newNenuItem = new FormGroup({
+    this.newDish = new FormGroup({
       menuItemName: new FormControl(),
       menuItemPrice: new FormControl(),
       // menuImg: new FormControl()
@@ -58,9 +58,10 @@ export class NewDishPage {
     var url = 'https://foodie1234.herokuapp.com/createNewDish';
     var postData = JSON.stringify({
       // post data MUSt match the request.body.userID;
-      menuItemName: this.newNenuItem.value['menuItemName'],
-      menuItemPrice: this.newNenuItem.value['menuItemPrice'],
-      menuItemImg: ''// this.newMenu.value['menuImg']
+      menuItemName: this.newDish.value['menuItemName'],
+      menuItemPrice: this.newDish.value['menuItemPrice'],
+      menuItemImg: '',// this.newMenu.value['menuImg'],
+      menuID: this.navParams.get('data')
     });
 
     const httpOptions = {
@@ -83,8 +84,13 @@ export class NewDishPage {
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: 'Confirmation',
-      subTitle: 'Your new dish "'+this.newNenuItem.value['menuItemName']+'" has been created',
-      buttons: ['Dismiss']
+      subTitle: 'Your new dish "'+this.newDish.value['menuItemName']+'" has been created',
+      buttons: [{
+        text: 'Return',
+        handler: () => {
+          this.navCtrl.pop();
+        }
+      }]
     });
     alert.present();
   }

@@ -5,6 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AlertController } from 'ionic-angular';
 import { DashboardData } from '../../providers/PDP-dashboardData';
 import { BookingsData } from '../../providers/PDP-bookingData';
+import { BookingsPage } from '../PDP-bookings/PDP-bookings';
+import { DashboardPage } from '../PDP-dashboard/PDP-dashboard';
 
 @Component({
   selector: 'page-PDP-booking-details',
@@ -57,7 +59,15 @@ export class BookingDetailsPage {
     let alert = this.alertCtrl.create({
       title: 'Confirmation',
       subTitle: 'Booking has been cancelled',
-      buttons: ['Dismiss']
+      buttons: [{
+        text: 'Return',
+        handler: () => {
+          if (this.navParams.get('preNav') == "dashboard")
+            this.navCtrl.setRoot(DashboardPage);
+          else
+            this.navCtrl.setRoot(BookingsPage);
+        }
+      }]
     });
     alert.present();
   }

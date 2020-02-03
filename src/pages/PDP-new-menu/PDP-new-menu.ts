@@ -4,12 +4,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MenusData } from '../../providers/PDP-menuData';
+import { MenusPage } from '../PDP-menus/PDP-menus';
 
 @Component({
   selector: 'page-PDP-new-menu',
   templateUrl: 'PDP-new-menu.html'
 })
 export class NewMenuPage {
+  default = {option:null};
   pdp_id: any;
   loading: any;
   newMenu: FormGroup;
@@ -19,6 +21,7 @@ export class NewMenuPage {
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public camera: Camera, public menusData: MenusData) {
     this.pdp_id = navParams.get('data');
+    this.default.option = "Chinese";
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Saving'
@@ -87,7 +90,12 @@ export class NewMenuPage {
     let alert = this.alertCtrl.create({
       title: 'Confirmation',
       subTitle: 'Your new menu "'+this.newMenu.value['menuName']+'" has been created',
-      buttons: ['Dismiss']
+      buttons: [{
+        text: 'Return',
+        handler: () => {
+          this.navCtrl.setRoot(MenusPage);
+        }
+      }]
     });
     alert.present();
   }

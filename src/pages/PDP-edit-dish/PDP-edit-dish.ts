@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http';
+import { MenusData } from '../../providers/PDP-menuData';
 
 @Component({
   selector: 'page-PDP-edit-dish',
   templateUrl: 'PDP-edit-dish.html'
 })
 export class EditDishPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  constructor(public navCtrl: NavController) {
+  dish: any;
+
+  constructor(public navCtrl: NavController, public http: HttpClient, public navParams: NavParams, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public menusData: MenusData) {
+    this.dish = this.navParams.get('data'); 
   }
   
 }
