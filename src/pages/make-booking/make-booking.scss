@@ -10,6 +10,14 @@ page-make-booking {
         bottom: 8px;
       }
       min-height: unset;
+      &.ion-textarea-con {
+        .input-wrapper {
+          flex-direction: column;
+        }
+        .label-text {
+          width: 100%;
+        }
+      }
       .item-inner {
         border: {
           bottom: 0;
@@ -55,6 +63,31 @@ page-make-booking {
         float: right;
         margin: {
           bottom: 0;
+        }
+      }
+      .select-field {
+        font: {
+          size: 1.4rem;
+        }
+        border: {
+          bottom: 1px solid #232323;
+        }
+        padding: {
+          left: 0;
+          right: 3px;
+          top: 0;
+          bottom: 2px;
+        }
+      }
+      .ion-textarea-element {
+        textarea {
+          margin: {
+            left: 0;
+            right: 0;
+          }
+          font: {
+            size: 1.4rem;
+          }
         }
       }
     }

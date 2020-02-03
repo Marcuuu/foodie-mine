@@ -36683,6 +36683,18 @@ page-make-booking .booking-details-list .booking-details-each {
   min-height: unset;
 }
 
+page-make-booking .booking-details-list .booking-details-each.ion-textarea-con .input-wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+page-make-booking .booking-details-list .booking-details-each.ion-textarea-con .label-text {
+  width: 100%;
+}
+
 page-make-booking .booking-details-list .booking-details-each .item-inner {
   border-bottom: 0;
 }
@@ -36732,6 +36744,21 @@ page-make-booking .booking-details-list .booking-details-each .label-detail {
   text-align: right;
   float: right;
   margin-bottom: 0;
+}
+
+page-make-booking .booking-details-list .booking-details-each .select-field {
+  font-size: 1.4rem;
+  border-bottom: 1px solid #232323;
+  padding-left: 0;
+  padding-right: 3px;
+  padding-top: 0;
+  padding-bottom: 2px;
+}
+
+page-make-booking .booking-details-list .booking-details-each .ion-textarea-element textarea {
+  margin-left: 0;
+  margin-right: 0;
+  font-size: 1.4rem;
 }
 
 page-make-booking .make-booking-cta {

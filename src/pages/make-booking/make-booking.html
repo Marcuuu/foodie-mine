@@ -19,7 +19,9 @@
       class="booking-details-each"
     >
       <p ion-text class="label-text" color="black">Chef</p>
-      <p ion-text class="label-detail" color="black">{{this.bookingDetails.fName}}</p>
+      <p ion-text class="label-detail" color="black">
+        {{this.bookingDetails.fName}}
+      </p>
     </ion-item>
     <ion-item
       color="none"
@@ -40,12 +42,17 @@
       class="booking-details-each"
     >
       <ion-label class="label-text" color="black">Time</ion-label>
-      <ion-datetime
-        displayFormat="HH:mm"
-        class="label-detail label-date"
-        color="black"
-        [(ngModel)]="date"
-      ></ion-datetime>
+      <ion-select
+        value="1300-1500"
+        okText="Okay"
+        cancelText="Cancel"
+        placeholder="Select a time"
+        class="select-field"
+      >
+        <ion-option value="1300-1500">1300 - 1500</ion-option>
+        <ion-option value="1600-1800">1600 - 1800</ion-option>
+        <ion-option value="1900-2100">1900 - 2100</ion-option>
+      </ion-select>
     </ion-item>
     <ion-item
       color="none"
@@ -53,7 +60,38 @@
       class="booking-details-each"
     >
       <p ion-text class="label-text" color="black">Location</p>
-      <p ion-text class="label-detail" color="black">{{this.bookingDetails.location}}</p>
+      <p ion-text class="label-detail" color="black">
+        {{this.bookingDetails.location}}
+      </p>
+    </ion-item>
+    <ion-item
+      color="none"
+      id="makeBooking-list-item24"
+      class="booking-details-each"
+    >
+      <ion-label class="label-text" color="black">Pax</ion-label>
+      <ion-select
+        value="1"
+        okText="Okay"
+        cancelText="Cancel"
+        placeholder="How many pax"
+        class="select-field"
+      >
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item
+      color="none"
+      id="makeBooking-list-item25"
+      class="booking-details-each ion-textarea-con"
+    >
+      <ion-label class="label-text" color="black">Notes</ion-label>
+      <ion-textarea class="ion-textarea-element"></ion-textarea>
     </ion-item>
   </ion-list>
   <div class="make-booking-cta">
