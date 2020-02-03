@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reviews
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page6">
+    <ion-list>
+      <ion-item *ngFor="let rev of allReview">
+        <ion-label class="fulllabel">
+            <h3 text-left>{{rev.comments}} </h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>

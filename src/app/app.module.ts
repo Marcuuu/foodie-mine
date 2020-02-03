@@ -13,6 +13,13 @@ import { EditMenuPage } from '../pages/PDP-edit-menu/PDP-edit-menu';
 import { EditProfilePage } from '../pages/PDP-edit-profile/PDP-edit-profile';
 import { NewDishPage } from '../pages/PDP-new-dish/PDP-new-dish';
 import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
+import { CustMenuPage } from '../pages/CUST-menu/menu';
+import { CustFavouritesPage } from '../pages/CUST-favourites/favourites' 
+import { CustMenuInfoPage } from '../pages/CUST-menuinfo/menuinfo'
+import { CustReviewsPage } from '../pages/CUST-reviews/reviews'
+import { CustSubmitReviewPage } from '../pages/CUST-submitReview/submitReview'
+import { CustTabsPage } from '../pages/CUST-tabs/tabs2'
+import { StarRatingModule } from 'ionic3-star-rating';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,6 +32,7 @@ import { MenusData } from '../providers/PDP-menuData';
 import { ProfileData } from '../providers/PDP-profileData';
 import { DashboardData } from '../providers/PDP-dashboardData';
 import { Camera } from '@ionic-native/camera/ngx';
+
 
 @NgModule({
   declarations: [
@@ -41,11 +49,18 @@ import { Camera } from '@ionic-native/camera/ngx';
     NewDishPage,
     EditDishPage,
     NewMenuPage,
-    LoginPage
+    LoginPage,
+    CustFavouritesPage,
+    CustMenuPage,
+    CustMenuInfoPage,
+    CustReviewsPage,
+    CustSubmitReviewPage,
+    CustTabsPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    StarRatingModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -64,7 +79,12 @@ import { Camera } from '@ionic-native/camera/ngx';
     NewDishPage,
     EditDishPage,
     NewMenuPage,
-    LoginPage
+    LoginPage,CustFavouritesPage,
+    CustMenuPage,
+    CustMenuInfoPage,
+    CustReviewsPage,
+    CustSubmitReviewPage,
+    CustTabsPage
   ],
   providers: [
     StatusBar,

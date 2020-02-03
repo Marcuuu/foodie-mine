@@ -1,0 +1,19 @@
+page-menuinfo {
+    .wholebutton{
+        flex-direction:column !important;
+        background-color:transparent !important;
+        padding-left:15px;
+      }
+      .heartbutton{
+        width:auto;
+        height:auto;
+        background-color:transparent !important;
+      }
+      .rate{
+        background-color:transparent !important;
+        border:none;
+      }
+      .side-side{
+        display:inline-block;
+      }
+}
