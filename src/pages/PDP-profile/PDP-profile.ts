@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController, LoadingController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, App } from 'ionic-angular';
 import { EditProfilePage } from '../PDP-edit-profile/PDP-edit-profile';
 import { Profile } from '../../models/PDP-Profile';
 import { Storage } from '@ionic/storage';
@@ -16,7 +16,7 @@ export class ProfilePage {
   profiles: Profile[];
   profile: Profile;
 
-  constructor(public navCtrl: NavController, private storage: Storage, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
+  constructor(private app: App, public navCtrl: NavController, private storage: Storage, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
     this.loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Logging out'
@@ -56,7 +56,7 @@ export class ProfilePage {
             console.log('Yes');
             this.loading.present();
             this.storage.remove('loginid');
-            this.navCtrl.setRoot(LoginPage);
+            this.app.getRootNav().setRoot(LoginPage);
             this.loading.dismiss();
           }
         }
