@@ -182,11 +182,11 @@ export class EditMenuPage {
       })
     };   
 
-    this.http.post(url, postData, httpOptions).subscribe(() => {    
-      this.deleting.dismiss();
-      this.deleteAlert();
+    this.http.post(url, postData, httpOptions).subscribe(() => {
       console.log("In /deleteMenu");
       this.menuData.getMenusData(this.menu.pdpID);
+      this.deleting.dismiss();
+      this.deleteAlert();
     });
   }
 }

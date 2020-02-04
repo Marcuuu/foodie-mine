@@ -122,9 +122,9 @@ export class EditProfilePage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /updateProfile");
       console.log('postData:', postData);
+      this.profileData.getProfileData();
       this.loading.dismiss();
       this.presentAlert();
-      this.profileData.getProfileData();
     });
   }
 }

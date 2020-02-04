@@ -114,9 +114,9 @@ export class EditDishPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /updateDish");
       console.log('postData:', postData);
+      this.menusData.getMenuItemsData();
       this.loading.dismiss();
       this.presentAlert();
-      this.menusData.getMenuItemsData();
     });
   }
 }
