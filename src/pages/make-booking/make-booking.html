@@ -25,6 +25,16 @@
     </ion-item>
     <ion-item
       color="none"
+      id="makeBooking-list-item23"
+      class="booking-details-each"
+    >
+      <p ion-text class="label-text" color="black">Location</p>
+      <p ion-text class="label-detail" color="black">
+        {{this.bookingDetails.location}}
+      </p>
+    </ion-item>
+    <ion-item
+      color="none"
       id="makeBooking-list-item21"
       class="booking-details-each"
     >
@@ -34,17 +44,8 @@
         class="label-detail label-date"
         color="black"
         [(ngModel)]="date"
+        (ionChange)="updateMyDate($event)"
       ></ion-datetime>
-    </ion-item>
-    <ion-item
-      color="none"
-      id="makeBooking-list-item23"
-      class="booking-details-each"
-    >
-      <p ion-text class="label-text" color="black">Location</p>
-      <p ion-text class="label-detail" color="black">
-        {{this.bookingDetails.location}}
-      </p>
     </ion-item>
     <ion-item
       color="none"
@@ -58,6 +59,7 @@
         cancelText="Cancel"
         placeholder="Select a time"
         class="select-field"
+        (ionChange)="updateMyTime($event)"
       >
         <ion-option value="1300-1500">1300 - 1500</ion-option>
         <ion-option value="1600-1800">1600 - 1800</ion-option>
@@ -76,6 +78,7 @@
         cancelText="Cancel"
         placeholder="How many pax"
         class="select-field"
+        (ionChange)="updateMyPax($event)"
       >
         <ion-option value="1">1</ion-option>
         <ion-option value="2">2</ion-option>
@@ -91,7 +94,10 @@
       class="booking-details-each ion-textarea-con"
     >
       <ion-label class="label-text" color="black">Notes</ion-label>
-      <ion-textarea class="ion-textarea-element"></ion-textarea>
+      <ion-textarea
+        class="ion-textarea-element"
+        (input)="updateMyNotes($event.target.value)"
+      ></ion-textarea>
     </ion-item>
   </ion-list>
   <div class="make-booking-cta">
@@ -105,7 +111,12 @@
     >
       Cancel
     </button>
-    <button id="makeBooking-button4" ion-button color="yellow">
+    <button
+      id="makeBooking-button4"
+      ion-button
+      color="yellow"
+      (click)="makeBooking()"
+    >
       Confirm
     </button>
   </div>

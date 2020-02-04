@@ -255,6 +255,7 @@ var MenuDetailsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MakeBookingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(50);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -266,34 +267,78 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var MakeBookingPage = /** @class */ (function () {
-    function MakeBookingPage(navCtrl, navParams) {
+    function MakeBookingPage(navCtrl, navParams, http) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.http = http;
         this.bookingDetails = navParams.get("item");
     }
     MakeBookingPage.prototype.ionViewDidLoad = function () {
         console.log(this.bookingDetails);
         this.date = new Date().toISOString();
     };
+    MakeBookingPage.prototype.updateMyDate = function ($event) {
+        var year = $event.year;
+        var month = $event.month;
+        var day = $event.day;
+        var full = year + "-" + month + "-" + day;
+        localStorage.setItem("bookDate", full);
+    };
+    MakeBookingPage.prototype.updateMyTime = function ($event) {
+        localStorage.setItem("bookTime", $event);
+    };
+    MakeBookingPage.prototype.updateMyPax = function ($event) {
+        localStorage.setItem("bookPax", $event);
+    };
+    MakeBookingPage.prototype.updateMyNotes = function ($event) {
+        localStorage.setItem("bookNotes", $event);
+    };
+    // makeBooking() {
+    //   var url = "https://elp-tutorial.herokuapp.com/makeBooking";
+    //   this.data = this.http.get(url);
+    //   this.subscription = this.data.subscribe(data => {
+    //     this.profileList = data;
+    //   });
+    // }
     MakeBookingPage.prototype.makeBooking = function () {
+        var _this = this;
         var url = "https://elp-tutorial.herokuapp.com/makeBooking";
-        /* this.data = this.http.get(url);
-        this.subscription = this.data.subscribe(data => {
-          this.profileList = data;
-        }); */
+        var postData = JSON.stringify({
+            //these fields MUST match the server.js request.body.XXX;
+            bookDate: localStorage.getItem("bookDate"),
+            bookTime: localStorage.getItem("bookTime"),
+            bookPax: localStorage.getItem("bookPax"),
+            bookNotes: localStorage.getItem("bookNotes")
+        });
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            console.log("postData:", postData);
+            console.log(data);
+            _this.bookingData = data;
+        }, function (error) {
+            console.log(error);
+        });
+        this.navCtrl.pop();
     };
     MakeBookingPage.prototype.cancelBooking = function () {
         this.navCtrl.pop();
     };
     MakeBookingPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-make-booking",template:/*ion-inline-start:"D:\Work\ELP\src\pages\make-booking\make-booking.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Make Booking\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page7">\n  <h4\n    id="makeBooking-heading6"\n    style="color:#000000;font-size:1.7rem;margin-bottom:15px;"\n  >\n    Confirm Booking\n  </h4>\n  <ion-list id="makeBooking-list3" class="booking-details-list">\n    <ion-item\n      color="none"\n      id="makeBooking-list-item20"\n      class="booking-details-each"\n    >\n      <p ion-text class="label-text" color="black">Chef</p>\n      <p ion-text class="label-detail" color="black">\n        {{this.bookingDetails.fName}}\n      </p>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item21"\n      class="booking-details-each"\n    >\n      <ion-label class="label-text" color="black">Date</ion-label>\n      <ion-datetime\n        displayFormat="DD MMM YYYY"\n        class="label-detail label-date"\n        color="black"\n        [(ngModel)]="date"\n      ></ion-datetime>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item23"\n      class="booking-details-each"\n    >\n      <p ion-text class="label-text" color="black">Location</p>\n      <p ion-text class="label-detail" color="black">\n        {{this.bookingDetails.location}}\n      </p>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item22"\n      class="booking-details-each"\n    >\n      <ion-label class="label-text" color="black">Time</ion-label>\n      <ion-select\n        value="1300-1500"\n        okText="Okay"\n        cancelText="Cancel"\n        placeholder="Select a time"\n        class="select-field"\n      >\n        <ion-option value="1300-1500">1300 - 1500</ion-option>\n        <ion-option value="1600-1800">1600 - 1800</ion-option>\n        <ion-option value="1900-2100">1900 - 2100</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item24"\n      class="booking-details-each"\n    >\n      <ion-label class="label-text" color="black">Pax</ion-label>\n      <ion-select\n        value="1"\n        okText="Okay"\n        cancelText="Cancel"\n        placeholder="How many pax"\n        class="select-field"\n      >\n        <ion-option value="1">1</ion-option>\n        <ion-option value="2">2</ion-option>\n        <ion-option value="3">3</ion-option>\n        <ion-option value="4">4</ion-option>\n        <ion-option value="5">5</ion-option>\n        <ion-option value="6">6</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item25"\n      class="booking-details-each ion-textarea-con"\n    >\n      <ion-label class="label-text" color="black">Notes</ion-label>\n      <ion-textarea class="ion-textarea-element"></ion-textarea>\n    </ion-item>\n  </ion-list>\n  <div class="make-booking-cta">\n    <button\n      id="makeBooking-button3"\n      class="cancel-btn"\n      ion-button\n      outline\n      color="black"\n      (click)="cancelBooking()"\n    >\n      Cancel\n    </button>\n    <button id="makeBooking-button4" ion-button color="yellow">\n      Confirm\n    </button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"D:\Work\ELP\src\pages\make-booking\make-booking.html"*/
+            selector: "page-make-booking",template:/*ion-inline-start:"D:\Work\ELP\src\pages\make-booking\make-booking.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Make Booking\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page7">\n  <h4\n    id="makeBooking-heading6"\n    style="color:#000000;font-size:1.7rem;margin-bottom:15px;"\n  >\n    Confirm Booking\n  </h4>\n  <ion-list id="makeBooking-list3" class="booking-details-list">\n    <ion-item\n      color="none"\n      id="makeBooking-list-item20"\n      class="booking-details-each"\n    >\n      <p ion-text class="label-text" color="black">Chef</p>\n      <p ion-text class="label-detail" color="black">\n        {{this.bookingDetails.fName}}\n      </p>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item23"\n      class="booking-details-each"\n    >\n      <p ion-text class="label-text" color="black">Location</p>\n      <p ion-text class="label-detail" color="black">\n        {{this.bookingDetails.location}}\n      </p>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item21"\n      class="booking-details-each"\n    >\n      <ion-label class="label-text" color="black">Date</ion-label>\n      <ion-datetime\n        displayFormat="DD MMM YYYY"\n        class="label-detail label-date"\n        color="black"\n        [(ngModel)]="date"\n        (ionChange)="updateMyDate($event)"\n      ></ion-datetime>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item22"\n      class="booking-details-each"\n    >\n      <ion-label class="label-text" color="black">Time</ion-label>\n      <ion-select\n        value="1300-1500"\n        okText="Okay"\n        cancelText="Cancel"\n        placeholder="Select a time"\n        class="select-field"\n        (ionChange)="updateMyTime($event)"\n      >\n        <ion-option value="1300-1500">1300 - 1500</ion-option>\n        <ion-option value="1600-1800">1600 - 1800</ion-option>\n        <ion-option value="1900-2100">1900 - 2100</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item24"\n      class="booking-details-each"\n    >\n      <ion-label class="label-text" color="black">Pax</ion-label>\n      <ion-select\n        value="1"\n        okText="Okay"\n        cancelText="Cancel"\n        placeholder="How many pax"\n        class="select-field"\n        (ionChange)="updateMyPax($event)"\n      >\n        <ion-option value="1">1</ion-option>\n        <ion-option value="2">2</ion-option>\n        <ion-option value="3">3</ion-option>\n        <ion-option value="4">4</ion-option>\n        <ion-option value="5">5</ion-option>\n        <ion-option value="6">6</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item\n      color="none"\n      id="makeBooking-list-item25"\n      class="booking-details-each ion-textarea-con"\n    >\n      <ion-label class="label-text" color="black">Notes</ion-label>\n      <ion-textarea\n        class="ion-textarea-element"\n        (input)="updateMyNotes($event.target.value)"\n      ></ion-textarea>\n    </ion-item>\n  </ion-list>\n  <div class="make-booking-cta">\n    <button\n      id="makeBooking-button3"\n      class="cancel-btn"\n      ion-button\n      outline\n      color="black"\n      (click)="cancelBooking()"\n    >\n      Cancel\n    </button>\n    <button\n      id="makeBooking-button4"\n      ion-button\n      color="yellow"\n      (click)="makeBooking()"\n    >\n      Confirm\n    </button>\n  </div>\n</ion-content>\n'/*ion-inline-end:"D:\Work\ELP\src\pages\make-booking\make-booking.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object])
     ], MakeBookingPage);
     return MakeBookingPage;
-    var _a, _b;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=make-booking.js.map
