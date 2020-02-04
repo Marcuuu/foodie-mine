@@ -123,8 +123,8 @@ export class EditMenuPage {
       console.log("In /updateMenu");
       console.log('postData:', postData);
       this.menuData.getMenusData(this.menu.pdpID);
-      this.loading.dismiss();
-      this.presentAlert();
+      setTimeout(() => this.loading.dismiss(), 1000);
+      setTimeout(() => this.presentAlert(), 1000);
     });
   }
 
