@@ -73,19 +73,16 @@ app.get("/discoverprofiles", cors(corsOptions), function(request, response) {
 
 app.get("/getmenu", cors(corsOptions), function(request, response) {
   console.log("Connected to /getmenu");
-  db.query(
-    "SELECT * FROM foodie.pdp_menu",
-    function(err, result, fields) {
-      if (err) {
-        console.log("Error message: ", err);
-        throw err;
-      }
-      string = JSON.stringify(result);
-      json = JSON.parse(string);
-      response.send(json);
-      console.log(json);
+  db.query("SELECT * FROM foodie.pdp_menu", function(err, result, fields) {
+    if (err) {
+      console.log("Error message: ", err);
+      throw err;
     }
-  );
+    string = JSON.stringify(result);
+    json = JSON.parse(string);
+    response.send(json);
+    console.log(json);
+  });
 });
 
 app.route("/addUser", cors(corsOptions)).post(function(request, response) {
@@ -122,6 +119,52 @@ app.route("/addUser", cors(corsOptions)).post(function(request, response) {
     }
   });
 });
+
+app.route("/makeBooking", cors(corsOptions)).post(function(request, response) {
+  // Values from JSON in editStudent.page.ts
+  var bookDate = request.body.bookDate;
+  var bookTime = request.body.bookTime;
+  var bookPax = request.body.bookPax;
+  var bookNotes = request.body.bookNotes;
+
+  db.query("SELECT * FROM booking_detail", function(error, result, fields) {
+    if (!error) {
+      if (result.length == 0) {
+        response.send(false);
+      } else {
+        db.query(
+          "INSERT INTO booking_detail (bookDate, bookTime, bookPax, bookNotes) VALUES (?,?,?,?);",
+          [bookDate, bookTime, bookPax, bookNotes],
+          function(error, result, fields) {
+            if (!error) {
+              var string = JSON.stringify(result);
+              var json = JSON.parse(string);
+              console.log("Row inserted: ", json);
+            } else {
+              response.send(true);
+            }
+          }
+        );
+      }
+    } else {
+      console.log(error);
+    }
+  });
+
+  // db.query(
+  //   "UPDATE userInfo SET userName = ?,userPassword = ?,userType = ? WHERE userID = ?;",
+  //   [Name, Password, Type, UID],
+  //   function(err, result, fields) {
+  //     if (err) {
+  //       console.log("Error message:", error);
+  //       throw error;
+  //     } else {
+  //       response.send("sucessfully updated!");
+  //     }
+  //   }
+  // );
+});
+
 app.route("/updateUser", cors(corsOptions)).post(function(request, response) {
   // Values from JSON in editStudent.page.ts
   var UID = request.body.userID;

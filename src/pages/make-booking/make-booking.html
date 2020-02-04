@@ -38,6 +38,16 @@
     </ion-item>
     <ion-item
       color="none"
+      id="makeBooking-list-item23"
+      class="booking-details-each"
+    >
+      <p ion-text class="label-text" color="black">Location</p>
+      <p ion-text class="label-detail" color="black">
+        {{this.bookingDetails.location}}
+      </p>
+    </ion-item>
+    <ion-item
+      color="none"
       id="makeBooking-list-item22"
       class="booking-details-each"
     >
@@ -53,16 +63,6 @@
         <ion-option value="1600-1800">1600 - 1800</ion-option>
         <ion-option value="1900-2100">1900 - 2100</ion-option>
       </ion-select>
-    </ion-item>
-    <ion-item
-      color="none"
-      id="makeBooking-list-item23"
-      class="booking-details-each"
-    >
-      <p ion-text class="label-text" color="black">Location</p>
-      <p ion-text class="label-detail" color="black">
-        {{this.bookingDetails.location}}
-      </p>
     </ion-item>
     <ion-item
       color="none"

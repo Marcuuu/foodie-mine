@@ -17,6 +17,14 @@ export class MakeBookingPage {
     this.date = new Date().toISOString();
   }
 
+  makeBooking() {
+    var url = "https://elp-tutorial.herokuapp.com/makeBooking";
+    /* this.data = this.http.get(url);
+    this.subscription = this.data.subscribe(data => {
+      this.profileList = data;
+    }); */
+  }
+
   cancelBooking() {
     this.navCtrl.pop();
   }
