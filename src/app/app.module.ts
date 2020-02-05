@@ -30,7 +30,6 @@ import { StarRatingModule } from 'ionic3-star-rating';
     MenusPage,
     TabsPage,
     Tabs2Page,
-    ProfilePage,
     BookingDetailsPage,
     MenuPage,
     MenuInfoPage,
@@ -40,8 +39,6 @@ import { StarRatingModule } from 'ionic3-star-rating';
     NewDishPage,
     EditDishPage,
     FavouritesPage,
-    ReviewsPage,
-    SubmitReview,
     LoginPage,
   ],
   imports: [
@@ -58,7 +55,6 @@ import { StarRatingModule } from 'ionic3-star-rating';
     MenusPage,
     TabsPage,
     Tabs2Page,
-    ProfilePage,
     BookingDetailsPage,
     MenuPage,
     MenuInfoPage,
@@ -68,8 +64,6 @@ import { StarRatingModule } from 'ionic3-star-rating';
     NewDishPage,
     EditDishPage,
     FavouritesPage,
-    ReviewsPage,
-    SubmitReview,
     LoginPage,
   ],
   providers: [
