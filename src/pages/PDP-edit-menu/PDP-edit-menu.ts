@@ -124,8 +124,10 @@ export class EditMenuPage {
       console.log('postData:', postData);
       console.log('SQL Result: ', data);
       this.menuData.getMenusData(this.menu.pdpID);
-      setTimeout(() => this.loading.dismiss(), 1500);
-      setTimeout(() => this.presentAlert(), 1500);
+      setTimeout(() => {
+        this.loading.dismiss();
+        this.presentAlert();
+      }, 1500);
     });
   }
 
@@ -187,8 +189,10 @@ export class EditMenuPage {
       console.log("In /deleteMenu");
       console.log('SQL Result: ', data);
       this.menuData.getMenusData(this.menu.pdpID);
-      setTimeout(() => this.deleting.dismiss(), 2000);
-      setTimeout(() => this.deleteAlert(), 2000);
+      setTimeout(() => {
+        this.deleting.dismiss();
+        this.deleteAlert();
+      }, 2000);
     });
   }
 }

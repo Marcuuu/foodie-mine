@@ -82,8 +82,10 @@ export class NewMenuPage {
       console.log('postData:', postData);
       console.log('SQL Result: ', data);
       this.menusData.getMenusData(this.pdp_id);
-      setTimeout(() => this.loading.dismiss(), 1500);
-      setTimeout(() => this.presentAlert(), 1500);
+      setTimeout(() => {
+        this.loading.dismiss();
+        this.presentAlert();
+      }, 1500);
     });
   }
 

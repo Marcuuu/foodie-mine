@@ -50,8 +50,10 @@ export class LoginPage {
         this.profileData.getProfileData();
         this.menusData.getMenusData(data[0].custID);
         this.menusData.getMenuItemsData();
-        setTimeout(() => this.navCtrl.setRoot(PDPTabsPage), 2500);
-        setTimeout(() => this.loading.dismiss(), 2500);
+        setTimeout(() => {
+          this.navCtrl.setRoot(PDPTabsPage);
+          this.loading.dismiss();
+        }, 2500);
       } 
       //customer
       if (data[0].custID == 2) {
