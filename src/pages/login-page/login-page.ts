@@ -53,7 +53,7 @@ export class LoginPage {
         setTimeout(() => {
           this.navCtrl.setRoot(PDPTabsPage);
           this.loading.dismiss();
-        }, 2500);
+        }, 1000);
       } 
       //customer
       if (data[0].custID == 2) {
