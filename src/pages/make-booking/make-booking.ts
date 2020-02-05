@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams, AlertController } from "ionic-angular";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
@@ -10,17 +10,20 @@ export class MakeBookingPage {
   bookingDetails: any;
   date: any;
   bookingData: any;
-  bookingSuccess = false;
+
+  noBookTime = false;
+  noBookPax = false;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public http: HttpClient
+    public http: HttpClient,
+    private alertCtrl: AlertController
   ) {
     this.bookingDetails = navParams.get("item");
   }
 
   ionViewDidLoad() {
-    console.log(this.bookingDetails);
+    console.log(this.bookingDetails.fName);
     this.date = new Date().toISOString();
   }
 
@@ -44,42 +47,77 @@ export class MakeBookingPage {
     localStorage.setItem("bookNotes", $event);
   }
 
-  // makeBooking() {
-  //   var url = "https://elp-tutorial.herokuapp.com/makeBooking";
-  //   this.data = this.http.get(url);
-  //   this.subscription = this.data.subscribe(data => {
-  //     this.profileList = data;
-  //   });
-  // }
+  emptyBookTime() {
+    let alert = this.alertCtrl.create({
+      title: "Select a time",
+      message: "Timeslot cannot be empty",
+      buttons: ["Ok"]
+    });
+    alert.present();
+  }
+
+  emptyBookPax() {
+    let alert = this.alertCtrl.create({
+      title: "Select number of pax",
+      message: "Pax cannot be empty",
+      buttons: ["Ok"]
+    });
+    alert.present();
+  }
+
+  bookingSuccess() {
+    let alert = this.alertCtrl.create({
+      title: "Booking Successful",
+      message: "See you soon!",
+      buttons: ["Ok"]
+    });
+    alert.present();
+  }
 
   makeBooking() {
     var url = "https://elp-tutorial.herokuapp.com/makeBooking";
-    var postData = JSON.stringify({
-      //these fields MUST match the server.js request.body.XXX;
-      bookDate: localStorage.getItem("bookDate"),
-      bookTime: localStorage.getItem("bookTime"),
-      bookPax: localStorage.getItem("bookPax"),
-      bookNotes: localStorage.getItem("bookNotes")
-    });
-    const httpOptions = {
-      headers: new HttpHeaders({
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
-      })
-    };
-    this.http.post(url, postData, httpOptions).subscribe(
-      data => {
-        console.log("postData:", postData);
-        console.log(data);
-        this.bookingData = data;
-      },
-      error => {
-        console.log(error);
-      }
-    );
-    this.navCtrl.pop();
-    this.bookingSuccess = !this.bookingSuccess;
+    var bookTime = localStorage.getItem("bookTime");
+    var bookPax = localStorage.getItem("bookPax");
+
+    if (bookTime == null) {
+      this.emptyBookTime();
+    } else if (bookPax == null) {
+      this.emptyBookPax();
+    } else {
+      console.log("Booking...");
+      var postData = JSON.stringify({
+        //these fields MUST match the server.js request.body.XXX;
+        bookDate: localStorage.getItem("bookDate"),
+        bookTime: localStorage.getItem("bookTime"),
+        bookPax: localStorage.getItem("bookPax"),
+        bookNotes: localStorage.getItem("bookNotes"),
+        name: this.bookingDetails.fName,
+        menuID: this.bookingDetails.menuId
+      });
+      const httpOptions = {
+        headers: new HttpHeaders({
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
+        })
+      };
+      this.http.post(url, postData, httpOptions).subscribe(
+        data => {
+          console.log("postData:", postData);
+          console.log(data);
+          this.bookingData = data;
+        },
+        error => {
+          console.log(error);
+        }
+      );
+      localStorage.removeItem("bookDate");
+      localStorage.removeItem("bookTime");
+      localStorage.removeItem("bookPax");
+      localStorage.removeItem("bookNotes");
+      this.navCtrl.pop();
+      this.bookingSuccess();
+    }
   }
 
   cancelBooking() {

@@ -9,6 +9,7 @@ import { TabsControllerPage } from "../pages/tabs-controller/tabs-controller";
 import { ProfilePage } from "../pages/profile/profile";
 import { MenuDetailsPage } from "../pages/menu-details/menu-details";
 import { MakeBookingPage } from "../pages/make-booking/make-booking";
+import { LoginPage } from "../pages/login-page/login-page";
 
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -23,7 +24,8 @@ import { HttpClientModule } from "@angular/common/http";
     TabsControllerPage,
     ProfilePage,
     MenuDetailsPage,
-    MakeBookingPage
+    MakeBookingPage,
+    LoginPage
   ],
   imports: [BrowserModule, IonicModule.forRoot(MyApp), HttpClientModule],
   bootstrap: [IonicApp],
@@ -35,7 +37,8 @@ import { HttpClientModule } from "@angular/common/http";
     TabsControllerPage,
     ProfilePage,
     MenuDetailsPage,
-    MakeBookingPage
+    MakeBookingPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
