@@ -2,49 +2,80 @@ page-submitReview {
     .body{
         overflow-y:hidden;
     }
-    
-    .fullwidth{
-        width: 100%;
-        size:12;
-        
-    }
-    
+    // .scroll-content{
+    //     overflow-y: hidden !important;
+    // }
     .center{
         text-align: center !important;
         width:100%;
     }
     
     .text{
-        margin-right:5px;
-        margin-left:5px;
-        margin-top:25px;
-    }
-    
-    .margin{
-        margin-right:5px;
-        margin-left:5px;
-        margin-top:0px;
-    }
-    .margintext{
-        margin-right:5px;
-        margin-left:5px;
-        margin-top:15px;
-        margin-bottom:0px;
+        margin: 7px 0px 0px 0px;
+        font-weight: 600;
+        font-family: 'Titillium Web', sans-serif;
+        position: relative;
+        text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+        font-size: 20px;
+        // line-height: 40px;
+        color: #355681;
+        text-transform: uppercase;
     }
     .right{
         text-align: right !important;
-        width:90%;
+        width:100%;
         font-size:14px;
         margin-top:0px;
         
     }
     .border{
-        border:1px solid black;
+        border-bottom:1px solid black;
     }
-    .button{
-        margin-top:5px;
-    
-        height:35px;
+    .border-text{
+        border:1px solid grey;
     }
-    
+    .no-border{
+        border:none;
+    }
+    .upup{
+        margin-top:30px;
+    }
+    .wholebutton{
+        // flex-direction:column !important;
+        display:inline-block;
+        width:auto !important;
+        background-color:transparent;
+        height:100% !important; 
+    }
+    .p-text{
+        display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.4);
+    font-size: 16px;
+    }
+    /* HIDE RADIO */
+[type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* IMAGE STYLES */
+  [type=radio] + img {
+    cursor: pointer;
+  }
+  
+  /* CHECKED STYLES */
+  [type=radio]:checked + img {
+    // outline: 2px solid grey;
+    background-color: grey;
+  }
 }

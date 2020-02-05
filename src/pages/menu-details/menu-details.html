@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{this.details.fName}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content id="page6">
+  <div class="details-image">
+    <img src="{{this.details.menu_image}}" alt="" />
+  </div>
+  <div padding>
+    <h4 id="menuDetails-heading3" style="color:#232323;font-weight:600;margin-bottom:5px;">
+      {{this.details.menuName}}
+    </h4>
+    <div style="margin-bottom:15px;color:#232323;">{{this.details.description}}</div>
+    <div class="details-info-list">
+      <div
+        id="menuDetails-markdown5"
+        class="show-list-numbers-and-dots details-info-each"
+      >
+        <ion-icon name="pin"></ion-icon>
+        <p ion-text>{{this.details.location}}</p>
+      </div>
+      <div
+        id="menuDetails-markdown6"
+        class="show-list-numbers-and-dots details-info-each"
+      >
+        <ion-icon name="pricetag"></ion-icon>
+        <p ion-text>{{this.details.menu_tags}}</p>
+      </div>
+      <div
+        id="menuDetails-markdown6"
+        class="show-list-numbers-and-dots details-info-each"
+      >
+        <ion-icon name="list-box"></ion-icon>
+        <p ion-text>~${{this.details.menu_price}}/pax</p>
+      </div>
+      <div
+        id="menuDetails-markdown6"
+        class="show-list-numbers-and-dots details-info-each"
+      >
+        <ion-icon name="call"></ion-icon>
+        <a href="tel:{{this.details.phone}}">{{this.details.phone}}</a>
+      </div>
+    </div>
+    <h5 id="menuDetails-heading4" style="color:#000000;font-size:1.6rem;">
+      Menu
+    </h5>
+    <ion-list id="menuDetails-list1" class="menu-list">
+      <ion-item color="none" id="menuDetails-list-item8" class="menu-item-each active" *ngFor="let item of menuList">
+        <img src="{{item.menuImg}}" alt="" (click)="popupImage($event)" />
+        <p ion-text color="black">{{item.menuItem}}</p>
+      </ion-item>
+    </ion-list>
+    <h5 id="menuDetails-heading5" style="color:#000000;font-size:1.6rem;">
+      Reviews
+    </h5>
+    <ion-list id="menuDetails-list2">
+      <ion-item color="none" id="menuDetails-list-item14">
+        Review 1
+      </ion-item>
+      <ion-item color="none" id="menuDetails-list-item15">
+        Review 2
+      </ion-item>
+      <ion-item color="none" id="menuDetails-list-item16">
+        Review 3
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+<ion-item class="popup-image" (click)="popupImage()" [class.active]="this.showImage">
+  <img src="{{this.popupSrc}}" alt="">
+</ion-item>
+<div class="book-cta">
+  <button class="book-cta-btn" (click)="goToMakeBookingPage($event, this.details)">
+    Book Now
+  </button>
+</div>

@@ -1,0 +1,102 @@
+page-make-booking {
+  .booking-details-list {
+    .booking-details-each {
+      background: transparent;
+      padding: {
+        left: 0;
+      }
+      margin: {
+        top: 8px;
+        bottom: 8px;
+      }
+      min-height: unset;
+      &.ion-textarea-con {
+        .input-wrapper {
+          flex-direction: column;
+        }
+        .label-text {
+          width: 100%;
+        }
+      }
+      .item-inner {
+        border: {
+          bottom: 0;
+        }
+      }
+      ion-label {
+        display: flex;
+        margin: 0;
+        text-overflow: unset;
+      }
+      .label-text {
+        display: inline-block;
+        width: 50%;
+        font: {
+          size: 1.5rem;
+          weight: 700;
+        }
+        margin: {
+          bottom: 0;
+        }
+      }
+      .label-date {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0;
+        .datetime-text {
+          font: {
+            size: 1.4rem;
+          }
+          border: {
+            bottom: 1px solid #232323;
+          }
+          padding: {
+            bottom: 2px;
+          }
+          min-width: unset;
+          flex: unset;
+        }
+      }
+      .label-detail {
+        width: 50%;
+        text-align: right;
+        float: right;
+        margin: {
+          bottom: 0;
+        }
+      }
+      .select-field {
+        font: {
+          size: 1.4rem;
+        }
+        border: {
+          bottom: 1px solid #232323;
+        }
+        padding: {
+          left: 0;
+          right: 3px;
+          top: 0;
+          bottom: 2px;
+        }
+      }
+      .ion-textarea-element {
+        textarea {
+          margin: {
+            left: 0;
+            right: 0;
+          }
+          font: {
+            size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+  .make-booking-cta {
+    display: flex;
+    justify-content: space-between;
+    .cancel-btn {
+      border-color: #dba420;
+    }
+  }
+}

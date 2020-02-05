@@ -1,20 +1,31 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
-import { TabsPage } from '../tabs/tabs';
-import { Tabs2Page } from '../tabs2/tabs2';
+import { PDPTabsPage } from '../PDP-tabs/PDP-tabs';
+import { ProfileData } from '../../providers/PDP-profileData';
+import { BookingsData } from '../../providers/PDP-bookingData';
+import { DashboardData } from '../../providers/PDP-dashboardData';
+import { CustTabsPage } from '../CUST-tabs/tabs2';
+import { MenusData } from '../../providers/PDP-menuData';
+
 
 @Component({
   selector: 'page-login-page',
   templateUrl: 'login-page.html'
 })
 export class LoginPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  cust:any;
-  constructor(public navCtrl: NavController,public http: HttpClient) {
+  cust: any;
+  loading: any;
+
+  constructor(public navCtrl: NavController, public http: HttpClient, public loadingCtrl: LoadingController, public dashboardData: DashboardData, public bookingData: BookingsData, public menusData: MenusData, public profileData: ProfileData) {
+    this.loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Authenticating'
+    });
   }
+  
   login(custId){
+    this.loading.present();
     var url = 'https://foodie1234.herokuapp.com/custLogin';
     var postData = JSON.stringify({
       //these fields MUST match the server.js request.body.XXX;  
@@ -31,17 +42,27 @@ export class LoginPage {
       console.log('postData:', postData);
       //pdp
       if (data[0].custID == 3) {
-        localStorage.setItem("loginid","3")
-        this.navCtrl.push(TabsPage);
+        var url = 'https://foodie1234.herokuapp.com/updateDashboard';
+        if (this.http.get(url).subscribe())          
+          console.log("In /updateDashboard");
+        localStorage.setItem("loginid","3");
+        this.navCtrl.setRoot(PDPTabsPage);
+        this.loading.dismiss();
+        this.dashboardData.getDashboardData();
+        this.bookingData.getBookingsData();
+        this.profileData.getProfileData();
+        this.menusData.getMenusData(data[0].custID);
+        this.menusData.getMenuItemsData();
       } 
       //customer
       if (data[0].custID == 2) {
         localStorage.setItem("loginid","2")
-        this.navCtrl.push(Tabs2Page);
+        this.navCtrl.push(CustTabsPage);
+        this.loading.dismiss();
       } 
       else if (data == false){
         console.log("Not authorized username");
-
+        this.loading.dismiss();
       }
      }, error => {
       console.log(error);

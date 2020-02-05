@@ -9,10 +9,10 @@
     <ion-title text-center>Favourites</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content style="width:100%;">
+<ion-content style="width:100%;" [hidden]="ishidden">
   <ion-list>
-    <ion-item *ngFor="let menu of menuPage">
-      <ion-label class="fulllabel">
+    <ion-item *ngFor="let menu of favs" >
+      <ion-label class="fulllabel" >
         <button class="wholebutton" item-right (click)="goToMenuPage(menu.menuId)">
           <h3 text-left>{{menu.fName}} </h3>
           <p text-left style="color:grey;">{{menu.menuName}} </p>
@@ -21,7 +21,10 @@
       </ion-label>
     </ion-item>
   </ion-list>
-</ion-content>
-<ion-content padding>
 
+</ion-content>
+<ion-content style="width:100%;" [hidden]="ishiddenimg">
+  <ion-label class="fulllabel" >
+    <img src="../../assets/imgs/fav_ss.jpg"/> 
+    </ion-label>
 </ion-content>

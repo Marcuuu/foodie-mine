@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Make Booking
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page7">
+  <h4
+    id="makeBooking-heading6"
+    style="color:#000000;font-size:1.7rem;margin-bottom:15px;"
+  >
+    Confirm Booking
+  </h4>
+  <ion-list id="makeBooking-list3" class="booking-details-list">
+    <ion-item
+      color="none"
+      id="makeBooking-list-item20"
+      class="booking-details-each"
+    >
+      <p ion-text class="label-text" color="black">Chef</p>
+      <p ion-text class="label-detail" color="black">
+        {{this.bookingDetails.fName}}
+      </p>
+    </ion-item>
+    <ion-item
+      color="none"
+      id="makeBooking-list-item23"
+      class="booking-details-each"
+    >
+      <p ion-text class="label-text" color="black">Location</p>
+      <p ion-text class="label-detail" color="black">
+        {{this.bookingDetails.location}}
+      </p>
+    </ion-item>
+    <ion-item
+      color="none"
+      id="makeBooking-list-item21"
+      class="booking-details-each"
+    >
+      <ion-label class="label-text" color="black">Date</ion-label>
+      <ion-datetime
+        displayFormat="DD MMM YYYY"
+        class="label-detail label-date"
+        color="black"
+        [(ngModel)]="date"
+        (ionChange)="updateMyDate($event)"
+      ></ion-datetime>
+    </ion-item>
+    <ion-item
+      color="none"
+      id="makeBooking-list-item22"
+      class="booking-details-each"
+    >
+      <ion-label class="label-text" color="black">Time</ion-label>
+      <ion-select
+        value="1300-1500"
+        okText="Okay"
+        cancelText="Cancel"
+        placeholder="Select a time"
+        class="select-field"
+        (ionChange)="updateMyTime($event)"
+      >
+        <ion-option value="1300-1500">1300 - 1500</ion-option>
+        <ion-option value="1600-1800">1600 - 1800</ion-option>
+        <ion-option value="1900-2100">1900 - 2100</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item
+      color="none"
+      id="makeBooking-list-item24"
+      class="booking-details-each"
+    >
+      <ion-label class="label-text" color="black">Pax</ion-label>
+      <ion-select
+        value="1"
+        okText="Okay"
+        cancelText="Cancel"
+        placeholder="How many pax"
+        class="select-field"
+        (ionChange)="updateMyPax($event)"
+      >
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item
+      color="none"
+      id="makeBooking-list-item25"
+      class="booking-details-each ion-textarea-con"
+    >
+      <ion-label class="label-text" color="black">Notes</ion-label>
+      <ion-textarea
+        class="ion-textarea-element"
+        (input)="updateMyNotes($event.target.value)"
+      ></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <div class="make-booking-cta">
+    <button
+      id="makeBooking-button3"
+      class="cancel-btn"
+      ion-button
+      outline
+      color="black"
+      (click)="cancelBooking()"
+    >
+      Cancel
+    </button>
+    <button
+      id="makeBooking-button4"
+      ion-button
+      color="yellow"
+      (click)="makeBooking()"
+    >
+      Confirm
+    </button>
+  </div>
+</ion-content>

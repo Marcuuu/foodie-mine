@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   selector: 'page-reviews',
   templateUrl: 'reviews.html'
 })
-export class ReviewsPage {
+export class CustReviewsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
   allReview:any;
