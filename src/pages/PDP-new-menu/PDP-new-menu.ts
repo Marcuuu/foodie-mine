@@ -80,9 +80,10 @@ export class NewMenuPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /createNewMenu");
       console.log('postData:', postData);
+      console.log('SQL Result: ', data);
       this.menusData.getMenusData(this.pdp_id);
-      this.loading.dismiss();
-      this.presentAlert();
+      setTimeout(() => this.loading.dismiss(), 1500);
+      setTimeout(() => this.presentAlert(), 1500);
     });
   }
 

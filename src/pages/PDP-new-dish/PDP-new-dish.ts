@@ -75,6 +75,7 @@ export class NewDishPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /createNewDish");
       console.log('postData:', postData);
+      console.log('SQL Result: ', data);
       this.menusData.getMenuItemsData();
       this.loading.dismiss();
       this.presentAlert();

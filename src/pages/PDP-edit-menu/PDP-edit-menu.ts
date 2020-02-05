@@ -122,9 +122,10 @@ export class EditMenuPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /updateMenu");
       console.log('postData:', postData);
+      console.log('SQL Result: ', data);
       this.menuData.getMenusData(this.menu.pdpID);
-      setTimeout(() => this.loading.dismiss(), 1000);
-      setTimeout(() => this.presentAlert(), 1000);
+      setTimeout(() => this.loading.dismiss(), 1500);
+      setTimeout(() => this.presentAlert(), 1500);
     });
   }
 
@@ -182,11 +183,12 @@ export class EditMenuPage {
       })
     };   
 
-    this.http.post(url, postData, httpOptions).subscribe(() => {
+    this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /deleteMenu");
+      console.log('SQL Result: ', data);
       this.menuData.getMenusData(this.menu.pdpID);
-      this.deleting.dismiss();
-      this.deleteAlert();
+      setTimeout(() => this.deleting.dismiss(), 2000);
+      setTimeout(() => this.deleteAlert(), 2000);
     });
   }
 }

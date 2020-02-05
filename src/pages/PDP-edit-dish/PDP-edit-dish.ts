@@ -114,6 +114,7 @@ export class EditDishPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /updateDish");
       console.log('postData:', postData);
+      console.log('SQL Result: ', data);
       this.menusData.getMenuItemsData();
       this.loading.dismiss();
       this.presentAlert();

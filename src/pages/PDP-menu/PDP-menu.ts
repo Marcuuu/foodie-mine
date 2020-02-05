@@ -113,8 +113,9 @@ export class MenuPage {
       })
     };   
 
-    this.http.post(url, postData, httpOptions).subscribe(() => {  
-      console.log("In /deleteDish");  
+    this.http.post(url, postData, httpOptions).subscribe((data) => {  
+      console.log("In /deleteDish");
+      console.log('SQL Result: ', data);
       this.menusData.getMenuItemsData();
       this.deleting.dismiss();
       this.deleteAlert();

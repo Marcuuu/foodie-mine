@@ -90,6 +90,7 @@ export class BookingDetailsPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /cancelBooking");
       console.log('postData:', postData);
+      console.log('SQL Result: ', data);
       this.dashboardData.getDashboardData();
       this.bookingData.getBookingsData();
       this.loading.dismiss();
