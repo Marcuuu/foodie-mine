@@ -35,7 +35,7 @@ export class NewMenuPage {
   }
 
   presentConfirm() {
-    if (!this.newMenu.valid){
+    if (!this.newMenu.controls.menuName.valid){
       let alert = this.alertCtrl.create({
         title: 'Error',
         subTitle: 'Menu name cannot be empty.',
