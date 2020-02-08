@@ -32,6 +32,7 @@ import { MenusData } from '../providers/PDP-menuData';
 import { ProfileData } from '../providers/PDP-profileData';
 import { DashboardData } from '../providers/PDP-dashboardData';
 import { Camera } from '@ionic-native/camera/ngx';
+import { SubmitReviewData } from '../providers/CUST-submitreviewData'
 
 
 @NgModule({
@@ -94,6 +95,7 @@ import { Camera } from '@ionic-native/camera/ngx';
     BookingsData,
     ProfileData,
     MenusData,
+    SubmitReviewData,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -10,10 +10,11 @@ export class CustReviewsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
   allReview:any;
+  rating2:any;
   constructor(public navCtrl: NavController,public http: HttpClient) {
   }
   getPDP() {
-    var url = 'https://foodie1234.herokuapp.com/getReviewName';
+    var url = 'https://foodie1234.herokuapp.com/getTopReview';
     var postData = JSON.stringify({
       //these fields MUST match the server.js request.body.XXX;  
       menuId: localStorage.getItem("cust_menuid"),
@@ -29,6 +30,7 @@ export class CustReviewsPage {
       console.log('postData:', postData)
       console.log(data);
       this.allReview = data;
+      this.rating2 = data[0].rating;
     }, error => {
       console.log(error);
     });

@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { CustReviewsPage } from '../CUST-reviews/reviews';
 import { CustSubmitReviewPage } from '../CUST-submitReview/submitReview';
-
+import { SubmitReviewData } from '../../providers/CUST-submitreviewData';
 /**
  * Generated class for the MenuPage page.
  *
@@ -19,11 +19,13 @@ export class CustMenuInfoPage {
 data:any;
 menuPage:any;
 rating:any;
+rating2:any;
 ratingNum:any;
 visible:any;
 TopReview:any;
+hvInfo:boolean;
 menuInfo:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient, public SubmitReviewData:SubmitReviewData) {
   }
 
   ionViewDidLoad() {
@@ -128,8 +130,16 @@ menuInfo:any;
     };
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log('postData:', postData)
-      console.log(data);
+      console.log("topReview",data);
+      if (data == false){
+        this.hvInfo=true
+      }
+      else{
+        this.hvInfo=false
         this.TopReview=data;
+        this.rating2 = data[0].rating;
+      }
+
     }, error => {
       console.log(error);
     });
@@ -195,11 +205,14 @@ menuInfo:any;
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log('postData1:', postData)
       console.log(data);
-      this.rating = data[0].avgFood;
-      this.ratingNum = data[0].avgFood;
-      if(this.ratingNum == null){
+      if(this.ratingNum == false){
+        this.rating=0;
         this.ratingNum = 0;
       }
+      else{
+      this.rating = data[0].avgFood;
+      this.ratingNum = data[0].avgFood;
+    }
     }, error => {
       console.log(error);
     });
@@ -237,6 +250,7 @@ menuInfo:any;
 
   navSubmitReview() {
     //this.router.navigateByUrl('/submitReview/' + this.custId +  '/' + this.menuId);
+    this.SubmitReviewData.getSubmitReviewData();
     this.navCtrl.push(CustSubmitReviewPage);
   }
 }

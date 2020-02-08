@@ -25,7 +25,7 @@
       <p>{{pdp.menuName}}</p>
     </ion-item>
     <ion-item class="side-side">
-      <ionic3-star-rating [(ngModel)]="rating" style="width:auto;" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"
+      <ionic3-star-rating [(ngModel)]="rating" style="width:auto;" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#36648b"
         defaultColor="#aaaaaa" readonly="true" fontSize="32px" (ratingChanged)="logRatingChange($event)">
       </ionic3-star-rating>
       <input class="rate" [(ngModel)]="ratingNum" type="decimal" disabled="true" size="3"/>
@@ -35,12 +35,30 @@
     <h3 style="color:lightgreen">Write a Review</h3>
   </button>
   <ion-label><h1 text-center>Reviews</h1></ion-label>
-  <ion-list>
-    <ion-item *ngFor="let rev of TopReview">
-      <ion-label style="white-space: normal;">{{rev.comments}}</ion-label>
-    </ion-item>
-
-  </ion-list>
+  <ion-grid *ngFor="let rev of TopReview" [hidden]="hvInfo">
+    <ion-row justify-content-start>
+      <ion-col col-5>
+        <div class="text-name"><label>{{rev.custName}}</label></div>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-start>
+      <ion-col col-6>
+        <div>          
+          <ionic3-star-rating [(ngModel)]="rating2" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#36648b"
+          defaultColor="#aaaaaa" readonly="true" fontSize="15px" (ratingChanged)="logRatingChange($event)">
+        </ionic3-star-rating>
+      </div>
+      </ion-col>
+      <ion-col col-6>
+        <div style="margin-top:7px;font-size:12px;">{{rev.datein | date: "dd/MMM/yyyy" }}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row justify-content-start>
+      <ion-col col-12>
+        <div style="margin-left:4px;">{{rev.comments}}</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   <button class="wholebutton" (click)="allReviews()">
     <h3 style="color:lightgreen">See all Reviews</h3>
   </button>
