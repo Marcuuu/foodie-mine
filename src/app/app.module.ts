@@ -22,6 +22,10 @@ import { BookingsPage } from "../pages/bookings/bookings";
 import { TabsControllerPage } from "../pages/tabs-controller/tabs-controller";
 import { MenuDetailsPage } from "../pages/menu-details/menu-details";
 import { MakeBookingPage } from "../pages/make-booking/make-booking";
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of bfae9bea... a
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { HttpClientModule } from "@angular/common/http";
@@ -53,8 +57,7 @@ import { HttpClientModule } from "@angular/common/http";
     IonicModule.forRoot(MyApp),
     TabsControllerPage,
     MenuDetailsPage,
-    MakeBookingPage,
-    LoginPage
+    MakeBookingPage
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,8 +79,12 @@ import { HttpClientModule } from "@angular/common/http";
     LoginPage,
     TabsControllerPage,
     MenuDetailsPage,
+<<<<<<< HEAD
     MakeBookingPage,
     LoginPage,
+=======
+    MakeBookingPage
+>>>>>>> parent of bfae9bea... a
   ],
   providers: [
     StatusBar,

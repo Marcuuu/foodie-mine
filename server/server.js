@@ -73,28 +73,7 @@ app.get("/discoverprofiles", cors(corsOptions), function(request, response) {
 
 app.get("/getmenu", cors(corsOptions), function(request, response) {
   console.log("Connected to /getmenu");
-  db.query("SELECT * FROM foodie.pdp_menu_items", function(
-    err,
-    result,
-    fields
-  ) {
-    if (err) {
-      console.log("Error message: ", err);
-      throw err;
-    }
-    string = JSON.stringify(result);
-    json = JSON.parse(string);
-    response.send(json);
-    console.log(json);
-  });
-});
-
-app.get("/getpdpprofile", cors(corsOptions), function(request, response) {
-  console.log("Connected to /getmenu");
-  var name = request.body.name;
-  const statement =
-    "SELECT id FROM foodie.pdp_profile WHERE fName = '" + name + "'";
-  db.query(statement, function(err, result, fields) {
+  db.query("SELECT * FROM foodie.pdp_menu", function(err, result, fields) {
     if (err) {
       console.log("Error message: ", err);
       throw err;
@@ -147,39 +126,28 @@ app.route("/makeBooking", cors(corsOptions)).post(function(request, response) {
   var bookTime = request.body.bookTime;
   var bookPax = request.body.bookPax;
   var bookNotes = request.body.bookNotes;
-  var name = request.body.name;
-  var menuId = request.body.menuID;
 
-  const statement =
-    "SELECT id FROM foodie.pdp_profile WHERE fName = '" + name + "'";
-  db.query(statement, function(error, result, fields) {
+  db.query("SELECT * FROM booking_detail", function(error, result, fields) {
     if (!error) {
-      var pdpIdString = JSON.stringify(result);
-      var pdpJson = JSON.parse(pdpIdString);
-      var pdpId = pdpJson[0].id;
-      db.query("SELECT * FROM booking_detail", function(error, result, fields) {
-        if (!error) {
-          if (result.length == 0) {
-            response.send(false);
-          } else {
-            db.query(
-              "INSERT INTO booking_detail (bookDate, bookTime, bookPax, bookNotes, custID, pdpID, menuID) VALUES (?,?,?,?,?,?,?);",
-              [bookDate, bookTime, bookPax, bookNotes, pdpId, menuId, 1],
-              function(error, result, fields) {
-                if (!error) {
-                  var string = JSON.stringify(result);
-                  var json = JSON.parse(string);
-                  console.log("Row inserted: ", json);
-                } else {
-                  response.send(true);
-                }
-              }
-            );
+      if (result.length == 0) {
+        response.send(false);
+      } else {
+        db.query(
+          "INSERT INTO booking_detail (bookDate, bookTime, bookPax, bookNotes) VALUES (?,?,?,?);",
+          [bookDate, bookTime, bookPax, bookNotes],
+          function(error, result, fields) {
+            if (!error) {
+              var string = JSON.stringify(result);
+              var json = JSON.parse(string);
+              console.log("Row inserted: ", json);
+            } else {
+              response.send(true);
+            }
           }
-        } else {
-          console.log(error);
-        }
-      });
+        );
+      }
+    } else {
+      console.log(error);
     }
   });
 

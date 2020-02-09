@@ -15,11 +15,7 @@ export class MenuDetailsPage {
   menuData: Observable<any>;
   showImage = false;
   popupSrc: any;
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    private http: HttpClient
-  ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
     this.details = navParams.get("item");
   }
 
@@ -49,9 +45,9 @@ export class MenuDetailsPage {
     this.menuData.subscribe(data => {
       this.menuList = data.filter(word => {
         if (word.menuName == this.details.menuName) {
-          return word;
+          return word
         }
-      });
+      })
     });
   }
 
