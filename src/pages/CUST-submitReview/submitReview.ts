@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController , NavParams, LoadingController} from 'ionic-angular';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
 import { SubmitReview } from '../../models/CUST-SubmitReview';
@@ -14,48 +14,20 @@ export class CustSubmitReviewPage {
   rating:  any; 
   point: any;
   myText: String;
-  menuInfo:any;
+  menuInfo:any[];
   isValid:boolean=true;
-  arr:SubmitReview[];
-  menuName:SubmitReview;
+  // arr:SubmitReview[];
   datein: any = new Date().toISOString().substr(0,10);
-  constructor(public navCtrl: NavController,public http: HttpClient, public loc :Location, public storage:Storage) {
+  menuTitle:any;
+  constructor(public navCtrl: NavController,public navParams: NavParams,public loadingCtrl: LoadingController,public http: HttpClient, public loc :Location, public storage:Storage) {
+
+    this.menuTitle=navParams.get('item');
+
   }
   hitme(point){
     this.point =point;
   }
-  // ngOnInit(){
-  //   this.getMenuInfo();
-  // }
-  // async ionViewWillEnter(){
-  //   console.log("WillEnter1");
-  //   await this.getMenuInfo();
-  //   console.log("WillEnter2");
-  //  } 
-  // async ionViewDidEnter(){
-  //   console.log("DidEnter1");
-  //   await this.getMenuInfo();
-  //   console.log("DidEnter2");
-  //  } 
 
-   ionViewWillEnter(){
-    let menuId = localStorage.getItem('cust_menuid')
-    console.log("menuid",menuId);
-    console.log("info",this.storage.get('SubmitReview'));
-    // this.storage.get('SubmitReview').then((data) => {
-    //   console.log(data);
-    //   this.arr = data;
-    //   for (var i=0;i<this.arr.length;i++){ 
-    //     if (this.arr[i].menuId == menuId){
-    //       console.log("arr1", this.arr[i]);
-    //       console.log("arr2", this.arr[i].menuName);
-    //       // this.menuName = this.arr[i];
-    //     }
-    //   }
-    //   console.log('Get Menu Name completed');
-    //   console.log(this.menuName);
-    // });
-  }
   logRatingChange(rating){
     this.isValid=false;
 }
@@ -110,33 +82,19 @@ export class CustSubmitReviewPage {
       })
     };   
     this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postData:', postData)
-      console.log(data);
       if (data == true) {
          this.navCtrl.pop();
+         let loading = this.loadingCtrl.create({
+          content: 'Please wait...'
+        });
+      
+        loading.present();
+      
+        setTimeout(() => {
+          loading.dismiss();
+        }, 2000);
       } 
      }, error => {
-      console.log(error);
-    });
-  }
-  getMenuInfo() {
-    var url = 'https://foodie1234.herokuapp.com/getMenuName';
-    var postData = JSON.stringify({
-      //these fields MUST match the server.js request.body.XXX;  
-      menuId: localStorage.getItem('cust_menuid'),
-    });
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
-      })
-    };
-    this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postData:', postData)
-      console.log(data);
-        this.menuInfo=data;
-    }, error => {
       console.log(error);
     });
   }
