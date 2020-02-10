@@ -1,29 +1,34 @@
 <ion-header>
   <ion-navbar>
-    <ion-title *ngFor="let menu of menuInfo">
-      <label>Rate {{menu.menuName}} </label>
+    <ion-title>
+      <label>Rate {{menuTitle}} </label>
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page5" class="body">
     <ion-label text-center class="text">Rate my Service</ion-label>
     <div>
-      <ionic3-star-rating [(ngModel)]="rating" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"
-        defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px" (ratingChanged)="logRatingChange($event)"> 
-      </ionic3-star-rating>
+      <ion-grid>
+        <ion-col col-12>
+          <ionic3-star-rating [(ngModel)]="rating" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"
+          defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="40px" (ratingChanged)="logRatingChange($event)"> 
+        </ionic3-star-rating>
+        </ion-col>
+      </ion-grid>
+
     </div>
     <!-- <ion-label text-center class="text">Food Quality</ion-label> -->
       <!-- <ionic3-star-rating [(ngModel)]="rating2" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"
         defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px">
       </ionic3-star-rating> -->
       <div text-center>
-        <ion-label text-center class="text">My Strongest point</ion-label>
+        <ion-label text-center class="text1">Category</ion-label>
         <div style="width:30%;display:inline-block;">
         <label>
           <input type="radio" name="point" (click)="hitme('hygenie')">
           <img src="../../assets/icon/broom.png">       
         </label>
-        <p class="p-text" text-center>Hygenie</p>
+        <p class="p-text" text-center>Hygiene</p>
       </div>
       <div style="width:30%;display:inline-block;">
         <label>

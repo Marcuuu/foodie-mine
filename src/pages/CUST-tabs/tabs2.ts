@@ -14,5 +14,4 @@ export class CustTabsPage {
   tab2Root: any = CustMenuPage;
   constructor(public navCtrl: NavController) {
   }
-  
 }

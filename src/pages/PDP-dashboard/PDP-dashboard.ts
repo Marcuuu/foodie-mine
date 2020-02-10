@@ -23,7 +23,8 @@ export class DashboardPage {
 
   goToBookingDetails(booking){
     this.navCtrl.push(BookingDetailsPage, {
-      data: booking
+      data: booking,
+      preNav: "dashboard"
     });
   }
 }

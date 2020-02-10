@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { CustMenuInfoPage } from '../CUST-menuinfo/menuinfo';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the FavouritesPage page.
@@ -20,17 +21,28 @@ data:any;
 favs:any;
 ishidden:any;
 ishiddenimg:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient) {
+loading:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController,public http: HttpClient,public storage: Storage) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FavouritesPage');
+  ngOnInit(){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+  
+    loading.present();
+  
+    setTimeout(() => {
+      loading.dismiss();
+    }, 2000);
   }
   ionViewWillEnter(){
     this.getFavs();
-    console.log('ionViewWillEnter FavouritePage',this.ishiddenimg);
   }
-
+  goToMenuPage(menuId){
+    //this.router.navigateByUrl('/pdpMenuPage/' + this.custId + '/' + menuId);
+    localStorage.setItem('cust_menuid',menuId);
+    this.navCtrl.push(CustMenuInfoPage);
+  }
   getFavs() {
     var url = 'https://foodie1234.herokuapp.com/getFavs';
     var postData = JSON.stringify({
@@ -45,32 +57,19 @@ ishiddenimg:any;
       })
     };
     this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postData:', postData);
-      console.log("data",data);
       if(data == false)
       {
         this.ishidden=true;
         this.ishiddenimg=false;
-        console.log('ionViewWillEnter FavouritePage1',this.ishidden);
-        console.log('ionViewWillEnter FavouritePage2',this.ishiddenimg);
       }
       else
       {
         this.ishidden=false;
         this.ishiddenimg=true;
-        console.log('ionViewWillEnter FavouritePage3',this.ishidden);
-        console.log('ionViewWillEnter FavouritePage4',this.ishiddenimg);
         this.favs=data;
       }
-        
     }, error => {
       console.log(error);
     });
   }
-  goToMenuPage(menuId){
-    //this.router.navigateByUrl('/pdpMenuPage/' + this.custId + '/' + menuId);
-    localStorage.setItem('cust_menuid',menuId);
-    this.navCtrl.push(CustMenuInfoPage);
-  }
-
 }

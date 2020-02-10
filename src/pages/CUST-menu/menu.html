@@ -14,7 +14,7 @@
     <ion-list>
       <ion-item *ngFor="let menu of menuPage">
         <ion-label class="fulllabel">
-          <button class="wholebutton" item-right (click)="goToMenuPage(menu.menuId)">
+          <button class="wholebutton" item-right (click)="goToMenuPage(menu.menuId,menu.menuName)">
             <h3 text-left>{{menu.fName}} </h3>
             <p text-left style="color:grey;">{{menu.menuName}} </p>
             <p text-left>{{menu.menu_category}} </p>

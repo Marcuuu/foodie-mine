@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController, LoadingController, App } from 'ionic-angular';
 import { EditProfilePage } from '../PDP-edit-profile/PDP-edit-profile';
 import { Profile } from '../../models/PDP-Profile';
 import { Storage } from '@ionic/storage';
+import { LoginPage } from '../login-page/login-page';
 
 @Component({
   selector: 'page-PDP-profile',
@@ -10,11 +11,17 @@ import { Storage } from '@ionic/storage';
 })
 
 export class ProfilePage {
+  loading: any;
   loginid: any;
   profiles: Profile[];
   profile: Profile;
 
-  constructor(public navCtrl: NavController, private storage: Storage) {}
+  constructor(private app: App, public navCtrl: NavController, private storage: Storage, public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
+    this.loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Logging out'
+    });
+  }
 
   ionViewWillEnter(){
     let id = localStorage.getItem('loginid');
@@ -29,6 +36,33 @@ export class ProfilePage {
       console.log('Get Profile completed');
       console.log(this.profile);
     });
+  }
+
+  presentConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm logout',
+      message: 'Are you sure you want to logout?',
+      buttons: [
+        {
+          text: 'No',
+          role: 'cancel',
+          handler: () => {
+            console.log('No');
+          }
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            console.log('Yes');
+            this.loading.present();
+            this.storage.remove('loginid');
+            this.app.getRootNav().setRoot(LoginPage);
+            this.loading.dismiss();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
   goToEditProfile(profile){

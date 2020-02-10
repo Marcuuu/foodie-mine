@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { CustMenuInfoPage } from '../CUST-menuinfo/menuinfo';
 
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the MenuPage page.
  *
@@ -17,27 +18,24 @@ import { CustMenuInfoPage } from '../CUST-menuinfo/menuinfo';
 export class CustMenuPage {
 data:any;
 menuPage:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient,public storage:Storage) {
   }
-
-  ionViewDidLoad() {
-    //console.log('ionViewDidLoad MenuPage');
-  }
-
   getPDP() {
-    console.log("In getPDP()");
     var url = 'https://foodie1234.herokuapp.com/getMenu';
     this.data = this.http.get(url);
     this.data.subscribe((data) => {
       this.menuPage=data;
-      console.log(data);
     });
   }
-  goToMenuPage(menuid){
-    localStorage.setItem("cust_menuid",menuid)
-    this.navCtrl.push(CustMenuInfoPage);
+  goToMenuPage(menuid,menuname){
+    // this.getFavanotData(menuid,localStorage.getItem("loginid"));
+    localStorage.setItem("cust_menuid",menuid);
+    this.navCtrl.push(CustMenuInfoPage,{
+      item:menuname
+    });
   }
-    ngOnInit(){
+
+  ngOnInit(){
       this.getPDP()
     }
-}
+  }

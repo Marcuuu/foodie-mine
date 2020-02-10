@@ -40,6 +40,7 @@ export class MenusData {
             this.result[i].pdp_id
            ));
           }
+        this.storage.remove('Menus');
         this.storage.set('Menus', menu);
       });
     }
@@ -53,12 +54,14 @@ export class MenusData {
       this.result = data;
       for(var i = 0; i < this.result.length; i++){
         menuItems.push(new MenuItems(
+          this.result[i].id,
           this.result[i].menuItem,
           this.result[i].price,
           this.result[i].menuImg,
           this.result[i].menuId
          ));
         }
+        this.storage.remove('MenuItems');
         this.storage.set('MenuItems', menuItems);
       });
     }
