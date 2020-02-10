@@ -153,7 +153,7 @@ app.route("/makeBooking", cors(corsOptions)).post(function(request, response) {
   //     }
   //   }
   // );
-});
+// });
 
 app.route("/updateUser", cors(corsOptions)).post(function(request, response) {
   // Values from JSON in editStudent.page.ts
