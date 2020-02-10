@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DiscoverPage } from '../discover/discover';
 import { CustFavouritesPage } from '../CUST-favourites/favourites';
-import { CustBookingsPage } from '../bookings/bookings';
+import { CustBookingsPage } from "../cust-bookings/cust-bookings";
 import { CustProfilePage } from '../CUST-profile/profile';
 
 @Component({

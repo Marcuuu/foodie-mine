@@ -85,7 +85,7 @@ export class LoginPage {
     };   
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log('postData:', postData);
-      //pdp
+      //pdp 
       console.log('data',data);
         localStorage.setItem("loginid",data[0].id);
         var url = 'https://foodie1234.herokuapp.com/updateDashboard';
