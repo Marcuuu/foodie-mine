@@ -36528,6 +36528,10 @@ body.details-active .book-cta {
   color: #dba420;
 }
 
+.alert-message {
+  overflow-y: auto;
+}
+
 page-favourites .wholebutton {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;

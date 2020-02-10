@@ -36,13 +36,12 @@
     *ngFor="let profile of profileList"
   >
     <ion-list>
-      <ion-item color="none" id="discover-list-item3">
+      <ion-item color="none" id="discover-list-item3" (click)="goToMenuDetailsPage($event, profile)">
         <ion-avatar item-left>
           <img src="{{profile.img}}" />
         </ion-avatar>
         <h2
           style="margin-bottom:0;font-weight:500;"
-          (click)="goToMenuDetailsPage($event, profile)"
         >
           {{profile.fName}}
         </h2>
@@ -74,7 +73,7 @@
         <div id="discover-markdown4" class="show-list-numbers-and-dots" style="display:flex;align-items:center;margin-bottom:5px;">
           <ion-icon name="pricetag" style="color:#929292;width:15px;text-align:center;"></ion-icon>
           <p style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;">
-            {{profile.menu_tags}}
+            {{profile.menu_category}}
           </p>
         </div>
         <div class="discover-ratings">
