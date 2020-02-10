@@ -21,6 +21,7 @@ export class DashboardData {
       for(var i = 0; i < this.result.length; i++){
         booking.push(new Booking(
           this.result[i].bookID,
+          this.result[i].custImage,
           this.result[i].custName,
           this.result[i].bookDate,
           this.result[i].bookTime,
