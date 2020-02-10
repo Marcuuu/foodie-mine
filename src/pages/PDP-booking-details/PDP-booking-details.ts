@@ -93,17 +93,9 @@ export class BookingDetailsPage {
       console.log('SQL Result: ', data);
       this.dashboardData.getDashboardData();
       this.bookingData.getBookingsData();
-<<<<<<< HEAD
       this.loading.dismiss();
       this.presentAlert();
       this.booking.bookStatus = "Cancelled";
-=======
-      this.booking.bookStatus = "Cancelled";
-      setTimeout(() => {
-        this.loading.dismiss();
-        this.presentAlert();
-      }, 500);
->>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
     });
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { FavouritesPage } from '../favourites/favourites';
-import { MenuPage } from '../cust_menu/menu';
+import { CustFavouritesPage } from '../CUST-favourites/favourites';
+import { CustMenuPage } from '../CUST-menu/menu';
 
 @Component({
   selector: 'page-tabs2',
@@ -10,8 +10,8 @@ import { MenuPage } from '../cust_menu/menu';
 export class Tabs2Page {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  tab1Root: any = FavouritesPage;
-  tab2Root: any = MenuPage;
+  tab1Root: any = CustFavouritesPage;
+  tab2Root: any = CustMenuPage;
   constructor(public navCtrl: NavController) {
   }
   
