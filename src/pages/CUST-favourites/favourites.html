@@ -53,30 +53,33 @@
         <h5
           id="discover-heading2"
           class="discover-menuname"
-          style="color:#000000;font-weight:600;"
+          style="color:#424242;font-weight:600;font-size:1.6rem;"
           (click)="goToMenuDetailsPage($event, profile)"
         >
           {{profile.menuName}}
         </h5>
-        <div class="show-list-numbers-and-dots">
-          <p style="color:#000000;">
+        <div class="show-list-numbers-and-dots" style="display:flex;align-items:center;margin-bottom:5px;">
+          <ion-icon name="list-box" style="color:#929292;width:15px;text-align:center;"></ion-icon>
+          <p style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;">
             ~${{profile.menu_price}}/pax
           </p>
         </div>
-        <div id="discover-markdown3" class="show-list-numbers-and-dots">
-          <p style="color:#000000;">
+        <div id="discover-markdown3" class="show-list-numbers-and-dots" style="display:flex;align-items:center;margin-bottom:5px;">
+          <ion-icon name="pin" style="color:#929292;width:15px;text-align:center;"></ion-icon>
+          <p style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;">
             {{profile.location}}
           </p>
         </div>
-        <div id="discover-markdown4" class="show-list-numbers-and-dots">
-          <p style="color:#000000;font-size:1.3rem;">
-            {{profile.menu_tags}}
+        <div id="discover-markdown4" class="show-list-numbers-and-dots" style="display:flex;align-items:center;margin-bottom:5px;">
+          <ion-icon name="pricetag" style="color:#929292;width:15px;text-align:center;"></ion-icon>
+          <p style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;">
+            {{profile.menu_category}}
           </p>
         </div>
-        <div class="discover-ratings" *ngFor="let review of totalReviews">
+        <div class="discover-ratings" >
           <span
             class="each-star"
-            [ngClass]="{'active' : review.avgRating > 0}"
+            [ngClass]="{'active' : profile.avgRating > 0}"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +94,7 @@
           </span>
           <span
             class="each-star"
-            [ngClass]="{'active' : review.avgRating > 1}"
+            [ngClass]="{'active' : profile.avgRating > 1}"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +109,7 @@
           </span>
           <span
             class="each-star"
-            [ngClass]="{'active' : review.avgRating > 2}"
+            [ngClass]="{'active' : profile.avgRating > 2}"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -121,7 +124,7 @@
           </span>
           <span
             class="each-star"
-            [ngClass]="{'active' : review.avgRating > 3}"
+            [ngClass]="{'active' : profile.avgRating > 3}"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +139,7 @@
           </span>
           <span
             class="each-star"
-            [ngClass]="{'active' : review.avgRating > 4}"
+            [ngClass]="{'active' : profile.avgRating > 4}"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +152,7 @@
               />
             </svg>
           </span>
-          <span class="rating-amount">{{review.totalReviews}} reviews</span>
+          <span class="rating-amount">{{profile.totalReviews}} reviews</span>
         </div>
       </div>
     </ion-list>
