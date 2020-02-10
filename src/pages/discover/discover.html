@@ -17,11 +17,11 @@
       <ion-label>
         Filter by:
       </ion-label>
-      <ion-select name="filter">
-        <ion-option>Distance (Closest)</ion-option>
-        <ion-option>Distance (Furthest)</ion-option>
-        <ion-option>Price (Low to High)</ion-option>
-        <ion-option>Price (High to Low)</ion-option>
+      <ion-select name="filter" (ionChange)="discoverFilter($event)">
+        <ion-option value="distance_closest">Distance (Closest)</ion-option>
+        <ion-option value="distance_furthest">Distance (Furthest)</ion-option>
+        <ion-option value="price_low_high">Price (Low to High)</ion-option>
+        <ion-option value="price_high_low">Price (High to Low)</ion-option>
       </ion-select>
     </ion-item>
   </form>

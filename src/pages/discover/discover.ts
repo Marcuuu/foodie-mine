@@ -23,6 +23,7 @@ export class DiscoverPage {
     this.data = this.http.get(url);
     this.subscription = this.data.subscribe(data => {
       this.profileList = data;
+      console.log(data)
     });
   }
 
@@ -45,5 +46,20 @@ export class DiscoverPage {
       item: item
     });
     console.log(item)
+  }
+
+  discoverFilter($event) {
+    if ($event == "distance_closest") {
+      this.profileList.sort((a, b) => (a.location_distance > b.location_distance) ? 1 : -1)
+    }
+    else if ($event == "distance_furthest") {
+      this.profileList.sort((a, b) => (b.location_distance > a.location_distance) ? 1 : -1)
+    }
+    else if ($event == "price_low_high") {
+      this.profileList.sort((a, b) => (a.menu_price > b.menu_price) ? 1 : -1)
+    }
+    else if ($event == "price_high_low") {
+      this.profileList.sort((a, b) => (b.menu_price > a.menu_price) ? 1 : -1)
+    }
   }
 }
