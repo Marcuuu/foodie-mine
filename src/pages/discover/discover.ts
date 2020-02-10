@@ -3,7 +3,7 @@ import { NavController } from "ionic-angular";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { MenuDetailsPage } from "../menu-details/menu-details";
-import * as $ from 'jquery';
+// import * as $ from 'jquery';
 
 @Component({
   selector: "page-discover",
