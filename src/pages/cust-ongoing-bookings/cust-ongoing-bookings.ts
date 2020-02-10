@@ -1,52 +1,70 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { CustBookData } from '../../providers/Cust-bookingData';
-import { CustBookingDetailsPage } from '../cust-booking-details/cust-booking-details';
-import { custBooking } from '../../models/Cust-Bookings';
-import { Storage } from '@ionic/storage';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component } from "@angular/core";
+import { NavController, NavParams } from "ionic-angular";
+// import { CustBookData } from '../../providers/Cust-bookingData';
+import { CustBookingDetailsPage } from "../cust-booking-details/cust-booking-details";
+import { custBooking } from "../../models/Cust-Bookings";
+import { Storage } from "@ionic/storage";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Component({
-  selector: 'page-cust-ongoing-bookings',
-  templateUrl: 'cust-ongoing-bookings.html'
+  selector: "page-cust-ongoing-bookings",
+  templateUrl: "cust-ongoing-bookings.html"
 })
 export class CustOngoingBookingsPage {
   cBooks: any;
   hideCard: boolean = false;
   custBook: custBooking;
-  
+
+  data: Observable<any>;
+  subscription: any;
+  custBookings: any;
+
   // this tells the tabs component which Pages should be each tab's root Page
-  constructor(public navCtrl: NavController, public http: HttpClient, public navParams: NavParams, private storage: Storage, public custBookData: CustBookData) {
-  }
+  constructor(
+    public navCtrl: NavController,
+    public http: HttpClient,
+    public navParams: NavParams,
+    private storage: Storage
+  ) {}
 
   ionViewWillEnter() {
-    this.getOnBook();
+    this.getCustBookings();
   }
 
-  getOnBook() {
-    console.log("entered", "here");
-    var url = 'https://foodie1234.herokuapp.com/getCustBookings';
-    var postData = JSON.stringify({
-      // post data MUSt match the request.body.userID; 
-      bookingID: localStorage.getItem("loginid")
-    });
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
-      })
-    };   
-
-    this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postData:', postData);
-      console.log("ongoing", data);
-      this.cBooks = data;
-    }, error => {
-      console.log(error);
+  getCustBookings() {
+    var url = "https://foodie1234.herokuapp.com/getCustBookings";
+    this.data = this.http.get(url);
+    this.subscription = this.data.subscribe(data => {
+      this.custBookings = data;
+      console.log(data);
     });
   }
+
+  // getOnBook() {
+  //   console.log("entered", "here");
+  //   var url = 'https://foodie1234.herokuapp.com/getCustBookings';
+  //   var postData = JSON.stringify({
+  //     // post data MUSt match the request.body.userID;
+  //     bookingID: localStorage.getItem("loginid")
+  //   });
+
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type':  'application/json',
+  //       'Access-Control-Allow-Origin': '*',
+  //       'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+  //     })
+  //   };
+
+  //   this.http.post(url, postData, httpOptions).subscribe((data) => {
+  //     console.log('postData:', postData);
+  //     console.log("ongoing", data);
+  //     this.cBooks = data;
+  //   }, error => {
+  //     console.log(error);
+  //   });
+  // }
 
   // ionViewWillEnter() {
   //   let id = localStorage.getItem('loginid');
@@ -54,7 +72,7 @@ export class CustOngoingBookingsPage {
   //   this.storage.get('CUSTBook').then((val) => {
   //     console.log(val);
   //     this.cBooks = val;
-  //     for (var i=0;i<this.cBooks.length;i++){ 
+  //     for (var i=0;i<this.cBooks.length;i++){
   //       if (this.cBooks[i].custID == id){
   //         this.custBook = this.cBooks[i];
   //       }
@@ -83,5 +101,4 @@ export class CustOngoingBookingsPage {
       data: bookItem
     });
   }
-  
 }

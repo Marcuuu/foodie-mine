@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title text-center>Favourites</ion-title>
+    <ion-title>Favourites</ion-title>
   </ion-navbar>
 </ion-header>
 <!-- <ion-content style="width:100%;" [hidden]="ishidden">
@@ -25,7 +25,7 @@
 </ion-content>
 <ion-content style="width:100%;" [hidden]="ishiddenimg">
   <ion-label class="fulllabel" >
-    <img src="../../assets/imgs/fav_ss.jpg"/> 
+    <img src="../../assets/imgs/fav_ss.jpg"/>
     </ion-label>
 </ion-content> -->
 <ion-content padding id="page2" [hidden]="ishidden">
@@ -74,10 +74,7 @@
           </p>
         </div>
         <div class="discover-ratings" *ngFor="let review of totalReviews">
-          <span
-            class="each-star"
-            [ngClass]="{'active' : review.avgRating > 0}"
-          >
+          <span class="each-star" [ngClass]="{'active' : review.avgRating > 0}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -89,10 +86,7 @@
               />
             </svg>
           </span>
-          <span
-            class="each-star"
-            [ngClass]="{'active' : review.avgRating > 1}"
-          >
+          <span class="each-star" [ngClass]="{'active' : review.avgRating > 1}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -104,10 +98,7 @@
               />
             </svg>
           </span>
-          <span
-            class="each-star"
-            [ngClass]="{'active' : review.avgRating > 2}"
-          >
+          <span class="each-star" [ngClass]="{'active' : review.avgRating > 2}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -119,10 +110,7 @@
               />
             </svg>
           </span>
-          <span
-            class="each-star"
-            [ngClass]="{'active' : review.avgRating > 3}"
-          >
+          <span class="each-star" [ngClass]="{'active' : review.avgRating > 3}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -134,10 +122,7 @@
               />
             </svg>
           </span>
-          <span
-            class="each-star"
-            [ngClass]="{'active' : review.avgRating > 4}"
-          >
+          <span class="each-star" [ngClass]="{'active' : review.avgRating > 4}">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -156,7 +141,7 @@
   </ion-card>
 </ion-content>
 <ion-content style="width:100%;" [hidden]="ishiddenimg">
-    <ion-label class="fulllabel" >
-      <img src="../../assets/imgs/fav_ss.jpg"/> 
-      </ion-label>
-  </ion-content>
+  <ion-label class="fulllabel">
+    <img src="../../assets/imgs/fav_ss.jpg" />
+  </ion-label>
+</ion-content>

@@ -4,21 +4,29 @@
       {{this.details.fName}}
     </ion-title>
     <ion-buttons end>
-        <button ion-button icon-only (click)="favmenu()">
-          <ion-icon [name]="visible ? 'heart' : 'heart-outline'"></ion-icon>
-        </button>
-      </ion-buttons>
+      <button ion-button icon-only (click)="favmenu()">
+        <ion-icon
+          [name]="visible ? 'heart' : 'heart-outline'"
+          color="danger"
+        ></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
-<ion-content id="page6">
+<ion-content id="page6" (window:resize)="onResize($event)">
   <div class="details-image">
     <img src="{{this.details.menu_image}}" alt="" />
   </div>
   <div padding>
-    <h4 id="menuDetails-heading3" style="color:#232323;font-weight:600;margin-bottom:5px;">
+    <h4
+      id="menuDetails-heading3"
+      style="color:#232323;font-weight:600;margin-bottom:5px;"
+    >
       {{this.details.menuName}}
     </h4>
-    <div style="margin-bottom:15px;color:#232323;">{{this.details.description}}</div>
+    <div style="margin-bottom:15px;color:#232323;">
+      {{this.details.description}}
+    </div>
     <div class="details-info-list">
       <div
         id="menuDetails-markdown5"
@@ -53,72 +61,174 @@
       Menu
     </h5>
     <ion-list id="menuDetails-list1" class="menu-list">
-      <ion-item color="none" id="menuDetails-list-item8" class="menu-item-each active" *ngFor="let item of menuList">
+      <ion-item
+        color="none"
+        id="menuDetails-list-item8"
+        class="menu-item-each active"
+        *ngFor="let item of menuList"
+      >
         <img src="{{item.menuImg}}" alt="" (click)="popupImage($event)" />
         <p ion-text color="black">{{item.menuItem}}</p>
       </ion-item>
     </ion-list>
-    <button class="wholebutton" (click)="navSubmitReview()">
-        <h3 style="color:lightgreen">Write a Review</h3>
-      </button>
-      <h5 id="menuDetails-heading5" style="color:#000000;font-size:1.6rem;">
+    <div class="reviews-con">
+      <div class="reviews-header">
+        <h5
+          id="menuDetails-heading5"
+          style="color:#000000;font-size:1.6rem;"
+          class="reviews-header-text"
+        >
           Reviews
         </h5>
-      <ion-card *ngFor="let rev of TopReview" [hidden]="hvInfo">
+        <button class="wholebutton" (click)="navSubmitReview()">
+          Write a Review
+        </button>
+      </div>
+      <ion-card
+        *ngFor="let rev of TopReview"
+        [hidden]="hvInfo"
+        class="reviews-each"
+      >
         <ion-grid>
           <ion-row>
-            <ion-col col-12 >
+            <ion-col col-12>
               <ion-avatar style="width:90px;height:90px;margin:0 auto;">
-                <img src="{{rev.cleanlinessRating}}">
+                <img src="{{rev.cleanlinessRating}}" />
               </ion-avatar>
             </ion-col>
           </ion-row>
-          <ion-row >
-            <ion-col col-12 text-center style="margin-top:-15px;">         
-                <ionic3-star-rating rating="{{rev.rating}}" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"
-                defaultColor="#aaaaaa" readonly="true"  fontSize="28px" >
+          <ion-row>
+            <ion-col col-12 text-center style="margin-top:-15px;">
+              <ionic3-star-rating
+                rating="{{rev.rating}}"
+                halfStar="false"
+                activeIcon="ios-star"
+                defaultIcon="ios-star-outline"
+                activeColor="#FFC300"
+                defaultColor="#aaaaaa"
+                readonly="true"
+                fontSize="28px"
+              >
               </ionic3-star-rating>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col col-12> 
+            <ion-col col-12>
               {{rev.comments}}
             </ion-col>
           </ion-row>
           <ion-row style="margin-top:10px;">
             <ion-col col-6 text-left style="color:grey">
-              <ion-icon name="calendar"></ion-icon>   {{rev.datein | date: "dd MMM yyyy" }}
+              <ion-icon name="calendar"></ion-icon> {{rev.datein | date: "dd MMM
+              yyyy" }}
             </ion-col>
             <ion-col col-6 text-right>
-        <b style="font-style:italic;">-{{rev.custName}}</b>
+              <b style="font-style:italic;">-{{rev.custName}}</b>
             </ion-col>
           </ion-row>
         </ion-grid>
       </ion-card>
-      <button class="wholebutton" (click)="allReviews()" style="margin-bottom:50px;">
-        <h3 style="color:lightgreen">See all Reviews</h3>
+      <button class="wholebutton right" (click)="allReviews()">
+        See all Reviews
       </button>
-    <!-- <h5 id="menuDetails-heading5" style="color:#000000;font-size:1.6rem;">
-      Reviews
-    </h5>
-    <ion-list id="menuDetails-list2">
-      <ion-item color="none" id="menuDetails-list-item14">
-        Review 1
-      </ion-item>
-      <ion-item color="none" id="menuDetails-list-item15">
-        Review 2
-      </ion-item>
-      <ion-item color="none" id="menuDetails-list-item16">
-        Review 3
-      </ion-item>
-    </ion-list> -->
+    </div>
+    <div class="related-con">
+      <h5 id="menuDetails-heading4" style="color:#000000;font-size:1.6rem;">
+        More like <span class="color-darkyellow">{{this.details.fName}}</span>
+      </h5>
+      <div class="related-inner">
+        <ion-card
+          *ngFor="let profile of profileList; let i = index;"
+          class="related-each"
+        >
+          <ion-list>
+            <ion-item
+              color="none"
+              id="discover-list-item3"
+              (click)="goToMenuDetailsPage($event, profile)"
+            >
+              <ion-avatar item-left>
+                <img src="{{profile.img}}" />
+              </ion-avatar>
+              <h2 style="margin-bottom:0;font-weight:500;color:#424242;">
+                {{profile.fName}}
+              </h2>
+            </ion-item>
+            <div class="discover-image">
+              <img src="{{profile.menu_image}}" alt="" />
+            </div>
+            <div class="discover-info">
+              <h5
+                id="discover-heading2"
+                class="discover-menuname"
+                style="color:#424242;font-weight:600;font-size:1.4rem;"
+                (click)="goToMenuDetailsPage($event, profile)"
+              >
+                {{profile.menuName}}
+              </h5>
+              <div
+                class="show-list-numbers-and-dots"
+                style="display:flex;align-items:center;margin-bottom:5px;"
+              >
+                <ion-icon
+                  name="list-box"
+                  style="color:#929292;width:15px;text-align:center;"
+                ></ion-icon>
+                <p
+                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"
+                >
+                  ~${{profile.menu_price}}/pax
+                </p>
+              </div>
+              <div
+                id="discover-markdown3"
+                class="show-list-numbers-and-dots"
+                style="display:flex;align-items:center;margin-bottom:5px;"
+              >
+                <ion-icon
+                  name="pin"
+                  style="color:#929292;width:15px;text-align:center;"
+                ></ion-icon>
+                <p
+                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"
+                >
+                  {{profile.location}}
+                </p>
+              </div>
+              <div
+                id="discover-markdown4"
+                class="show-list-numbers-and-dots"
+                style="display:flex;align-items:center;margin-bottom:5px;"
+              >
+                <ion-icon
+                  name="pricetag"
+                  style="color:#929292;width:15px;text-align:center;"
+                ></ion-icon>
+                <p
+                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"
+                >
+                  {{profile.menu_category}}
+                </p>
+              </div>
+            </div>
+          </ion-list>
+        </ion-card>
+      </div>
+    </div>
   </div>
 </ion-content>
-<ion-item class="popup-image" (click)="popupImage()" [class.active]="this.showImage">
-  <img src="{{this.popupSrc}}" alt="">
+<ion-item
+  class="popup-image"
+  (click)="popupImage()"
+  [class.active]="this.showImage"
+>
+  <img src="{{this.popupSrc}}" alt="" />
 </ion-item>
 <div class="book-cta">
-  <button class="book-cta-btn" (click)="goToMakeBookingPage($event, this.details)">
+  <button
+    class="book-cta-btn"
+    (click)="goToMakeBookingPage($event, this.details)"
+  >
     Book Now
   </button>
 </div>

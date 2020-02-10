@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController, NavParams, AlertController } from "ionic-angular";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { ThrowStmt } from "@angular/compiler";
+import * as $ from "jquery";
 
 @Component({
   selector: "page-make-booking",
@@ -21,9 +21,14 @@ export class MakeBookingPage {
   }
 
   ionViewDidLoad() {
-    localStorage.setItem("name", this.bookingDetails.fName)
+    localStorage.setItem("name", this.bookingDetails.fName);
     console.log(this.bookingDetails);
     this.date = new Date().toISOString();
+  }
+
+  countChar($event) {
+    var textLength = $event.target.textLength;
+    $(".characters-indicator .amount").text(textLength);
   }
 
   updateMyDate($event) {
@@ -48,55 +53,52 @@ export class MakeBookingPage {
 
   noDate() {
     let alert = this.alertCtrl.create({
-      title: 'Booking date cannot be empty',
-      message: 'Please select a date!',
-      buttons: ['Ok']
-    })
-    alert.present()
+      title: "Booking date cannot be empty",
+      message: "Please select a date!",
+      buttons: ["Ok"]
+    });
+    alert.present();
   }
 
   noTime() {
     let alert = this.alertCtrl.create({
-      title: 'Booking time cannot be empty',
-      message: 'Please select a time!',
-      buttons: ['Ok']
-    })
-    alert.present()
+      title: "Booking time cannot be empty",
+      message: "Please select a time!",
+      buttons: ["Ok"]
+    });
+    alert.present();
   }
 
   noPax() {
     let alert = this.alertCtrl.create({
-      title: 'Pax cannot be empty',
-      message: 'Please select the number of people!',
-      buttons: ['Ok']
-    })
-    alert.present()
+      title: "Pax cannot be empty",
+      message: "Please select the number of people!",
+      buttons: ["Ok"]
+    });
+    alert.present();
   }
 
   bookingSuccess() {
     let alert = this.alertCtrl.create({
-      title: 'Booking successful!',
-      message: 'See you soon!',
-      buttons: ['Ok']
-    })
-    alert.present()
+      title: "Booking successful!",
+      message: "See you soon!",
+      buttons: ["Ok"]
+    });
+    alert.present();
   }
 
   makeBooking() {
     var url = "https://foodie1234.herokuapp.com/makeBooking";
-    let bookDate = localStorage.getItem("bookDate")
-    let bookTime = localStorage.getItem("bookTime")
-    let bookPax = localStorage.getItem("bookPax")
+    let bookDate = localStorage.getItem("bookDate");
+    let bookTime = localStorage.getItem("bookTime");
+    let bookPax = localStorage.getItem("bookPax");
     if (bookDate == null) {
-      this.noDate()
-    }
-    else if (bookTime == null) {
-      this.noTime()
-    }
-    else if (bookPax == null) {
-      this.noPax()
-    }
-    else {
+      this.noDate();
+    } else if (bookTime == null) {
+      this.noTime();
+    } else if (bookPax == null) {
+      this.noPax();
+    } else {
       var postData = JSON.stringify({
         //these fields MUST match the server.js request.body.XXX;
         bookDate: localStorage.getItem("bookDate"),
@@ -124,11 +126,11 @@ export class MakeBookingPage {
           console.log(error);
         }
       );
-      localStorage.removeItem("bookDate")
-      localStorage.removeItem("bookTime")
-      localStorage.removeItem("bookPax")
-      localStorage.removeItem("bookNotes")
-      this.bookingSuccess()
+      localStorage.removeItem("bookDate");
+      localStorage.removeItem("bookTime");
+      localStorage.removeItem("bookPax");
+      localStorage.removeItem("bookNotes");
+      this.bookingSuccess();
       this.navCtrl.pop();
     }
   }

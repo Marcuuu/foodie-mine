@@ -9,30 +9,64 @@
   <!-- <h2 id="dashboard-heading6" style="color:#000000;">
     Upcoming Bookings
   </h2> -->
-  <ion-card id="dashboard-card24" *ngFor="let booking of bookings" class="each-booking-con">
+  <ion-card
+    id="dashboard-card24"
+    *ngFor="let booking of bookings"
+    class="each-booking-con"
+  >
     <ion-list>
       <ion-item color="none" id="dashboard-list-item49">
         <ion-avatar item-left>
           <img src="{{ booking?.custImage }}" />
         </ion-avatar>
         <h2 style="margin-bottom:0;font-weight:500;">
-        {{ booking?.custName }}
+          {{ booking?.custName }}
         </h2>
-        <ion-icon name="arrow-forward" item-right style="transform: scale(0.8);"></ion-icon>
+        <ion-icon
+          name="arrow-forward"
+          item-right
+          style="transform: scale(0.8);"
+        ></ion-icon>
       </ion-item>
-      <ion-item color="none" id="dashboard-list-item52">
-        <ion-icon name="calendar" item-left style="color:#929292;font-size:2rem;"></ion-icon>
-        {{ booking?.bookDate }} - {{ booking?.bookTime }}
+      <ion-item class="item-each" color="none" id="dashboard-list-item52">
+        <ion-icon
+          class="icons-each"
+          name="calendar"
+          item-left
+          style="color:#929292;font-size:2rem;"
+        ></ion-icon>
+        <p class="info-text-each">
+          {{ booking?.bookDate }} - {{ booking?.bookTime }}
+        </p>
       </ion-item>
-      <ion-item color="none" id="dashboard-list-item51">
-        <ion-icon name="people" item-left style="color:#929292;font-size:2rem;"></ion-icon>
-        {{ booking?.bookPax }}
+      <ion-item class="item-each" color="none" id="dashboard-list-item51">
+        <ion-icon
+          class="icons-each"
+          name="people"
+          item-left
+          style="color:#929292;font-size:2rem;"
+        ></ion-icon>
+        <p class="info-text-each">{{ booking?.bookPax }}</p>
       </ion-item>
-      <ion-item color="assertive" id="dashboard-list-item50">
-        <ion-icon name="create" item-left style="color:#929292;font-size:2rem;"></ion-icon>
-        {{ booking?.bookNotes }}
+      <ion-item class="item-each" color="assertive" id="dashboard-list-item50">
+        <ion-icon
+          class="icons-each"
+          name="create"
+          item-left
+          style="color:#929292;font-size:2rem;"
+        ></ion-icon>
+        <p class="info-text-each">{{ booking?.bookNotes }}</p>
       </ion-item>
-      <button id="dashboard-button2" class="view-details-btn" ion-button clear color="positive" block style="border-radius:0px 0px 0px 0px;" (click)="goToBookingDetails(booking)">
+      <button
+        id="dashboard-button2"
+        class="view-details-btn"
+        ion-button
+        clear
+        color="positive"
+        block
+        style="border-radius:0px 0px 0px 0px;"
+        (click)="goToBookingDetails(booking)"
+      >
         View Booking Details
       </button>
     </ion-list>
