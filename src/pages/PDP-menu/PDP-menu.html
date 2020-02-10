@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Menu
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-left solid (click)="goToEditMenu(menu)">
+        <ion-icon name="create"></ion-icon>
+        Edit Menu
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page10">
+  <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
+    <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
+  </div>
+  <h2 id="menu-heading9" style="color:#000000;">
+    {{ menu?.menuName }} (${{ menuPrice | number:'1.2-2' }})
+  </h2>
+  <div id="menu-markdown18" class="show-list-numbers-and-dots">
+    <p style="color:#000000; float:left;">
+      Category:
+      <strong>
+      {{ menu?.menuCategory }}
+      </strong>
+    </p>
+  </div>
+  <button id="menu-button18" ion-button color="positive" block on-click="goToNewDish()">
+    New Dish
+  </button>
+  <ion-card id="menu-card29" *ngFor="let menuItem of menuItems">
+    <ion-list>
+      <div style="width:100%;height:220px;margin:0px 0px;line-height:250px;background-color:#e8ebef;text-align:center;">
+        <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
+      </div>
+      <ion-item color="none" id="menu-list-item66">
+        {{ menuItem.menuItemName }} (${{ menuItem.menuItemPrice | number:'1.2-2' }})
+      </ion-item>
+      <button id="menu-button6" ion-button color="positive" (click)="goToEditDish(menuItem)">
+        Manage
+      </button>
+      <button id="menu-button7" ion-button color="danger" (click)="deleteConfirm(menuItem)">
+        Remove
+      </button>
+    </ion-list>
+  </ion-card>
+</ion-content>

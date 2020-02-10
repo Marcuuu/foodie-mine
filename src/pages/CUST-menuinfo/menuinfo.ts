@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { CustReviewsPage } from '../CUST-reviews/reviews';
 import { CustSubmitReviewPage } from '../CUST-submitReview/submitReview';
-
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the MenuPage page.
  *
@@ -25,45 +25,38 @@ visible:any;
 TopReview:any;
 hvInfo:boolean;
 menuInfo:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient) {
+loading: any;
+data1:any;
+imgInfo:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http: HttpClient, public loadingCtrl: LoadingController, public storage: Storage) {
+
+    this.data1=navParams.get('item');
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MenuPage');
-    this.getMenuInfo();
+  ngOnInit(){
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+  
+    loading.present();
+  
+    setTimeout(() => {
+      loading.dismiss();
+    }, 3000);
   }
 
   ionViewWillEnter(){
     this.getTopReview();
     this.getAvgRating();
     this.getFavAnot();
-    
     console.log('ionViewWillEnter MenuPage');
   }
-
-  ionViewWillLeave(){
-    console.log('ionViewWillLeave MenuPage');
-  }
-
-  ionViewDidLeave(){
-    console.log('ionViewDidLeave MenuPage');
-  }
-
-  // ngOnInit() {
-  //   this.getMenuInfo();
-  //   this.getTopReview();
-  //   this.getAvgRating();
-  //   // this.getPDPfName();
-  // }
-  
   favmenu(){
     if(this.visible==true){
-      this.getDeleteFavMenu();
-      
+      this.getDeleteFavMenu();     
       console.log("Deleted FaveMenu")
     }
     else if(this.visible==false){
-
       this.getInsertFavMenu();
       console.log("Inserted FaveMenu")
     }
@@ -84,8 +77,6 @@ menuInfo:any;
       })
     };
     this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postDataaaa:', postData)
-      console.log(data);
       this.visible=false;
     }, error => {
       console.log(error);
@@ -106,15 +97,11 @@ menuInfo:any;
       })
     };
     this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postDatabbbb:', postData)
-      console.log(data);
       this.visible=true;
     }, error => {
       console.log(error);
     });
   }
-
-
   getTopReview() {
     var url = 'https://foodie1234.herokuapp.com/getTopReview';
     var postData = JSON.stringify({
@@ -129,44 +116,40 @@ menuInfo:any;
       })
     };
     this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postData:', postData)
-      console.log("topReview",data);
       if (data == false){
         this.hvInfo=true
       }
       else{
         this.hvInfo=false
         this.TopReview=data;
-        this.rating2 = data[0].rating;
+        for(var i=0; i<this.TopReview.length; i++)
+        {
+          this.rating2 = data[i].rating;
+          if (data[i].cleanlinessRating == 1)
+          {
+            console.log("1",data[i].cleanlinessRating);
+            data[i].cleanlinessRating = "../../assets/icon/broom.png";
+            console.log("11",this.imgInfo);
+          }
+          else if(data[i].foodQualityRating == 1)
+          {
+            console.log("2",data[i].foodQualityRating);
+            data[i].cleanlinessRating = "../../assets/icon/food.png";
+            console.log("22",this.imgInfo);
+          }
+          else if(data[i].priceRating == 1)
+          {
+            console.log("3",data[i].priceRating);
+            data[i].cleanlinessRating = "../../assets/icon/money.png";
+            console.log("33",this.imgInfo);
+          }
+        }
       }
 
     }, error => {
       console.log(error);
     });
   }
-
-  // getPDPfName() {
-  //   var url = 'https://foodie1234.herokuapp.com/getPDPfName';
-  //   var postData = JSON.stringify({
-  //     //these fields MUST match the server.js request.body.XXX;  
-  //     menuId: this.menuId,
-  //   });
-  //   const httpOptions = {
-  //     headers: new HttpHeaders({
-  //       'Content-Type': 'application/json',
-  //       'Access-Control-Allow-Origin': '*',
-  //       'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
-  //     })
-  //   };
-  //   this.http.post(url, postData, httpOptions).subscribe((data) => {
-  //     console.log('postData:', postData)
-  //     console.log(data);
-  //       this.fName=data;
-  //   }, error => {
-  //     console.log(error);
-  //   });
-  // }
-
   getMenuInfo() {
     var url = 'https://foodie1234.herokuapp.com/getMenuInfo';
     var postData = JSON.stringify({
@@ -181,14 +164,11 @@ menuInfo:any;
       })
     };
     this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postData:', postData)
-      console.log(data);
         this.menuInfo=data;
     }, error => {
       console.log(error);
     });
   }
-
   getAvgRating() {
     var url = 'https://foodie1234.herokuapp.com/getAvgRating';
     var postData = JSON.stringify({
@@ -203,8 +183,6 @@ menuInfo:any;
       })
     };
     this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('postData1:', postData)
-      console.log(data);
       if(this.ratingNum == false){
         this.rating=0;
         this.ratingNum = 0;
@@ -217,7 +195,6 @@ menuInfo:any;
       console.log(error);
     });
   }
-
   getFavAnot() {
     var url = 'https://foodie1234.herokuapp.com/getFavAnot';
     var postData = JSON.stringify({
@@ -233,23 +210,17 @@ menuInfo:any;
       })
     };
     this.http.post(url, postData, httpOptions).subscribe((data) => {
-      console.log('getFavAnot()postData:', postData)
-      console.log(data);
-      console.log('FavAnotAAAA',this.visible);
         this.visible=data;
-        console.log('favANOTbbb',this.visible);
     }, error => {
       console.log(error);
     });
   }
-
   allReviews(){
-    //this.router.navigateByUrl('/allReview/' + this.menuId);
     this.navCtrl.push(CustReviewsPage);
   }
-
-  navSubmitReview() {
-    //this.router.navigateByUrl('/submitReview/' + this.custId +  '/' + this.menuId);
-    this.navCtrl.push(CustSubmitReviewPage);
+  navSubmitReview(menuname) {
+    this.navCtrl.push(CustSubmitReviewPage,{
+      item:menuname
+    });
   }
 }
