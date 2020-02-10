@@ -3,6 +3,7 @@ page-discover {
     padding: {
       left: 0;
       right: 0;
+      top: 0;
     }
     margin: {
       bottom: 10px;
@@ -62,6 +63,29 @@ page-discover {
         bottom: 20px;
       }
     }
+    @media only screen and (min-width: 768px) {
+      width: 49%;
+      display: inline-block;
+      vertical-align: top;
+      margin:{
+        top: 0;
+      }
+      &:nth-child(odd) {
+        margin:{
+          right: 1%;
+        }
+      }
+      &:nth-child(even) {
+        margin:{
+          left: 1%;
+        }
+      }
+    }
+  }
+  .discover-image {
+    img {
+      object-fit: cover;
+    }
   }
   .discover-info {
     padding: 15px;
@@ -75,6 +99,9 @@ page-discover {
     .each-star {
       margin: {
         right: 2px;
+      }
+      svg {
+        fill: #424242;
       }
       &:last-child {
         margin: {

@@ -1,3 +1,31 @@
 page-login-page {
-
+    .login-field-con {
+        padding:{
+            left: 0;
+        }
+        .label {
+            &.label-md {
+                margin:{
+                    left: 10px;
+                }
+            }
+        }
+    }
+    .login-btn {
+        width: 100%;
+        background: #ffd369;
+        color: #232323;
+        border-radius: 5px;
+        box-shadow: 0 3px 2px rgba(0,0,0,0.1);
+        font:{
+            size: 1.7rem;
+            weight: 700;
+        };
+        padding: 12px;
+        height: 4rem;
+        text-transform: none;
+        margin:{
+            top: 10px;
+        }
+    }
 }

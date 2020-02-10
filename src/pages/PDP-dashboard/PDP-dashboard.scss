@@ -1,3 +1,17 @@
-page-dashboard {
-
+page-pdp-dashboard {
+    .each-booking-con {
+        background: #ffd369;
+        margin: 0;
+        &:not(:last-child) {
+            margin: {
+                bottom: 20px;
+            }
+        }
+        .button-inner {
+            color: #000000;
+        }            
+        .button-clear-md:hover:not(.disable-hover) {
+            background-color: #ffd369;
+        }
+    }
 }

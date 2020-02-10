@@ -51,7 +51,7 @@ export class MenuDetailsPage {
     this.menuData = this.http.get(url);
     this.menuData.subscribe(data => {
       this.menuList = data.filter(word => {
-        if (word.menuName == this.details.menuName) {
+        if (word.menuId == this.details.menuId) {
           return word
         }
       })
