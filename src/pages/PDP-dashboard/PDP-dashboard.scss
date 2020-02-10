@@ -1,17 +1,37 @@
 page-pdp-dashboard {
-    .each-booking-con {
-        background: #ffd369;
-        margin: 0;
-        &:not(:last-child) {
-            margin: {
-                bottom: 20px;
-            }
-        }
-        .button-inner {
-            color: #000000;
-        }            
-        .button-clear-md:hover:not(.disable-hover) {
-            background-color: #ffd369;
-        }
+  .each-booking-con {
+    width: 100%;
+    background: #ffd369;
+    margin: 0;
+    &:not(:last-child) {
+      margin: {
+        bottom: 20px;
+      }
     }
+    .item-each {
+      .item-inner {
+        margin: {
+          left: 0;
+        }
+      }
+    }
+    .icons-each {
+      min-height: unset;
+    }
+    .info-text-each {
+      font: {
+        size: 1.4rem;
+      }
+      color: #000;
+    }
+    .view-details-btn {
+      text-transform: none;
+    }
+    .button-inner {
+      color: #000000;
+    }
+    .button-clear-md:hover:not(.disable-hover) {
+      background-color: #ffd369;
+    }
+  }
 }

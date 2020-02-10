@@ -97,7 +97,13 @@
       <ion-textarea
         class="ion-textarea-element"
         (input)="updateMyNotes($event.target.value)"
+        placeholder="Indicate your preferences..."
+        maxlength="100"
+        (keyup)="countChar($event)"
       ></ion-textarea>
+    </ion-item>
+    <ion-item class="characters-indicator">
+      <p><span class="amount">0</span>/100 characters</p>
     </ion-item>
   </ion-list>
   <div class="make-booking-cta">

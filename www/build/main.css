@@ -36831,13 +36831,46 @@ page-submitReview [type=radio]:checked + img {
   background-color: grey;
 }
 
+page-pdp-booking-details .each-detail {
+  width: 100%;
+  margin: 0;
+}
+
+page-pdp-booking-details .item-each .item-inner {
+  margin-left: 0 !important;
+}
+
+page-pdp-booking-details .cancel-booking-btn {
+  text-transform: none;
+  height: 4rem;
+  margin-top: 20px;
+}
+
 page-pdp-dashboard .each-booking-con {
+  width: 100%;
   background: #ffd369;
   margin: 0;
 }
 
 page-pdp-dashboard .each-booking-con:not(:last-child) {
   margin-bottom: 20px;
+}
+
+page-pdp-dashboard .each-booking-con .item-each .item-inner {
+  margin-left: 0;
+}
+
+page-pdp-dashboard .each-booking-con .icons-each {
+  min-height: unset;
+}
+
+page-pdp-dashboard .each-booking-con .info-text-each {
+  font-size: 1.4rem;
+  color: #000;
+}
+
+page-pdp-dashboard .each-booking-con .view-details-btn {
+  text-transform: none;
 }
 
 page-pdp-dashboard .each-booking-con .button-inner {
@@ -37123,6 +37156,25 @@ page-make-booking .make-booking-cta .cancel-btn {
   border-color: #dba420;
 }
 
+page-make-booking .characters-indicator {
+  padding-left: 0;
+  text-align: right;
+  background-color: transparent;
+  min-height: unset;
+}
+
+page-make-booking .characters-indicator .item-inner {
+  padding-right: 0 !important;
+}
+
+page-make-booking .characters-indicator .item-inner .label.label-md {
+  margin: 0;
+}
+
+page-make-booking .characters-indicator .item-inner .label.label-md p {
+  margin-bottom: 0;
+}
+
 page-menu-details .details-image img {
   display: block;
   width: 100%;
@@ -37178,7 +37230,8 @@ page-menu-details .details-info-each ion-icon {
   text-align: center;
 }
 
-page-menu-details .details-info-each p, page-menu-details .details-info-each a {
+page-menu-details .details-info-each p,
+page-menu-details .details-info-each a {
   display: inline-block;
   margin-left: 7px;
   margin-top: 0;
@@ -37254,11 +37307,112 @@ page-menu-details .popup-image img {
   margin-right: auto;
 }
 
+page-menu-details .reviews-con {
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+page-menu-details .reviews-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+page-menu-details .reviews-header-text {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  page-menu-details .reviews-cards-con {
+    margin-left: -0.5%;
+    margin-right: -0.5%;
+  }
+}
+
+page-menu-details .reviews-each {
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  page-menu-details .reviews-each {
+    width: 49%;
+    display: inline-block;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
+}
+
 page-menu-details .wholebutton {
-  -webkit-box-orient: vertical !important;
-  -webkit-box-direction: normal !important;
-  -webkit-flex-direction: column !important;
-  -ms-flex-direction: column !important;
-  flex-direction: column !important;
-  background-color: transparent !important;
+  padding: 10px;
+  border: 1px solid #ffd369;
+  border-radius: 5px;
+  background-color: transparent;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #2e2e2e;
+  margin-bottom: 0;
+}
+
+page-menu-details .wholebutton.right {
+  float: right;
+}
+
+page-menu-details .wholebutton h3 {
+  margin-bottom: 0;
+}
+
+page-menu-details .related-inner {
+  margin-left: -0.5%;
+  margin-right: -0.5%;
+}
+
+page-menu-details .related-each {
+  margin: 0;
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+
+@media only screen and (min-width: 768px) {
+  page-menu-details .related-each {
+    width: 32.33333333%;
+  }
+}
+
+page-menu-details .related-each:nth-child(n + 3) {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  page-menu-details .related-each:nth-child(n + 3) {
+    display: inline-block;
+  }
+}
+
+page-menu-details .related-each .discover-info {
+  padding: 10px;
+}
+
+page-menu-details .related-each .discover-image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+page-menu-details .related-each .discover-menuname {
+  margin-top: 0;
+  margin-bottom: 7px;
 }

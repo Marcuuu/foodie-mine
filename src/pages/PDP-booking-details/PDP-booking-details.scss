@@ -1,3 +1,20 @@
-page-booking-details {
-
+page-pdp-booking-details {
+  .each-detail {
+    width: 100%;
+    margin: 0;
+  }
+  .item-each {
+    .item-inner {
+      margin: {
+        left: 0 !important;
+      }
+    }
+  }
+  .cancel-booking-btn {
+    text-transform: none;
+    height: 4rem;
+    margin: {
+      top: 20px;
+    }
+  }
 }
