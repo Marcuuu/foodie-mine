@@ -124,8 +124,15 @@ export class EditProfilePage {
       console.log('postData:', postData);
       console.log('SQL Result: ', data);
       this.profileData.getProfileData();
+<<<<<<< HEAD
       this.loading.dismiss();
       this.presentAlert();
+=======
+      setTimeout(() => {
+        this.loading.dismiss();
+        this.presentAlert();
+      }, 500);
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
     });
   }
 }

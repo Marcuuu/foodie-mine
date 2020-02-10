@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DiscoverPage } from '../discover/discover';
 import { CustFavouritesPage } from '../CUST-favourites/favourites';
-import { BookingsPage } from '../bookings/bookings';
+import { CustBookingsPage } from '../bookings/bookings';
 import { CustProfilePage } from '../CUST-profile/profile';
 
 @Component({
@@ -14,7 +14,7 @@ export class TabsControllerPage {
   // should be each tab's root Page
   tab1Root: any = DiscoverPage;
   tab2Root: any = CustFavouritesPage;
-  tab3Root: any = BookingsPage;
+  tab3Root: any = CustBookingsPage;
   tab4Root: any = CustProfilePage;
   constructor(public navCtrl: NavController) {
   }
