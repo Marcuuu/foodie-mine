@@ -5,13 +5,24 @@
 // roboto, and noto sans fonts
 $font-path: "../assets/fonts";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 // The app direction is used to include
 // rtl styles in your app. For more info, please see:
 // http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 
+<<<<<<< HEAD
 @import "ionic.globals";
 
+=======
+
+@import "ionic.globals";
+
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
@@ -19,6 +30,12 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -28,6 +45,7 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
+<<<<<<< HEAD
   primary: #488aff,
   secondary: #32db64,
   danger: #f53d3d,
@@ -70,19 +88,46 @@ $colors: (
 .background-black {
   background-color: #232323;
 }
+=======
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 // App Theme
 // --------------------------------------------------
 // Ionic apps can have different themes applied, which can
@@ -92,6 +137,10 @@ $colors: (
 
 @import "ionic.theme.default";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
@@ -99,6 +148,10 @@ $colors: (
 
 @import "ionic.ionicons";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 // Fonts
 // --------------------------------------------------
 

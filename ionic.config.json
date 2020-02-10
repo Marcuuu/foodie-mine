@@ -1,5 +1,12 @@
 {
+<<<<<<< HEAD
   "name": "foodie",
   "integrations": {},
+=======
+  "name": "New Ionic App",
+  "integrations": {
+    "cordova": {}
+  },
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
   "type": "ionic-angular"
 }

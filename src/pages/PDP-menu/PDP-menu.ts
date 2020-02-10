@@ -117,8 +117,15 @@ export class MenuPage {
       console.log("In /deleteDish");
       console.log('SQL Result: ', data);
       this.menusData.getMenuItemsData();
+<<<<<<< HEAD
       this.deleting.dismiss();
       this.deleteAlert();
+=======
+      setTimeout(() => {
+        this.deleting.dismiss();
+        this.deleteAlert();
+      }, 500);
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
     });
   }
 

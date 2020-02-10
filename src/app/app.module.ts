@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+<<<<<<< HEAD
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { MenusPage } from '../pages/menus/menus';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -31,17 +32,50 @@ import { CustTabsPage } from '../pages/CUST-tabs/tabs2'
 import { BookingsData } from '../providers/PDP-bookingData';
 import { IonicStorageModule } from '@ionic/storage';
 import { NewMenuPage } from '../pages/PDP-new-menu/PDP-new-menu';
+=======
+import { DashboardPage } from '../pages/PDP-dashboard/PDP-dashboard';
+import { BookingsPage } from '../pages/PDP-bookings/PDP-bookings';
+import { MenusPage } from '../pages/PDP-menus/PDP-menus';
+import { PDPTabsPage } from '../pages/PDP-tabs/PDP-tabs';
+import { ProfilePage } from '../pages/PDP-profile/PDP-profile';
+import { BookingDetailsPage } from '../pages/PDP-booking-details/PDP-booking-details';
+import { MenuPage } from '../pages/PDP-menu/PDP-menu';
+import { EditMenuPage } from '../pages/PDP-edit-menu/PDP-edit-menu';
+import { EditProfilePage } from '../pages/PDP-edit-profile/PDP-edit-profile';
+import { NewDishPage } from '../pages/PDP-new-dish/PDP-new-dish';
+import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
+import { CustMenuPage } from '../pages/CUST-menu/menu';
+import { CustFavouritesPage } from '../pages/CUST-favourites/favourites' 
+import { CustMenuInfoPage } from '../pages/CUST-menuinfo/menuinfo'
+import { CustReviewsPage } from '../pages/CUST-reviews/reviews'
+import { CustSubmitReviewPage } from '../pages/CUST-submitReview/submitReview'
+import { CustTabsPage } from '../pages/CUST-tabs/tabs2'
+import { StarRatingModule } from 'ionic3-star-rating';
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpClientModule } from '@angular/common/http';
+import { BookingsData } from '../providers/PDP-bookingData';
+import { IonicStorageModule } from '@ionic/storage';
+import { NewMenuPage } from '../pages/PDP-new-menu/PDP-new-menu';
+import { LoginPage } from '../pages/login-page/login-page';
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 import { MenusData } from '../providers/PDP-menuData';
 import { ProfileData } from '../providers/PDP-profileData';
 import { DashboardData } from '../providers/PDP-dashboardData';
 import { Camera } from '@ionic-native/camera/ngx';
+<<<<<<< HEAD
 import { PDPTabsPage } from '../pages/PDP-tabs/PDP-tabs';
 import { ProfilePage } from '../pages/PDP-profile/PDP-profile';
 import { MenuPage } from '../pages/PDP-menu/PDP-menu';
+=======
+
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
 
 @NgModule({
   declarations: [
     MyApp,
+<<<<<<< HEAD
     DiscoverPage,
     CustFavouritesPage,
     BookingsPage,
@@ -52,10 +86,20 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     CustMenuPage,
     CustMenuInfoPage,
     CreateMenuPage,
+=======
+    DashboardPage,
+    BookingsPage,
+    MenusPage,
+    PDPTabsPage,
+    ProfilePage,
+    BookingDetailsPage,
+    MenuPage,
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
     EditMenuPage,
     EditProfilePage,
     NewDishPage,
     EditDishPage,
+<<<<<<< HEAD
     LoginPage,
     DashboardPage,
     BookingsPage,
@@ -64,6 +108,13 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     ProfilePage,
     NewMenuPage,
     CustFavouritesPage,
+=======
+    NewMenuPage,
+    LoginPage,
+    CustFavouritesPage,
+    CustMenuPage,
+    CustMenuInfoPage,
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
     CustReviewsPage,
     CustSubmitReviewPage,
     CustTabsPage
@@ -73,13 +124,18 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     HttpClientModule,
     StarRatingModule,
     IonicModule.forRoot(MyApp),
+<<<<<<< HEAD
     TabsControllerPage,
     MenuDetailsPage,
     MakeBookingPage
+=======
+    IonicStorageModule.forRoot()
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+<<<<<<< HEAD
     DiscoverPage,
     CustFavouritesPage,
     BookingsPage,
@@ -90,10 +146,20 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     CustMenuPage,
     CustMenuInfoPage,
     CreateMenuPage,
+=======
+    DashboardPage,
+    BookingsPage,
+    MenusPage,
+    PDPTabsPage,
+    ProfilePage,
+    BookingDetailsPage,
+    MenuPage,
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
     EditMenuPage,
     EditProfilePage,
     NewDishPage,
     EditDishPage,
+<<<<<<< HEAD
     LoginPage,
     TabsControllerPage,
     MenuDetailsPage,
@@ -103,6 +169,12 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     ProfilePage,
     MenuPage,
     NewMenuPage,
+=======
+    NewMenuPage,
+    LoginPage,CustFavouritesPage,
+    CustMenuPage,
+    CustMenuInfoPage,
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
     CustReviewsPage,
     CustSubmitReviewPage,
     CustTabsPage
@@ -115,7 +187,14 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     BookingsData,
     ProfileData,
     MenusData,
+<<<<<<< HEAD
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule {}
+=======
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+})
+export class AppModule {}
+>>>>>>> c535ca7c76ce11a29d122f2509eedc2554c5cfad
