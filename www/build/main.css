@@ -36837,6 +36837,10 @@ page-discover .discover-ratings .each-star {
   margin-right: 2px;
 }
 
+page-discover .discover-ratings .each-star svg {
+  fill: #424242;
+}
+
 page-discover .discover-ratings .each-star:last-child {
   margin-right: 5px;
 }
