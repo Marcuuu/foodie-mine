@@ -11,14 +11,28 @@ page-make-booking {
       }
       min-height: unset;
       &.ion-textarea-con {
+        border: 0;
         .input-wrapper {
           flex-direction: column;
         }
         .label-text {
           width: 100%;
         }
+        ion-textarea {
+          margin:{
+            top: 5px;
+          }
+          padding:{
+            left: 10px;
+            right: 10px;
+          }
+          border: 1px solid #dedede;
+        }
       }
       .item-inner {
+        padding:{
+          right: 0;
+        }
         border: {
           bottom: 0;
         }

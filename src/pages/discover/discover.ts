@@ -19,7 +19,7 @@ export class DiscoverPage {
   }
 
   getProfiles() {
-    var url = "https://elp-tutorial.herokuapp.com/discoverprofiles";
+    var url = "https://foodie1234.herokuapp.com/discoverprofiles";
     this.data = this.http.get(url);
     this.subscription = this.data.subscribe(data => {
       this.profileList = data;

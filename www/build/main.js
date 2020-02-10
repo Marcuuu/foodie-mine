@@ -2152,7 +2152,7 @@ var DiscoverPage = /** @class */ (function () {
     };
     DiscoverPage.prototype.getProfiles = function () {
         var _this = this;
-        var url = "https://elp-tutorial.herokuapp.com/discoverprofiles";
+        var url = "https://foodie1234.herokuapp.com/discoverprofiles";
         this.data = this.http.get(url);
         this.subscription = this.data.subscribe(function (data) {
             _this.profileList = data;
@@ -2179,11 +2179,12 @@ var DiscoverPage = /** @class */ (function () {
     };
     DiscoverPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-discover",template:/*ion-inline-start:"C:\Users\19B759H\Desktop\elp\src\pages\discover\discover.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Foodie\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page2">\n\n  <form id="discover-form1">\n\n    <ion-searchbar\n\n      placeholder="Search"\n\n      name="search"\n\n      id="discover-search1"\n\n      (ionInput)="getItems($event)"\n\n    ></ion-searchbar>\n\n    <ion-item id="discover-select1" class="discover-filter">\n\n      <ion-label>\n\n        Filter by:\n\n      </ion-label>\n\n      <ion-select name="filter">\n\n        <ion-option>Distance (Closest)</ion-option>\n\n        <ion-option>Distance (Furthest)</ion-option>\n\n        <ion-option>Price (Low to High)</ion-option>\n\n        <ion-option>Price (High to Low)</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n  </form>\n\n  <h4 id="discover-heading1" class="header-m">\n\n    Discover around <span class="color-darkyellow">Kovan</span>\n\n  </h4>\n\n  <ion-card\n\n    id="discover-card21"\n\n    class="discover-card-each"\n\n    *ngFor="let profile of profileList"\n\n  >\n\n    <ion-list>\n\n      <ion-item color="none" id="discover-list-item3">\n\n        <ion-avatar item-left>\n\n          <img src="{{profile.img}}" />\n\n        </ion-avatar>\n\n        <h2\n\n          style="margin-bottom:0;font-weight:500;"\n\n          (click)="goToMenuDetailsPage($event, profile)"\n\n        >\n\n          {{profile.fName}}\n\n        </h2>\n\n      </ion-item>\n\n      <div class="discover-image">\n\n        <img src="{{profile.menu_image}}" alt="" />\n\n      </div>\n\n      <div class="discover-info">\n\n        <h5\n\n          id="discover-heading2"\n\n          class="discover-menuname"\n\n          style="color:#000000;font-weight:600;"\n\n          (click)="goToMenuDetailsPage($event, profile)"\n\n        >\n\n          {{profile.menuName}}\n\n        </h5>\n\n        <div id="discover-markdown3" class="show-list-numbers-and-dots">\n\n          <p style="color:#000000;">\n\n            {{profile.location}}\n\n          </p>\n\n        </div>\n\n        <div id="discover-markdown4" class="show-list-numbers-and-dots">\n\n          <p style="color:#000000;font-size:1.3rem;">\n\n            {{profile.menu_tags}}\n\n          </p>\n\n        </div>\n\n        <div class="discover-ratings">\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 0}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 1}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 2}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 3}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 4}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span class="rating-amount">{{profile.menu_rating_amt}} reviews</span>\n\n        </div>\n\n      </div>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\19B759H\Desktop\elp\src\pages\discover\discover.html"*/
+            selector: "page-discover",template:/*ion-inline-start:"C:\Users\19B759H\Desktop\elp\src\pages\discover\discover.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Foodie\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page2">\n\n  <form id="discover-form1">\n\n    <ion-searchbar\n\n      placeholder="Search"\n\n      name="search"\n\n      id="discover-search1"\n\n      (ionInput)="getItems($event)"\n\n    ></ion-searchbar>\n\n    <ion-item id="discover-select1" class="discover-filter">\n\n      <ion-label>\n\n        Filter by:\n\n      </ion-label>\n\n      <ion-select name="filter">\n\n        <ion-option>Distance (Closest)</ion-option>\n\n        <ion-option>Distance (Furthest)</ion-option>\n\n        <ion-option>Price (Low to High)</ion-option>\n\n        <ion-option>Price (High to Low)</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n  </form>\n\n  <h4 id="discover-heading1" class="header-m">\n\n    Discover around <span class="color-darkyellow">Kovan</span>\n\n  </h4>\n\n  <ion-card\n\n    id="discover-card21"\n\n    class="discover-card-each"\n\n    *ngFor="let profile of profileList"\n\n  >\n\n    <ion-list>\n\n      <ion-item color="none" id="discover-list-item3">\n\n        <ion-avatar item-left>\n\n          <img src="{{profile.img}}" />\n\n        </ion-avatar>\n\n        <h2\n\n          style="margin-bottom:0;font-weight:500;"\n\n          (click)="goToMenuDetailsPage($event, profile)"\n\n        >\n\n          {{profile.fName}}\n\n        </h2>\n\n      </ion-item>\n\n      <div class="discover-image">\n\n        <img src="{{profile.menu_image}}" alt="" />\n\n      </div>\n\n      <div class="discover-info">\n\n        <h5\n\n          id="discover-heading2"\n\n          class="discover-menuname"\n\n          style="color:#000000;font-weight:600;"\n\n          (click)="goToMenuDetailsPage($event, profile)"\n\n        >\n\n          {{profile.menuName}}\n\n        </h5>\n\n        <div class="show-list-numbers-and-dots">\n\n          <p style="color:#000000;">\n\n            ~${{profile.menu_price}}/pax\n\n          </p>\n\n        </div>\n\n        <div id="discover-markdown3" class="show-list-numbers-and-dots">\n\n          <p style="color:#000000;">\n\n            {{profile.location}}\n\n          </p>\n\n        </div>\n\n        <div id="discover-markdown4" class="show-list-numbers-and-dots">\n\n          <p style="color:#000000;font-size:1.3rem;">\n\n            {{profile.menu_tags}}\n\n          </p>\n\n        </div>\n\n        <div class="discover-ratings">\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 0}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 1}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 2}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 3}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : profile.menu_ratings > 4}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span class="rating-amount">{{profile.menu_rating_amt}} reviews</span>\n\n        </div>\n\n      </div>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\19B759H\Desktop\elp\src\pages\discover\discover.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _b || Object])
     ], DiscoverPage);
     return DiscoverPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=discover.js.map
@@ -2290,14 +2291,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MakeBookingPage = /** @class */ (function () {
-    function MakeBookingPage(navCtrl, navParams, http) {
+    function MakeBookingPage(navCtrl, navParams, http, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.http = http;
-        this.bookingSuccess = false;
+        this.alertCtrl = alertCtrl;
         this.bookingDetails = navParams.get("item");
     }
     MakeBookingPage.prototype.ionViewDidLoad = function () {
+        localStorage.setItem("name", this.bookingDetails.fName);
         console.log(this.bookingDetails);
         this.date = new Date().toISOString();
     };
@@ -2317,39 +2319,85 @@ var MakeBookingPage = /** @class */ (function () {
     MakeBookingPage.prototype.updateMyNotes = function ($event) {
         localStorage.setItem("bookNotes", $event);
     };
-    // makeBooking() {
-    //   var url = "https://elp-tutorial.herokuapp.com/makeBooking";
-    //   this.data = this.http.get(url);
-    //   this.subscription = this.data.subscribe(data => {
-    //     this.profileList = data;
-    //   });
-    // }
+    MakeBookingPage.prototype.noDate = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Booking date cannot be empty',
+            message: 'Please select a date!',
+            buttons: ['Ok']
+        });
+        alert.present();
+    };
+    MakeBookingPage.prototype.noTime = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Booking time cannot be empty',
+            message: 'Please select a time!',
+            buttons: ['Ok']
+        });
+        alert.present();
+    };
+    MakeBookingPage.prototype.noPax = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Pax cannot be empty',
+            message: 'Please select the number of people!',
+            buttons: ['Ok']
+        });
+        alert.present();
+    };
+    MakeBookingPage.prototype.bookingSuccess = function () {
+        var alert = this.alertCtrl.create({
+            title: 'Booking successful!',
+            message: 'See you soon!',
+            buttons: ['Ok']
+        });
+        alert.present();
+    };
     MakeBookingPage.prototype.makeBooking = function () {
         var _this = this;
-        var url = "https://elp-tutorial.herokuapp.com/makeBooking";
-        var postData = JSON.stringify({
-            //these fields MUST match the server.js request.body.XXX;
-            bookDate: localStorage.getItem("bookDate"),
-            bookTime: localStorage.getItem("bookTime"),
-            bookPax: localStorage.getItem("bookPax"),
-            bookNotes: localStorage.getItem("bookNotes")
-        });
-        var httpOptions = {
-            headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
-            })
-        };
-        this.http.post(url, postData, httpOptions).subscribe(function (data) {
-            console.log("postData:", postData);
-            console.log(data);
-            _this.bookingData = data;
-        }, function (error) {
-            console.log(error);
-        });
-        this.navCtrl.pop();
-        this.bookingSuccess = !this.bookingSuccess;
+        var url = "https://foodie1234.herokuapp.com/makeBooking";
+        var bookDate = localStorage.getItem("bookDate");
+        var bookTime = localStorage.getItem("bookTime");
+        var bookPax = localStorage.getItem("bookPax");
+        if (bookDate == null) {
+            this.noDate();
+        }
+        else if (bookTime == null) {
+            this.noTime();
+        }
+        else if (bookPax == null) {
+            this.noPax();
+        }
+        else {
+            var postData = JSON.stringify({
+                //these fields MUST match the server.js request.body.XXX;
+                bookDate: localStorage.getItem("bookDate"),
+                bookTime: localStorage.getItem("bookTime"),
+                bookPax: localStorage.getItem("bookPax"),
+                bookNotes: localStorage.getItem("bookNotes"),
+                custID: localStorage.getItem("loginid"),
+                menuID: this.bookingDetails.menuId,
+                pdpID: this.bookingDetails.pdp_id
+            });
+            var httpOptions = {
+                headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
+                })
+            };
+            this.http.post(url, postData, httpOptions).subscribe(function (data) {
+                console.log("postData:", postData);
+                console.log(data);
+                _this.bookingData = data;
+            }, function (error) {
+                console.log(error);
+            });
+            localStorage.removeItem("bookDate");
+            localStorage.removeItem("bookTime");
+            localStorage.removeItem("bookPax");
+            localStorage.removeItem("bookNotes");
+            this.bookingSuccess();
+            this.navCtrl.pop();
+        }
     };
     MakeBookingPage.prototype.cancelBooking = function () {
         this.navCtrl.pop();
@@ -2358,11 +2406,10 @@ var MakeBookingPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: "page-make-booking",template:/*ion-inline-start:"C:\Users\19B759H\Desktop\elp\src\pages\make-booking\make-booking.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Make Booking\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page7">\n\n  <h4\n\n    id="makeBooking-heading6"\n\n    style="color:#000000;font-size:1.7rem;margin-bottom:15px;"\n\n  >\n\n    Confirm Booking\n\n  </h4>\n\n  <ion-list id="makeBooking-list3" class="booking-details-list">\n\n    <ion-item\n\n      color="none"\n\n      id="makeBooking-list-item20"\n\n      class="booking-details-each"\n\n    >\n\n      <p ion-text class="label-text" color="black">Chef</p>\n\n      <p ion-text class="label-detail" color="black">\n\n        {{this.bookingDetails.fName}}\n\n      </p>\n\n    </ion-item>\n\n    <ion-item\n\n      color="none"\n\n      id="makeBooking-list-item23"\n\n      class="booking-details-each"\n\n    >\n\n      <p ion-text class="label-text" color="black">Location</p>\n\n      <p ion-text class="label-detail" color="black">\n\n        {{this.bookingDetails.location}}\n\n      </p>\n\n    </ion-item>\n\n    <ion-item\n\n      color="none"\n\n      id="makeBooking-list-item21"\n\n      class="booking-details-each"\n\n    >\n\n      <ion-label class="label-text" color="black">Date</ion-label>\n\n      <ion-datetime\n\n        displayFormat="DD MMM YYYY"\n\n        class="label-detail label-date"\n\n        color="black"\n\n        [(ngModel)]="date"\n\n        (ionChange)="updateMyDate($event)"\n\n      ></ion-datetime>\n\n    </ion-item>\n\n    <ion-item\n\n      color="none"\n\n      id="makeBooking-list-item22"\n\n      class="booking-details-each"\n\n    >\n\n      <ion-label class="label-text" color="black">Time</ion-label>\n\n      <ion-select\n\n        value="1300-1500"\n\n        okText="Okay"\n\n        cancelText="Cancel"\n\n        placeholder="Select a time"\n\n        class="select-field"\n\n        (ionChange)="updateMyTime($event)"\n\n      >\n\n        <ion-option value="1300-1500">1300 - 1500</ion-option>\n\n        <ion-option value="1600-1800">1600 - 1800</ion-option>\n\n        <ion-option value="1900-2100">1900 - 2100</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <ion-item\n\n      color="none"\n\n      id="makeBooking-list-item24"\n\n      class="booking-details-each"\n\n    >\n\n      <ion-label class="label-text" color="black">Pax</ion-label>\n\n      <ion-select\n\n        value="1"\n\n        okText="Okay"\n\n        cancelText="Cancel"\n\n        placeholder="How many pax"\n\n        class="select-field"\n\n        (ionChange)="updateMyPax($event)"\n\n      >\n\n        <ion-option value="1">1</ion-option>\n\n        <ion-option value="2">2</ion-option>\n\n        <ion-option value="3">3</ion-option>\n\n        <ion-option value="4">4</ion-option>\n\n        <ion-option value="5">5</ion-option>\n\n        <ion-option value="6">6</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n    <ion-item\n\n      color="none"\n\n      id="makeBooking-list-item25"\n\n      class="booking-details-each ion-textarea-con"\n\n    >\n\n      <ion-label class="label-text" color="black">Notes</ion-label>\n\n      <ion-textarea\n\n        class="ion-textarea-element"\n\n        (input)="updateMyNotes($event.target.value)"\n\n      ></ion-textarea>\n\n    </ion-item>\n\n  </ion-list>\n\n  <div class="make-booking-cta">\n\n    <button\n\n      id="makeBooking-button3"\n\n      class="cancel-btn"\n\n      ion-button\n\n      outline\n\n      color="black"\n\n      (click)="cancelBooking()"\n\n    >\n\n      Cancel\n\n    </button>\n\n    <button\n\n      id="makeBooking-button4"\n\n      ion-button\n\n      color="yellow"\n\n      (click)="makeBooking()"\n\n    >\n\n      Confirm\n\n    </button>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\19B759H\Desktop\elp\src\pages\make-booking\make-booking.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], MakeBookingPage);
     return MakeBookingPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=make-booking.js.map

@@ -57,7 +57,7 @@ db.getConnection(err => {
 app.get("/discoverprofiles", cors(corsOptions), function(request, response) {
   console.log("Connected to /discoverprofiles");
   db.query(
-    "SELECT * FROM foodie.pdp_profile INNER JOIN foodie.pdp_menu ON foodie.pdp_profile.fName = foodie.pdp_menu.fName;",
+    "SELECT * FROM foodie.pdp_profile INNER JOIN foodie.pdp_menu ON foodie.pdp_profile.id = foodie.pdp_menu.pdp_id;",
     function(err, result, fields) {
       if (err) {
         console.log("Error message: ", err);
@@ -125,10 +125,11 @@ app.route("/makeBooking", cors(corsOptions)).post(function(request, response) {
   var bookTime = request.body.bookTime;
   var bookPax = request.body.bookPax;
   var bookNotes = request.body.bookNotes != null ? request.body.bookNotes : "No food allergies or special requests!";
+  var custId = request.body.custID;
   var pdpId = request.body.pdpID;
   var menuId = request.body.menuID;
   db.query("INSERT INTO foodie.booking_detail (bookDate, bookTime, bookPax, bookNotes, bookStatus, custID, pdpID, menuID) VALUES (?,?,?,?,?,?,?,?);",
-  [bookDate, bookTime, bookPax, bookNotes, "Ongoing", 1, pdpId, menuId], function(error, result, fields) {
+  [bookDate, bookTime, bookPax, bookNotes, "Ongoing", custId, pdpId, menuId], function(error, result, fields) {
     if (!error) {
       var string = JSON.stringify(result);
       var json = JSON.parse(string);
