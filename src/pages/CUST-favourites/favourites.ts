@@ -107,52 +107,24 @@ export class CustFavouritesPage {
         "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
       })
     };
-<<<<<<< HEAD
-    this.http.post(url, postData, httpOptions).subscribe(
-      data => {
-        if (data == false) {
-          this.ishidden = true;
-          this.ishiddenimg = false;
-        } else {
-          this.ishidden = false;
-          this.ishiddenimg = true;
-          this.favs = data;
-          for (var i = 0; i < this.favs.length; i++) {
-            this.getTotalReviews(this.favs[i].menuId);
-          }
-        }
-        this.setCardHeight();
-      },
-      error => {
-        console.log(error);
-=======
-    this.http.post(url, postData, httpOptions).subscribe((data) => {
-      if(data == false)
-      {
-        this.ishidden=true;
-        this.ishiddenimg=false;
-      }
-      else
-      {
-        this.ishidden=false;
-        this.ishiddenimg=true;
-        this.favs=data;
+    this.http.post(url, postData, httpOptions).subscribe(data => {
+      if (data == false) {
+        this.ishidden = true;
+        this.ishiddenimg = false;
+      } else {
+        this.ishidden = false;
+        this.ishiddenimg = true;
+        this.favs = data;
         console.log(this.favs);
         // for(var i =0; i<this.favs.length;i++){
         // this.getTotalReviews(this.favs[i].menuId,i);
         // }
->>>>>>> 9587ca655cc281442c390aaafbeee34b694fef9a
       }
-    );
+    });
   }
 
-<<<<<<< HEAD
-  getTotalReviews(menuId) {
+  getTotalReviews(menuId, index) {
     var url = "https://foodie1234.herokuapp.com/getTotalReviews";
-=======
-  getTotalReviews(menuId,index) {
-    var url = 'https://foodie1234.herokuapp.com/getTotalReviews';
->>>>>>> 9587ca655cc281442c390aaafbeee34b694fef9a
     var postData = JSON.stringify({
       //these fields MUST match the server.js request.body.XXX;
       menuId: menuId
@@ -164,24 +136,16 @@ export class CustFavouritesPage {
         "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE"
       })
     };
-<<<<<<< HEAD
     this.http.post(url, postData, httpOptions).subscribe(
       data => {
         this.totalReviews = data;
+        console.log("data22", this.totalReviews);
+        console.log("menuidd", menuId);
+        console.log("index", index);
       },
       error => {
         console.log(error);
       }
     );
-=======
-    this.http.post(url, postData, httpOptions).subscribe((data) => {
-      this.totalReviews=data;
-      console.log("data22",this.totalReviews);
-      console.log("menuidd",menuId);
-      console.log("index",index);
-    }, error => {
-      console.log(error);
-    });
->>>>>>> 9587ca655cc281442c390aaafbeee34b694fef9a
   }
 }
