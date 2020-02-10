@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 108:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9,9 +9,9 @@ webpackJsonp([0],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_tabs_PDP_tabs__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_PDP_profileData__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_PDP_bookingData__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_PDP_dashboardData__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_PDP_profileData__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_PDP_bookingData__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_PDP_dashboardData__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tabs_controller_tabs_controller__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_PDP_menuData__ = __webpack_require__(31);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -152,14 +152,14 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 109:
+/***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_booking_details_PDP_booking_details__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_booking_details_PDP_booking_details__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -206,7 +206,7 @@ var DashboardPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 110:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -214,10 +214,10 @@ var DashboardPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_PDP_dashboardData__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_PDP_bookingData__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__PDP_bookings_PDP_bookings__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__PDP_dashboard_PDP_dashboard__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_PDP_dashboardData__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_PDP_bookingData__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__PDP_bookings_PDP_bookings__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__PDP_dashboard_PDP_dashboard__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -335,7 +335,7 @@ var BookingDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 111:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -387,7 +387,7 @@ var DashboardData = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 112:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -439,14 +439,14 @@ var BookingsData = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 113:
+/***/ 112:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BookingsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_booking_details_PDP_booking_details__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_booking_details_PDP_booking_details__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -507,7 +507,7 @@ var BookingsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 114:
+/***/ 113:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -516,7 +516,7 @@ var BookingsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_edit_profile_PDP_edit_profile__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_page_login_page__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_page_login_page__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -603,7 +603,7 @@ var ProfilePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 115:
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -655,7 +655,7 @@ var ProfileData = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 116:
+/***/ 115:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -663,10 +663,10 @@ var ProfileData = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_make_booking_make_booking__ = __webpack_require__(230);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_CUST_submitReview_submitReview__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_CUST_reviews_reviews__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_CUST_submitReview_submitReview__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_CUST_reviews_reviews__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jquery__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -915,7 +915,7 @@ var MenuDetailsPage = /** @class */ (function () {
     };
     MenuDetailsPage = MenuDetailsPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-menu-details",template:/*ion-inline-start:"D:\Work\ELP\src\pages\menu-details\menu-details.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      {{this.details.fName}}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="favmenu()">\n        <ion-icon\n          [name]="visible ? \'heart\' : \'heart-outline\'"\n          color="danger"\n        ></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content id="page6" (window:resize)="onResize($event)">\n  <div class="details-image">\n    <img src="{{this.details.menu_image}}" alt="" />\n  </div>\n  <div padding>\n    <h4\n      id="menuDetails-heading3"\n      style="color:#232323;font-weight:600;margin-bottom:5px;"\n    >\n      {{this.details.menuName}}\n    </h4>\n    <div style="margin-bottom:15px;color:#232323;">\n      {{this.details.description}}\n    </div>\n    <div class="details-info-list">\n      <div\n        id="menuDetails-markdown5"\n        class="show-list-numbers-and-dots details-info-each"\n      >\n        <ion-icon name="pin"></ion-icon>\n        <p ion-text>{{this.details.location}}</p>\n      </div>\n      <div\n        id="menuDetails-markdown6"\n        class="show-list-numbers-and-dots details-info-each"\n      >\n        <ion-icon name="pricetag"></ion-icon>\n        <p ion-text>{{this.details.menu_category}}</p>\n      </div>\n      <div\n        id="menuDetails-markdown6"\n        class="show-list-numbers-and-dots details-info-each"\n      >\n        <ion-icon name="list-box"></ion-icon>\n        <p ion-text>~${{this.details.menu_price}}/pax</p>\n      </div>\n      <div\n        id="menuDetails-markdown6"\n        class="show-list-numbers-and-dots details-info-each"\n      >\n        <ion-icon name="call"></ion-icon>\n        <a href="tel:{{this.details.phone}}">{{this.details.phone}}</a>\n      </div>\n    </div>\n    <h5 id="menuDetails-heading4" style="color:#000000;font-size:1.6rem;">\n      Menu\n    </h5>\n    <ion-list id="menuDetails-list1" class="menu-list">\n      <ion-item\n        color="none"\n        id="menuDetails-list-item8"\n        class="menu-item-each active"\n        *ngFor="let item of menuList"\n      >\n        <img src="{{item.menuImg}}" alt="" (click)="popupImage($event)" />\n        <p ion-text color="black">{{item.menuItem}}</p>\n      </ion-item>\n    </ion-list>\n    <div class="reviews-con">\n      <div class="reviews-header">\n        <h5\n          id="menuDetails-heading5"\n          style="color:#000000;font-size:1.6rem;"\n          class="reviews-header-text"\n        >\n          Reviews\n        </h5>\n        <button class="wholebutton" (click)="navSubmitReview()">\n          Write a Review\n        </button>\n      </div>\n      <ion-card\n        *ngFor="let rev of TopReview"\n        [hidden]="hvInfo"\n        class="reviews-each"\n      >\n        <ion-grid>\n          <ion-row>\n            <ion-col col-12>\n              <ion-avatar style="width:90px;height:90px;margin:0 auto;">\n                <img src="{{rev.cleanlinessRating}}" />\n              </ion-avatar>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12 text-center style="margin-top:-15px;">\n              <ionic3-star-rating\n                rating="{{rev.rating}}"\n                halfStar="false"\n                activeIcon="ios-star"\n                defaultIcon="ios-star-outline"\n                activeColor="#FFC300"\n                defaultColor="#aaaaaa"\n                readonly="true"\n                fontSize="28px"\n              >\n              </ionic3-star-rating>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12>\n              {{rev.comments}}\n            </ion-col>\n          </ion-row>\n          <ion-row style="margin-top:10px;">\n            <ion-col col-6 text-left style="color:grey">\n              <ion-icon name="calendar"></ion-icon> {{rev.datein | date: "dd MMM\n              yyyy" }}\n            </ion-col>\n            <ion-col col-6 text-right>\n              <b style="font-style:italic;">-{{rev.custName}}</b>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-card>\n      <button class="wholebutton right" (click)="allReviews()">\n        See all Reviews\n      </button>\n    </div>\n    <div class="related-con">\n      <h5 id="menuDetails-heading4" style="color:#000000;font-size:1.6rem;">\n        More like <span class="color-darkyellow">{{this.details.fName}}</span>\n      </h5>\n      <div class="related-inner">\n        <ion-card\n          *ngFor="let profile of profileList; let i = index;"\n          class="related-each"\n        >\n          <ion-list>\n            <ion-item\n              color="none"\n              id="discover-list-item3"\n              (click)="goToMenuDetailsPage($event, profile)"\n            >\n              <ion-avatar item-left>\n                <img src="{{profile.img}}" />\n              </ion-avatar>\n              <h2 style="margin-bottom:0;font-weight:500;color:#424242;">\n                {{profile.fName}}\n              </h2>\n            </ion-item>\n            <div class="discover-image">\n              <img src="{{profile.menu_image}}" alt="" />\n            </div>\n            <div class="discover-info">\n              <h5\n                id="discover-heading2"\n                class="discover-menuname"\n                style="color:#424242;font-weight:600;font-size:1.4rem;"\n                (click)="goToMenuDetailsPage($event, profile)"\n              >\n                {{profile.menuName}}\n              </h5>\n              <div\n                class="show-list-numbers-and-dots"\n                style="display:flex;align-items:center;margin-bottom:5px;"\n              >\n                <ion-icon\n                  name="list-box"\n                  style="color:#929292;width:15px;text-align:center;"\n                ></ion-icon>\n                <p\n                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"\n                >\n                  ~${{profile.menu_price}}/pax\n                </p>\n              </div>\n              <div\n                id="discover-markdown3"\n                class="show-list-numbers-and-dots"\n                style="display:flex;align-items:center;margin-bottom:5px;"\n              >\n                <ion-icon\n                  name="pin"\n                  style="color:#929292;width:15px;text-align:center;"\n                ></ion-icon>\n                <p\n                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"\n                >\n                  {{profile.location}}\n                </p>\n              </div>\n              <div\n                id="discover-markdown4"\n                class="show-list-numbers-and-dots"\n                style="display:flex;align-items:center;margin-bottom:5px;"\n              >\n                <ion-icon\n                  name="pricetag"\n                  style="color:#929292;width:15px;text-align:center;"\n                ></ion-icon>\n                <p\n                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"\n                >\n                  {{profile.menu_category}}\n                </p>\n              </div>\n            </div>\n          </ion-list>\n        </ion-card>\n      </div>\n    </div>\n  </div>\n</ion-content>\n<ion-item\n  class="popup-image"\n  (click)="popupImage()"\n  [class.active]="this.showImage"\n>\n  <img src="{{this.popupSrc}}" alt="" />\n</ion-item>\n<div class="book-cta">\n  <button\n    class="book-cta-btn"\n    (click)="goToMakeBookingPage($event, this.details)"\n  >\n    Book Now\n  </button>\n</div>\n'/*ion-inline-end:"D:\Work\ELP\src\pages\menu-details\menu-details.html"*/
+            selector: "page-menu-details",template:/*ion-inline-start:"D:\Work\ELP\src\pages\menu-details\menu-details.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      {{this.details.fName}}\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="favmenu()">\n        <ion-icon\n          [name]="visible ? \'heart\' : \'heart-outline\'"\n          color="danger"\n        ></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-content id="page6" (window:resize)="onResize($event)">\n  <div class="details-image">\n    <img src="{{this.details.menu_image}}" alt="" />\n  </div>\n  <div padding>\n    <h4\n      id="menuDetails-heading3"\n      style="color:#232323;font-weight:600;margin-bottom:5px;"\n    >\n      {{this.details.menuName}}\n    </h4>\n    <div style="margin-bottom:15px;color:#232323;">\n      {{this.details.description}}\n    </div>\n    <div class="details-info-list">\n      <div\n        id="menuDetails-markdown5"\n        class="show-list-numbers-and-dots details-info-each"\n      >\n        <ion-icon name="pin"></ion-icon>\n        <p ion-text>{{this.details.location}}</p>\n      </div>\n      <div\n        id="menuDetails-markdown6"\n        class="show-list-numbers-and-dots details-info-each"\n      >\n        <ion-icon name="pricetag"></ion-icon>\n        <p ion-text>{{this.details.menu_category}}</p>\n      </div>\n      <div\n        id="menuDetails-markdown6"\n        class="show-list-numbers-and-dots details-info-each"\n      >\n        <ion-icon name="list-box"></ion-icon>\n        <p ion-text>~${{this.details.menu_price}}/pax</p>\n      </div>\n      <div\n        id="menuDetails-markdown6"\n        class="show-list-numbers-and-dots details-info-each"\n      >\n        <ion-icon name="call"></ion-icon>\n        <a href="tel:{{this.details.phone}}">{{this.details.phone}}</a>\n      </div>\n    </div>\n    <h5 id="menuDetails-heading4" style="color:#000000;font-size:1.6rem;">\n      Menu\n    </h5>\n    <ion-list id="menuDetails-list1" class="menu-list">\n      <ion-item\n        color="none"\n        id="menuDetails-list-item8"\n        class="menu-item-each active"\n        *ngFor="let item of menuList"\n      >\n        <img src="{{item.menuImg}}" alt="" (click)="popupImage($event)" />\n        <p ion-text color="black">{{item.menuItem}}</p>\n      </ion-item>\n    </ion-list>\n    <div class="reviews-con">\n      <div class="reviews-header">\n        <h5\n          id="menuDetails-heading5"\n          style="color:#000000;font-size:1.6rem;"\n          class="reviews-header-text"\n        >\n          Reviews\n        </h5>\n        <button class="wholebutton" (click)="navSubmitReview()">\n          Write a Review\n        </button>\n      </div>\n      <div class="reviews-cards-con">\n        <ion-card\n          *ngFor="let rev of TopReview"\n          [hidden]="hvInfo"\n          class="reviews-each"\n        >\n          <ion-grid>\n            <ion-row>\n              <ion-col col-12>\n                <ion-avatar style="width:90px;height:90px;margin:0 auto;">\n                  <img src="{{rev.cleanlinessRating}}" />\n                </ion-avatar>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col col-12 text-center style="margin-top:-15px;">\n                <ionic3-star-rating\n                  rating="{{rev.rating}}"\n                  halfStar="false"\n                  activeIcon="ios-star"\n                  defaultIcon="ios-star-outline"\n                  activeColor="#FFC300"\n                  defaultColor="#aaaaaa"\n                  readonly="true"\n                  fontSize="28px"\n                >\n                </ionic3-star-rating>\n              </ion-col>\n            </ion-row>\n            <ion-row>\n              <ion-col col-12>\n                {{rev.comments}}\n              </ion-col>\n            </ion-row>\n            <ion-row style="margin-top:10px;">\n              <ion-col col-6 text-left style="color:grey">\n                <ion-icon name="calendar"></ion-icon> {{rev.datein | date: "dd\n                MMM yyyy" }}\n              </ion-col>\n              <ion-col col-6 text-right>\n                <b style="font-style:italic;">-{{rev.custName}}</b>\n              </ion-col>\n            </ion-row>\n          </ion-grid>\n        </ion-card>\n      </div>\n      <button class="wholebutton right" (click)="allReviews()">\n        See all Reviews\n      </button>\n    </div>\n    <div class="related-con">\n      <h5 id="menuDetails-heading4" style="color:#000000;font-size:1.6rem;">\n        More like <span class="color-darkyellow">{{this.details.fName}}</span>\n      </h5>\n      <div class="related-inner">\n        <ion-card\n          *ngFor="let profile of profileList; let i = index;"\n          class="related-each"\n        >\n          <ion-list>\n            <ion-item\n              color="none"\n              id="discover-list-item3"\n              (click)="goToMenuDetailsPage($event, profile)"\n            >\n              <ion-avatar item-left>\n                <img src="{{profile.img}}" />\n              </ion-avatar>\n              <h2 style="margin-bottom:0;font-weight:500;color:#424242;">\n                {{profile.fName}}\n              </h2>\n            </ion-item>\n            <div class="discover-image">\n              <img src="{{profile.menu_image}}" alt="" />\n            </div>\n            <div class="discover-info">\n              <h5\n                id="discover-heading2"\n                class="discover-menuname"\n                style="color:#424242;font-weight:600;font-size:1.4rem;"\n                (click)="goToMenuDetailsPage($event, profile)"\n              >\n                {{profile.menuName}}\n              </h5>\n              <div\n                class="show-list-numbers-and-dots"\n                style="display:flex;align-items:center;margin-bottom:5px;"\n              >\n                <ion-icon\n                  name="list-box"\n                  style="color:#929292;width:15px;text-align:center;"\n                ></ion-icon>\n                <p\n                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"\n                >\n                  ~${{profile.menu_price}}/pax\n                </p>\n              </div>\n              <div\n                id="discover-markdown3"\n                class="show-list-numbers-and-dots"\n                style="display:flex;align-items:center;margin-bottom:5px;"\n              >\n                <ion-icon\n                  name="pin"\n                  style="color:#929292;width:15px;text-align:center;"\n                ></ion-icon>\n                <p\n                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"\n                >\n                  {{profile.location}}\n                </p>\n              </div>\n              <div\n                id="discover-markdown4"\n                class="show-list-numbers-and-dots"\n                style="display:flex;align-items:center;margin-bottom:5px;"\n              >\n                <ion-icon\n                  name="pricetag"\n                  style="color:#929292;width:15px;text-align:center;"\n                ></ion-icon>\n                <p\n                  style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.3rem;"\n                >\n                  {{profile.menu_category}}\n                </p>\n              </div>\n            </div>\n          </ion-list>\n        </ion-card>\n      </div>\n    </div>\n  </div>\n</ion-content>\n<ion-item\n  class="popup-image"\n  (click)="popupImage()"\n  [class.active]="this.showImage"\n>\n  <img src="{{this.popupSrc}}" alt="" />\n</ion-item>\n<div class="book-cta">\n  <button\n    class="book-cta-btn"\n    (click)="goToMakeBookingPage($event, this.details)"\n  >\n    Book Now\n  </button>\n</div>\n'/*ion-inline-end:"D:\Work\ELP\src\pages\menu-details\menu-details.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
@@ -929,7 +929,7 @@ var MenuDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 118:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1059,7 +1059,7 @@ var CustSubmitReviewPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 119:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1145,7 +1145,7 @@ var CustReviewsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 120:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1153,8 +1153,8 @@ var CustReviewsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_reviews_reviews__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CUST_submitReview_submitReview__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_reviews_reviews__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CUST_submitReview_submitReview__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1383,7 +1383,7 @@ var CustMenuInfoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 121:
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1391,7 +1391,7 @@ var CustMenuInfoPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1451,7 +1451,7 @@ var CustMenuPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 122:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1492,6 +1492,71 @@ var CustRescheduleBookingPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=cust-reschedule-booking.js.map
+
+/***/ }),
+
+/***/ 122:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustBookData; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_Cust_Bookings__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var CustBookData = /** @class */ (function () {
+    function CustBookData(http, storage) {
+        this.http = http;
+        this.storage = storage;
+    }
+    CustBookData.prototype.getBookData = function () {
+        var _this = this;
+        console.log("In /getCustBookings");
+        var url = 'https://foodie1234.herokuapp.com/getCustBookings';
+        var postData = JSON.stringify({
+            // post data MUSt match the request.body.userID; 
+            custId: localStorage.getItem("loginid")
+        });
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            var custBook = [];
+            console.log("In /getCustBookings");
+            _this.result = data;
+            for (var i = 0; i < _this.result.length; i++) {
+                custBook.push(new __WEBPACK_IMPORTED_MODULE_2__models_Cust_Bookings__["a" /* custBooking */](_this.result[i].bookID, _this.result[i].fName, _this.result[i].img, _this.result[i].location, _this.result[i].phone, _this.result[i].email, _this.result[i].bookDate, _this.result[i].bookTime, _this.result[i].bookPax, _this.result[i].bookNotes, _this.result[i].bookStatus, _this.result[i].menu_image, _this.result[i].custID));
+            }
+            console.log("test", data);
+            _this.storage.remove('CUSTBook');
+            _this.storage.set('CUSTBook', custBook);
+        });
+    };
+    CustBookData = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
+    ], CustBookData);
+    return CustBookData;
+}());
+
+//# sourceMappingURL=Cust-bookingData.js.map
 
 /***/ }),
 
@@ -1600,10 +1665,10 @@ webpackEmptyAsyncContext.id = 176;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PDPTabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_dashboard_PDP_dashboard__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_bookings_PDP_bookings__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_dashboard_PDP_dashboard__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_bookings_PDP_bookings__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PDP_menus_PDP_menus__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__PDP_profile_PDP_profile__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__PDP_profile_PDP_profile__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2553,11 +2618,11 @@ var NewMenuPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_PDP_profileData__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_PDP_profileData__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera_ngx__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__PDP_profile_PDP_profile__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__PDP_profile_PDP_profile__ = __webpack_require__(113);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2762,8 +2827,8 @@ var TabsControllerPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_details_menu_details__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_details_menu_details__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2787,6 +2852,9 @@ var DiscoverPage = /** @class */ (function () {
     DiscoverPage.prototype.ngOnInit = function () {
         this.getProfiles();
     };
+    DiscoverPage.prototype.resizeEvent = function (event) {
+        this.setCardHeight();
+    };
     DiscoverPage.prototype.getProfiles = function () {
         var _this = this;
         var url = "https://foodie1234.herokuapp.com/discoverprofiles";
@@ -2809,6 +2877,9 @@ var DiscoverPage = /** @class */ (function () {
                     __WEBPACK_IMPORTED_MODULE_4_jquery__(this).css("height", tallest);
                 });
             }, 2000);
+        }
+        else {
+            __WEBPACK_IMPORTED_MODULE_4_jquery__(".discover-card-each .discover-image img").attr("style", "");
         }
     };
     DiscoverPage.prototype.getItems = function (ev) {
@@ -2861,11 +2932,12 @@ var DiscoverPage = /** @class */ (function () {
     };
     DiscoverPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-discover",template:/*ion-inline-start:"D:\Work\ELP\src\pages\discover\discover.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Foodie\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page2">\n\n  <form id="discover-form1">\n\n    <ion-searchbar\n\n      placeholder="Search"\n\n      name="search"\n\n      id="discover-search1"\n\n      (ionInput)="getItems($event)"\n\n    ></ion-searchbar>\n\n    <ion-item id="discover-select1" class="discover-filter">\n\n      <ion-label>\n\n        Sort by:\n\n      </ion-label>\n\n      <ion-select name="filter" (ionChange)="sortProfiles($event)">\n\n        <ion-option value="distance_closest">Distance (Closest)</ion-option>\n\n        <ion-option value="distance_furthest">Distance (Furthest)</ion-option>\n\n        <ion-option value="price_low_high">Price (Low to High)</ion-option>\n\n        <ion-option value="price_high_low">Price (High to Low)</ion-option>\n\n        <ion-option value="reviews_low_high">Reviews (Low to High)</ion-option>\n\n        <ion-option value="reviews_high_low">Reviews (High to Low)</ion-option>\n\n      </ion-select>\n\n    </ion-item>\n\n  </form>\n\n  <h4 id="discover-heading1" class="header-m">\n\n    Discover around <span class="color-darkyellow">Kovan</span>\n\n  </h4>\n\n  <div class="discover-each-con">\n\n    <ion-card\n\n      id="discover-card21"\n\n      class="discover-card-each"\n\n      *ngFor="let profile of profileList"\n\n    >\n\n      <ion-list>\n\n        <ion-item color="none" id="discover-list-item3" (click)="goToMenuDetailsPage($event, profile)">\n\n          <ion-avatar item-left>\n\n            <img src="{{profile.img}}" />\n\n          </ion-avatar>\n\n          <h2\n\n            style="margin-bottom:0;font-weight:500;color:#424242;"\n\n          >\n\n            {{profile.fName}}\n\n          </h2>\n\n        </ion-item>\n\n        <div class="discover-image">\n\n          <img src="{{profile.menu_image}}" alt="" />\n\n        </div>\n\n        <div class="discover-info">\n\n          <h5\n\n            id="discover-heading2"\n\n            class="discover-menuname"\n\n            style="color:#424242;font-weight:600;font-size:1.6rem;"\n\n            (click)="goToMenuDetailsPage($event, profile)"\n\n          >\n\n            {{profile.menuName}}\n\n          </h5>\n\n          <div class="show-list-numbers-and-dots" style="display:flex;align-items:center;margin-bottom:5px;">\n\n            <ion-icon name="list-box" style="color:#929292;width:15px;text-align:center;"></ion-icon>\n\n            <p style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;">\n\n              ~${{profile.menu_price}}/pax\n\n            </p>\n\n          </div>\n\n          <div id="discover-markdown3" class="show-list-numbers-and-dots" style="display:flex;align-items:center;margin-bottom:5px;">\n\n            <ion-icon name="pin" style="color:#929292;width:15px;text-align:center;"></ion-icon>\n\n            <p style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;">\n\n              {{profile.location}}\n\n            </p>\n\n          </div>\n\n          <div id="discover-markdown4" class="show-list-numbers-and-dots" style="display:flex;align-items:center;margin-bottom:5px;">\n\n            <ion-icon name="pricetag" style="color:#929292;width:15px;text-align:center;"></ion-icon>\n\n            <p style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;">\n\n              {{profile.menu_category}}\n\n            </p>\n\n          </div>\n\n          <div class="discover-ratings">\n\n            <span\n\n              class="each-star"\n\n              [ngClass]="{\'active\' : profile.menu_ratings > 0}"\n\n            >\n\n              <svg\n\n                xmlns="http://www.w3.org/2000/svg"\n\n                width="24"\n\n                height="24"\n\n                viewBox="0 0 24 24"\n\n              >\n\n                <path\n\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n                />\n\n              </svg>\n\n            </span>\n\n            <span\n\n              class="each-star"\n\n              [ngClass]="{\'active\' : profile.menu_ratings > 1}"\n\n            >\n\n              <svg\n\n                xmlns="http://www.w3.org/2000/svg"\n\n                width="24"\n\n                height="24"\n\n                viewBox="0 0 24 24"\n\n              >\n\n                <path\n\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n                />\n\n              </svg>\n\n            </span>\n\n            <span\n\n              class="each-star"\n\n              [ngClass]="{\'active\' : profile.menu_ratings > 2}"\n\n            >\n\n              <svg\n\n                xmlns="http://www.w3.org/2000/svg"\n\n                width="24"\n\n                height="24"\n\n                viewBox="0 0 24 24"\n\n              >\n\n                <path\n\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n                />\n\n              </svg>\n\n            </span>\n\n            <span\n\n              class="each-star"\n\n              [ngClass]="{\'active\' : profile.menu_ratings > 3}"\n\n            >\n\n              <svg\n\n                xmlns="http://www.w3.org/2000/svg"\n\n                width="24"\n\n                height="24"\n\n                viewBox="0 0 24 24"\n\n              >\n\n                <path\n\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n                />\n\n              </svg>\n\n            </span>\n\n            <span\n\n              class="each-star"\n\n              [ngClass]="{\'active\' : profile.menu_ratings > 4}"\n\n            >\n\n              <svg\n\n                xmlns="http://www.w3.org/2000/svg"\n\n                width="24"\n\n                height="24"\n\n                viewBox="0 0 24 24"\n\n              >\n\n                <path\n\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n                />\n\n              </svg>\n\n            </span>\n\n            <span class="rating-amount">{{profile.menu_rating_amt}} reviews</span>\n\n          </div>\n\n        </div>\n\n      </ion-list>\n\n    </ion-card>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\Work\ELP\src\pages\discover\discover.html"*/
+            selector: "page-discover",template:/*ion-inline-start:"D:\Work\ELP\src\pages\discover\discover.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Foodie\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page2" (window:resize)="resizeEvent($event)">\n  <form id="discover-form1">\n    <ion-searchbar\n      placeholder="Search"\n      name="search"\n      id="discover-search1"\n      (ionInput)="getItems($event)"\n    ></ion-searchbar>\n    <ion-item id="discover-select1" class="discover-filter">\n      <ion-label>\n        Sort by:\n      </ion-label>\n      <ion-select name="filter" (ionChange)="sortProfiles($event)">\n        <ion-option value="distance_closest">Distance (Closest)</ion-option>\n        <ion-option value="distance_furthest">Distance (Furthest)</ion-option>\n        <ion-option value="price_low_high">Price (Low to High)</ion-option>\n        <ion-option value="price_high_low">Price (High to Low)</ion-option>\n        <ion-option value="reviews_low_high">Reviews (Low to High)</ion-option>\n        <ion-option value="reviews_high_low">Reviews (High to Low)</ion-option>\n      </ion-select>\n    </ion-item>\n  </form>\n  <h4 id="discover-heading1" class="header-m">\n    Discover around <span class="color-darkyellow">Kovan</span>\n  </h4>\n  <div class="discover-each-con">\n    <ion-card\n      id="discover-card21"\n      class="discover-card-each"\n      *ngFor="let profile of profileList"\n    >\n      <ion-list>\n        <ion-item\n          color="none"\n          id="discover-list-item3"\n          (click)="goToMenuDetailsPage($event, profile)"\n        >\n          <ion-avatar item-left>\n            <img src="{{profile.img}}" />\n          </ion-avatar>\n          <h2 style="margin-bottom:0;font-weight:500;color:#424242;">\n            {{profile.fName}}\n          </h2>\n        </ion-item>\n        <div class="discover-image">\n          <img src="{{profile.menu_image}}" alt="" />\n        </div>\n        <div class="discover-info">\n          <h5\n            id="discover-heading2"\n            class="discover-menuname"\n            style="color:#424242;font-weight:600;font-size:1.6rem;"\n            (click)="goToMenuDetailsPage($event, profile)"\n          >\n            {{profile.menuName}}\n          </h5>\n          <div\n            class="show-list-numbers-and-dots"\n            style="display:flex;align-items:center;margin-bottom:5px;"\n          >\n            <ion-icon\n              name="list-box"\n              style="color:#929292;width:15px;text-align:center;"\n            ></ion-icon>\n            <p\n              style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;"\n            >\n              ~${{profile.menu_price}}/pax\n            </p>\n          </div>\n          <div\n            id="discover-markdown3"\n            class="show-list-numbers-and-dots"\n            style="display:flex;align-items:center;margin-bottom:5px;"\n          >\n            <ion-icon\n              name="pin"\n              style="color:#929292;width:15px;text-align:center;"\n            ></ion-icon>\n            <p\n              style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;"\n            >\n              {{profile.location}}\n            </p>\n          </div>\n          <div\n            id="discover-markdown4"\n            class="show-list-numbers-and-dots"\n            style="display:flex;align-items:center;margin-bottom:5px;"\n          >\n            <ion-icon\n              name="pricetag"\n              style="color:#929292;width:15px;text-align:center;"\n            ></ion-icon>\n            <p\n              style="color:#000000;margin-left:7px;margin-bottom:0;font-size:1.4rem;"\n            >\n              {{profile.menu_category}}\n            </p>\n          </div>\n          <div class="discover-ratings">\n            <span\n              class="each-star"\n              [ngClass]="{\'active\' : profile.menu_ratings > 0}"\n            >\n              <svg\n                xmlns="http://www.w3.org/2000/svg"\n                width="24"\n                height="24"\n                viewBox="0 0 24 24"\n              >\n                <path\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n                />\n              </svg>\n            </span>\n            <span\n              class="each-star"\n              [ngClass]="{\'active\' : profile.menu_ratings > 1}"\n            >\n              <svg\n                xmlns="http://www.w3.org/2000/svg"\n                width="24"\n                height="24"\n                viewBox="0 0 24 24"\n              >\n                <path\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n                />\n              </svg>\n            </span>\n            <span\n              class="each-star"\n              [ngClass]="{\'active\' : profile.menu_ratings > 2}"\n            >\n              <svg\n                xmlns="http://www.w3.org/2000/svg"\n                width="24"\n                height="24"\n                viewBox="0 0 24 24"\n              >\n                <path\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n                />\n              </svg>\n            </span>\n            <span\n              class="each-star"\n              [ngClass]="{\'active\' : profile.menu_ratings > 3}"\n            >\n              <svg\n                xmlns="http://www.w3.org/2000/svg"\n                width="24"\n                height="24"\n                viewBox="0 0 24 24"\n              >\n                <path\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n                />\n              </svg>\n            </span>\n            <span\n              class="each-star"\n              [ngClass]="{\'active\' : profile.menu_ratings > 4}"\n            >\n              <svg\n                xmlns="http://www.w3.org/2000/svg"\n                width="24"\n                height="24"\n                viewBox="0 0 24 24"\n              >\n                <path\n                  d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n                />\n              </svg>\n            </span>\n            <span class="rating-amount"\n              >{{profile.menu_rating_amt}} reviews</span\n            >\n          </div>\n        </div>\n      </ion-list>\n    </ion-card>\n  </div>\n</ion-content>\n'/*ion-inline-end:"D:\Work\ELP\src\pages\discover\discover.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _b || Object])
     ], DiscoverPage);
     return DiscoverPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=discover.js.map
@@ -2880,7 +2952,7 @@ var DiscoverPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_jquery__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3071,8 +3143,8 @@ var CustProfilePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustBookingDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_Cust_bookingData__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_Cust_bookingData__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3412,10 +3484,12 @@ var CustOngoingBookingsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: "page-cust-ongoing-bookings",template:/*ion-inline-start:"D:\Work\ELP\src\pages\cust-ongoing-bookings\cust-ongoing-bookings.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ongoing Bookings\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page11">\n\n  <ion-card id="ongoingBookings-card22" *ngFor = "let bookItem of cBooks" (click)="goToCustBookDetails(bookItem)">\n\n    <ion-list>\n\n      <ion-item color="none" id="ongoingBookings-list-item61">\n\n        <ion-avatar item-left>\n\n          <img src="{{bookItem?.img}}" />\n\n        </ion-avatar>\n\n        <h2>\n\n          {{bookItem?.fName}}\n\n        </h2>\n\n        <ion-icon name="arrow-forward" item-right></ion-icon>\n\n      </ion-item>\n\n      <ion-item color="none" id="ongoingBookings-list-item62">\n\n        <ion-icon name="calendar" item-left></ion-icon>\n\n        {{bookItem?.bookDate}}, {{bookItem?.bookTime}}\n\n      </ion-item>\n\n      <ion-item color="none" id="ongoingBookings-list-item63">\n\n        <ion-icon name="information-circle" item-left></ion-icon>\n\n        {{bookItem?.bookStatus}}\n\n      </ion-item>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"D:\Work\ELP\src\pages\cust-ongoing-bookings\cust-ongoing-bookings.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], CustOngoingBookingsPage);
     return CustOngoingBookingsPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=cust-ongoing-bookings.js.map
@@ -3510,35 +3584,35 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_PDP_dashboard_PDP_dashboard__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_PDP_bookings_PDP_bookings__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_PDP_dashboard_PDP_dashboard__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_PDP_bookings_PDP_bookings__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_PDP_menus_PDP_menus__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_PDP_booking_details_PDP_booking_details__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_PDP_booking_details_PDP_booking_details__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs2_tabs2__ = __webpack_require__(319);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_CUST_menuinfo_menuinfo__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_CUST_menuinfo_menuinfo__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_CUST_favourites_favourites__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_discover_discover__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_tabs_controller_tabs_controller__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_menu_details_menu_details__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_menu_details_menu_details__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_make_booking_make_booking__ = __webpack_require__(230);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_CUST_menu_menu__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_CUST_reviews_reviews__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_CUST_submitReview_submitReview__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_CUST_menu_menu__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_CUST_reviews_reviews__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_CUST_submitReview_submitReview__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_CUST_tabs_tabs2__ = __webpack_require__(320);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_ionic3_star_rating__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_status_bar__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__ionic_native_splash_screen__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_PDP_bookingData__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_PDP_bookingData__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_storage__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_PDP_new_menu_PDP_new_menu__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_login_page_login_page__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_login_page_login_page__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_PDP_menuData__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_PDP_profileData__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_PDP_dashboardData__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_PDP_profileData__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_PDP_dashboardData__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_camera_ngx__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_PDP_tabs_PDP_tabs__ = __webpack_require__(219);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_PDP_profile_PDP_profile__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_PDP_profile_PDP_profile__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_CUST_profile_profile__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_PDP_menu_PDP_menu__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_PDP_edit_menu_PDP_edit_menu__ = __webpack_require__(224);
@@ -3546,13 +3620,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_PDP_new_dish_PDP_new_dish__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_PDP_edit_dish_PDP_edit_dish__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_cust_booking_details_cust_booking_details__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_cust_past_booking_details_cust_past_booking_details__ = __webpack_require__(235);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_custb_view_menu_custb_view_menu__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_cust_bookings_cust_bookings__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_cust_ongoing_bookings_cust_ongoing_bookings__ = __webpack_require__(236);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_cust_past_bookings_cust_past_bookings__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_Cust_bookingData__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_Cust_bookingData__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__providers_Cust_pastBookingData__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3765,7 +3839,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(218);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_page_login_page__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_page_login_page__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3989,7 +4063,7 @@ var CustBookingsPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CUST_favourites_favourites__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4032,7 +4106,7 @@ var Tabs2Page = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CUST_favourites_favourites__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4074,7 +4148,7 @@ var CustTabsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustbViewMenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4120,7 +4194,7 @@ var CustbViewMenuPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_ongoing_bookings_cust_ongoing_bookings__ = __webpack_require__(236);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cust_past_bookings_cust_past_bookings__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_Cust_bookingData__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_Cust_bookingData__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4244,9 +4318,9 @@ var MenusPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__menu_details_menu_details__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__menu_details_menu_details__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4361,71 +4435,6 @@ var CustFavouritesPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=favourites.js.map
-
-/***/ }),
-
-/***/ 56:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustBookData; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_Cust_Bookings__ = __webpack_require__(234);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var CustBookData = /** @class */ (function () {
-    function CustBookData(http, storage) {
-        this.http = http;
-        this.storage = storage;
-    }
-    CustBookData.prototype.getBookData = function () {
-        var _this = this;
-        console.log("In /getCustBookings");
-        var url = 'https://foodie1234.herokuapp.com/getCustBookings';
-        var postData = JSON.stringify({
-            // post data MUSt match the request.body.userID; 
-            custId: localStorage.getItem("loginid")
-        });
-        var httpOptions = {
-            headers: new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]({
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
-            })
-        };
-        this.http.post(url, postData, httpOptions).subscribe(function (data) {
-            var custBook = [];
-            console.log("In /getCustBookings");
-            _this.result = data;
-            for (var i = 0; i < _this.result.length; i++) {
-                custBook.push(new __WEBPACK_IMPORTED_MODULE_2__models_Cust_Bookings__["a" /* custBooking */](_this.result[i].bookID, _this.result[i].fName, _this.result[i].img, _this.result[i].location, _this.result[i].phone, _this.result[i].email, _this.result[i].bookDate, _this.result[i].bookTime, _this.result[i].bookPax, _this.result[i].bookNotes, _this.result[i].bookStatus, _this.result[i].menu_image, _this.result[i].custID));
-            }
-            console.log("test", data);
-            _this.storage.remove('CUSTBook');
-            _this.storage.set('CUSTBook', custBook);
-        });
-    };
-    CustBookData = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
-    ], CustBookData);
-    return CustBookData;
-}());
-
-//# sourceMappingURL=Cust-bookingData.js.map
 
 /***/ })
 

@@ -37309,8 +37309,7 @@ page-menu-details .popup-image img {
 
 page-menu-details .reviews-con {
   margin-top: 30px;
-  margin-bottom: 30px;
-  overflow: auto;
+  margin-bottom: 70px;
 }
 
 page-menu-details .reviews-header {
@@ -37333,10 +37332,26 @@ page-menu-details .reviews-header-text {
   margin-bottom: 0;
 }
 
+@media only screen and (min-width: 768px) {
+  page-menu-details .reviews-cards-con {
+    margin-left: -0.5%;
+    margin-right: -0.5%;
+  }
+}
+
 page-menu-details .reviews-each {
   width: 100%;
   margin: 0;
   margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  page-menu-details .reviews-each {
+    width: 49%;
+    display: inline-block;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
 }
 
 page-menu-details .wholebutton {

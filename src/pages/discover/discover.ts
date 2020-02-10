@@ -19,6 +19,10 @@ export class DiscoverPage {
     this.getProfiles();
   }
 
+  resizeEvent(event) {
+    this.setCardHeight();
+  }
+
   getProfiles() {
     var url = "https://foodie1234.herokuapp.com/discoverprofiles";
     this.data = this.http.get(url);
@@ -41,6 +45,8 @@ export class DiscoverPage {
           $(this).css("height", tallest);
         });
       }, 2000);
+    } else {
+      $(".discover-card-each .discover-image img").attr("style", "");
     }
   }
 
