@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, NavParams } from 'ionic-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera/ngx';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MenusData } from '../../providers/PDP-menuData';
 
 @Component({
@@ -23,35 +23,57 @@ export class NewDishPage {
     });
 
     this.newDish = new FormGroup({
-      menuItemName: new FormControl(),
-      menuItemPrice: new FormControl(),
+      menuItemName: new FormControl('', Validators.required),
+      menuItemPrice: new FormControl('', Validators.required),
       // menuImg: new FormControl()
     })
   }
 
   presentConfirm() {
-    let alert = this.alertCtrl.create({
-      title: 'Confirm save',
-      message: 'Would you like to save your new dish?',
-      buttons: [
-        {
-          text: 'No',
-          role: 'cancel',
-          handler: () => {
-            console.log('No');
+    if (!this.newDish.controls.menuItemName.valid){
+      let alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: 'Dish name cannot be empty.',
+        buttons: [{
+          text: 'Dismiss'
+        }]
+      });
+      alert.present();
+    }
+    else if (!this.newDish.controls.menuItemPrice.valid){
+      let alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: 'Dish price cannot be empty.',
+        buttons: [{
+          text: 'Dismiss'
+        }]
+      });
+      alert.present();
+    }
+    else{
+      let alert = this.alertCtrl.create({
+        title: 'Confirm save',
+        message: 'Would you like to save your new dish?',
+        buttons: [
+          {
+            text: 'No',
+            role: 'cancel',
+            handler: () => {
+              console.log('No');
+            }
+          },
+          {
+            text: 'Yes',
+            handler: () => {
+              console.log('Yes');
+              this.loading.present();
+              this.createNewDish();
+            }
           }
-        },
-        {
-          text: 'Yes',
-          handler: () => {
-            this.createNewDish();
-            this.loading.present();
-            console.log('Yes');
-          }
-        }
-      ]
-    });
-    alert.present();
+        ]
+      });
+      alert.present();
+    }
   }
 
   createNewDish(){
@@ -75,9 +97,10 @@ export class NewDishPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /createNewDish");
       console.log('postData:', postData);
+      console.log('SQL Result: ', data);
+      this.menusData.getMenuItemsData();
       this.loading.dismiss();
       this.presentAlert();
-      this.menusData.getMenuItemsData();
     });
   }
 

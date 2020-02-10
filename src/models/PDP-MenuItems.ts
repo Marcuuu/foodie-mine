@@ -1,6 +1,7 @@
 export class MenuItems {
 
-    constructor(
+    constructor(        
+        public menuItemID: string,
         public menuItemName: string,
         public menuItemPrice: string,
         public menuItemImg: string,

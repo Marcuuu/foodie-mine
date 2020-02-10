@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, NavParams } from 'ionic-angular';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera/ngx';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MenusData } from '../../providers/PDP-menuData';
 import { MenusPage } from '../PDP-menus/PDP-menus';
 
@@ -28,35 +28,47 @@ export class NewMenuPage {
     });
 
     this.newMenu = new FormGroup({
-      menuName: new FormControl(),
+      menuName: new FormControl('', Validators.required),
       menuCategory: new FormControl(),
       // menuImg: new FormControl()
     });
   }
 
   presentConfirm() {
-    let alert = this.alertCtrl.create({
-      title: 'Confirm save',
-      message: 'Would you like to save your new menu?',
-      buttons: [
-        {
-          text: 'No',
-          role: 'cancel',
-          handler: () => {
-            console.log('No');
+    if (!this.newMenu.controls.menuName.valid){
+      let alert = this.alertCtrl.create({
+        title: 'Error',
+        subTitle: 'Menu name cannot be empty.',
+        buttons: [{
+          text: 'Dismiss'
+        }]
+      });
+      alert.present();
+    }
+    else{
+      let alert = this.alertCtrl.create({
+        title: 'Confirm save',
+        message: 'Would you like to save your new menu?',
+        buttons: [
+          {
+            text: 'No',
+            role: 'cancel',
+            handler: () => {
+              console.log('No');
+            }
+          },
+          {
+            text: 'Yes',
+            handler: () => {
+              this.createNewMenu();
+              this.loading.present();
+              console.log('Yes');
+            }
           }
-        },
-        {
-          text: 'Yes',
-          handler: () => {
-            this.createNewMenu();
-            this.loading.present();
-            console.log('Yes');
-          }
-        }
-      ]
-    });
-    alert.present();
+        ]
+      });
+      alert.present();
+    }
   }
 
   createNewMenu(){
@@ -80,9 +92,12 @@ export class NewMenuPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /createNewMenu");
       console.log('postData:', postData);
-      this.loading.dismiss();
-      this.presentAlert();
+      console.log('SQL Result: ', data);
       this.menusData.getMenusData(this.pdp_id);
+      setTimeout(() => {
+        this.loading.dismiss();
+        this.presentAlert();
+      }, 1500);
     });
   }
 

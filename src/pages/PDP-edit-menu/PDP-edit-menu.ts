@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera/ngx';
 import { MenusData } from '../../providers/PDP-menuData';
 import { MenusPage } from '../PDP-menus/PDP-menus';
-import { MenuPage } from '../PDP-menu/PDP-menu';
 
 @Component({
   selector: 'page-PDP-edit-menu',
@@ -79,8 +78,8 @@ export class EditMenuPage {
         {
           text: 'Yes',
           handler: () => {
-            this.navCtrl.pop();
             console.log('Yes');
+            this.navCtrl.pop();
           }
         }
       ]
@@ -95,7 +94,7 @@ export class EditMenuPage {
       buttons: [{
         text: 'Return',
         handler: () => {
-          this.navCtrl.setRoot(MenuPage);
+          this.navCtrl.pop();
         }
       }]
     });
@@ -123,9 +122,12 @@ export class EditMenuPage {
     this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /updateMenu");
       console.log('postData:', postData);
-      this.loading.dismiss();
-      this.presentAlert();
+      console.log('SQL Result: ', data);
       this.menuData.getMenusData(this.menu.pdpID);
+      setTimeout(() => {
+        this.loading.dismiss();
+        this.presentAlert();
+      }, 1500);
     });
   }
 
@@ -183,11 +185,14 @@ export class EditMenuPage {
       })
     };   
 
-    this.http.post(url, postData, httpOptions).subscribe(() => {    
-      this.deleting.dismiss();
-      this.deleteAlert();
+    this.http.post(url, postData, httpOptions).subscribe((data) => {
       console.log("In /deleteMenu");
+      console.log('SQL Result: ', data);
       this.menuData.getMenusData(this.menu.pdpID);
+      setTimeout(() => {
+        this.deleting.dismiss();
+        this.deleteAlert();
+      }, 2000);
     });
   }
 }

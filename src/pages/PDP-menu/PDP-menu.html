@@ -16,7 +16,7 @@
     <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
   </div>
   <h2 id="menu-heading9" style="color:#000000;">
-    {{ menu?.menuName }} (${{ menuPrice }})
+    {{ menu?.menuName }} (${{ menuPrice | number:'1.2-2' }})
   </h2>
   <div id="menu-markdown18" class="show-list-numbers-and-dots">
     <p style="color:#000000; float:left;">
@@ -35,12 +35,12 @@
         <i class="icon ion-image" style="font-size:64px;color:#888;vertical-align:middle;"></i>
       </div>
       <ion-item color="none" id="menu-list-item66">
-        {{ menuItem.menuItemName }} (${{ menuItem.menuItemPrice }})
+        {{ menuItem.menuItemName }} (${{ menuItem.menuItemPrice | number:'1.2-2' }})
       </ion-item>
       <button id="menu-button6" ion-button color="positive" (click)="goToEditDish(menuItem)">
         Manage
       </button>
-      <button id="menu-button7" ion-button color="danger" (click)="presentConfirm()">
+      <button id="menu-button7" ion-button color="danger" (click)="deleteConfirm(menuItem)">
         Remove
       </button>
     </ion-list>
