@@ -6,33 +6,35 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page2">
-  <form id="loginPage-form1">
-    <div style="text-align:center;">
-      <img
-        src="../../assets/imgs/foodie_logo.png"
-        style="margin-top:100px;margin-bottom:50px;padding-left:50px;padding-right:50px;"
-      />
-    </div>
-    <ion-item id="loginPage-input1" class="markdown login-field-con">
-      <ion-label>
-        Username :
-      </ion-label>
-      <ion-input
-        type="text"
-        [(ngModel)]="username"
-        [ngModelOptions]="{standalone:true}"
-        placeholder=""
-      ></ion-input>
-    </ion-item>
-  </form>
-  <button
-    id="loginPage-button1"
-    class="login-btn"
-    ion-button
-    color="positive"
-    block
-    (click)="login(this.username)"
-  >
-    Login
-  </button>
+  <div style="text-align:center;">
+    <img
+      src="../../assets/imgs/foodie_logo.png"
+      style="margin-top:100px;margin-bottom:50px;padding-left:50px;padding-right:50px;"
+    />
+  </div>
+  <div style="max-width:500px;margin-left:auto;margin-right:auto;">
+    <form id="loginPage-form1">
+      <ion-item id="loginPage-input1" class="markdown login-field-con">
+        <ion-label>
+          Username :
+        </ion-label>
+        <ion-input
+          type="text"
+          [(ngModel)]="username"
+          [ngModelOptions]="{standalone:true}"
+          placeholder=""
+        ></ion-input>
+      </ion-item>
+    </form>
+    <button
+      id="loginPage-button1"
+      class="login-btn"
+      ion-button
+      color="positive"
+      block
+      (click)="login(this.username)"
+    >
+      Login
+    </button>
+  </div>
 </ion-content>
