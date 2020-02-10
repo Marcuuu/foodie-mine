@@ -97,7 +97,7 @@ export class NewMenuPage {
       setTimeout(() => {
         this.loading.dismiss();
         this.presentAlert();
-      }, 1500);
+      }, 2000);
     });
   }
 

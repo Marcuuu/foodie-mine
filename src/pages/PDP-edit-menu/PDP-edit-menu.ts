@@ -127,7 +127,7 @@ export class EditMenuPage {
       setTimeout(() => {
         this.loading.dismiss();
         this.presentAlert();
-      }, 1500);
+      }, 2000);
     });
   }
 
