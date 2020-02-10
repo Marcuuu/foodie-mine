@@ -8,11 +8,11 @@ webpackJsonp([1],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_tabs_PDP_tabs__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_tabs_PDP_tabs__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_PDP_profileData__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_PDP_bookingData__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_PDP_dashboardData__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tabs_controller_tabs_controller__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__tabs_controller_tabs_controller__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_PDP_menuData__ = __webpack_require__(31);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -342,7 +342,7 @@ var BookingDetailsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_PDP_Bookings__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_PDP_Bookings__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -394,7 +394,7 @@ var DashboardData = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BookingsData; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_PDP_Bookings__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_PDP_Bookings__ = __webpack_require__(216);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -514,7 +514,7 @@ var BookingsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_edit_profile_PDP_edit_profile__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_edit_profile_PDP_edit_profile__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_page_login_page__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -659,12 +659,437 @@ var ProfileData = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuDetailsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_make_booking_make_booking__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_CUST_submitReview_submitReview__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_CUST_reviews_reviews__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(8);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var MenuDetailsPage = /** @class */ (function () {
+    function MenuDetailsPage(navCtrl, navParams, http) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.http = http;
+        this.showImage = false;
+        this.details = navParams.get("item");
+    }
+    MenuDetailsPage.prototype.ngOnInit = function () {
+        this.getMenu();
+    };
+    MenuDetailsPage.prototype.ionViewWillEnter = function () {
+        var body = document.getElementsByTagName("BODY")[0];
+        body.classList.add("details-active");
+        this.getFavAnot();
+        this.getTopReview();
+    };
+    MenuDetailsPage.prototype.ionViewWillLeave = function () {
+        var body = document.getElementsByTagName("BODY")[0];
+        body.classList.remove("details-active");
+    };
+    MenuDetailsPage.prototype.goToMakeBookingPage = function (event, item) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_make_booking_make_booking__["a" /* MakeBookingPage */], {
+            item: item
+        });
+    };
+    MenuDetailsPage.prototype.getMenu = function () {
+        var _this = this;
+        var url = "https://elp-tutorial.herokuapp.com/getmenu";
+        this.menuData = this.http.get(url);
+        this.menuData.subscribe(function (data) {
+            _this.menuList = data.filter(function (word) {
+                if (word.menuName == _this.details.menuName) {
+                    return word;
+                }
+            });
+        });
+    };
+    MenuDetailsPage.prototype.popupImage = function (event) {
+        if (!this.showImage == true) {
+            var imgSrc = event.srcElement.src;
+            this.popupSrc = imgSrc;
+            console.log(this.popupSrc);
+        }
+        this.showImage = !this.showImage;
+    };
+    MenuDetailsPage.prototype.favmenu = function () {
+        if (this.visible == true) {
+            this.getDeleteFavMenu();
+            console.log("Deleted FaveMenu");
+        }
+        else if (this.visible == false) {
+            this.getInsertFavMenu();
+            console.log("Inserted FaveMenu");
+        }
+    };
+    MenuDetailsPage.prototype.getDeleteFavMenu = function () {
+        var _this = this;
+        var url = 'https://foodie1234.herokuapp.com/getDeleteFavMenu';
+        var postData = JSON.stringify({
+            //these fields MUST match the server.js request.body.XXX;  
+            menuId: this.details.menuId,
+            loginId: localStorage.getItem('loginid'),
+        });
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            _this.visible = false;
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    MenuDetailsPage.prototype.getInsertFavMenu = function () {
+        var _this = this;
+        var url = 'https://foodie1234.herokuapp.com/getInsertFavMenu';
+        var postData = JSON.stringify({
+            //these fields MUST match the server.js request.body.XXX;  
+            menuId: this.details.menuId,
+            loginId: localStorage.getItem('loginid'),
+        });
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            _this.visible = true;
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    MenuDetailsPage.prototype.getFavAnot = function () {
+        var _this = this;
+        var url = 'https://foodie1234.herokuapp.com/getFavAnot';
+        var postData = JSON.stringify({
+            //these fields MUST match the server.js request.body.XXX;  
+            menuId: this.details.menuId,
+            loginId: localStorage.getItem('loginid'),
+        });
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            _this.visible = data;
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    MenuDetailsPage.prototype.getTopReview = function () {
+        var _this = this;
+        var url = 'https://foodie1234.herokuapp.com/getTopReview';
+        var postData = JSON.stringify({
+            //these fields MUST match the server.js request.body.XXX;  
+            menuId: this.details.menuId,
+        });
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            if (data == false) {
+                _this.hvInfo = true;
+            }
+            else {
+                _this.hvInfo = false;
+                _this.TopReview = data;
+                for (var i = 0; i < _this.TopReview.length; i++) {
+                    if (_this.TopReview[i].cleanlinessRating == 1) {
+                        console.log("1", _this.TopReview[i].cleanlinessRating);
+                        _this.TopReview[i].cleanlinessRating = "../../assets/icon/broom.png";
+                    }
+                    else if (_this.TopReview[i].foodQualityRating == 1) {
+                        console.log("2", _this.TopReview[i].foodQualityRating);
+                        _this.TopReview[i].cleanlinessRating = "../../assets/icon/food.png";
+                    }
+                    else if (_this.TopReview[i].priceRating == 1) {
+                        console.log("3", _this.TopReview[i].priceRating);
+                        _this.TopReview[i].cleanlinessRating = "../../assets/icon/money.png";
+                    }
+                }
+            }
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    MenuDetailsPage.prototype.navSubmitReview = function () {
+        console.log(this.details);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__pages_CUST_submitReview_submitReview__["a" /* CustSubmitReviewPage */], {
+            item: this.details
+        });
+    };
+    MenuDetailsPage.prototype.allReviews = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__pages_CUST_reviews_reviews__["a" /* CustReviewsPage */], {
+            item: this.details
+        });
+    };
+    MenuDetailsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: "page-menu-details",template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\menu-details\menu-details.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      {{this.details.fName}}\n\n    </ion-title>\n\n    <ion-buttons end>\n\n        <button ion-button icon-only (click)="favmenu()">\n\n          <ion-icon [name]="visible ? \'heart\' : \'heart-outline\'"></ion-icon>\n\n        </button>\n\n      </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content id="page6">\n\n  <div class="details-image">\n\n    <img src="{{this.details.menu_image}}" alt="" />\n\n  </div>\n\n  <div padding>\n\n    <h4 id="menuDetails-heading3" style="color:#232323;font-weight:600;margin-bottom:5px;">\n\n      {{this.details.menuName}}\n\n    </h4>\n\n    <div style="margin-bottom:15px;color:#232323;">{{this.details.description}}</div>\n\n    <div class="details-info-list">\n\n      <div\n\n        id="menuDetails-markdown5"\n\n        class="show-list-numbers-and-dots details-info-each"\n\n      >\n\n        <ion-icon name="pin"></ion-icon>\n\n        <p ion-text>{{this.details.location}}</p>\n\n      </div>\n\n      <div\n\n        id="menuDetails-markdown6"\n\n        class="show-list-numbers-and-dots details-info-each"\n\n      >\n\n        <ion-icon name="pricetag"></ion-icon>\n\n        <p ion-text>{{this.details.menu_tags}}</p>\n\n      </div>\n\n      <div\n\n        id="menuDetails-markdown6"\n\n        class="show-list-numbers-and-dots details-info-each"\n\n      >\n\n        <ion-icon name="list-box"></ion-icon>\n\n        <p ion-text>~${{this.details.menu_price}}/pax</p>\n\n      </div>\n\n      <div\n\n        id="menuDetails-markdown6"\n\n        class="show-list-numbers-and-dots details-info-each"\n\n      >\n\n        <ion-icon name="call"></ion-icon>\n\n        <a href="tel:{{this.details.phone}}">{{this.details.phone}}</a>\n\n      </div>\n\n    </div>\n\n    <h5 id="menuDetails-heading4" style="color:#000000;font-size:1.6rem;">\n\n      Menu\n\n    </h5>\n\n    <ion-list id="menuDetails-list1" class="menu-list">\n\n      <ion-item color="none" id="menuDetails-list-item8" class="menu-item-each active" *ngFor="let item of menuList">\n\n        <img src="{{item.menuImg}}" alt="" (click)="popupImage($event)" />\n\n        <p ion-text color="black">{{item.menuItem}}</p>\n\n      </ion-item>\n\n    </ion-list>\n\n    <button class="wholebutton" (click)="navSubmitReview()">\n\n        <h3 style="color:lightgreen">Write a Review</h3>\n\n      </button>\n\n      <h5 id="menuDetails-heading5" style="color:#000000;font-size:1.6rem;">\n\n          Reviews\n\n        </h5>\n\n      <ion-card *ngFor="let rev of TopReview" [hidden]="hvInfo">\n\n        <ion-grid>\n\n          <ion-row>\n\n            <ion-col col-12 >\n\n              <ion-avatar style="width:90px;height:90px;margin:0 auto;">\n\n                <img src="{{rev.cleanlinessRating}}">\n\n              </ion-avatar>\n\n            </ion-col>\n\n          </ion-row>\n\n          <ion-row >\n\n            <ion-col col-12 text-center style="margin-top:-15px;">         \n\n                <ionic3-star-rating rating="{{rev.rating}}" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n                defaultColor="#aaaaaa" readonly="true"  fontSize="28px" >\n\n              </ionic3-star-rating>\n\n            </ion-col>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col col-12> \n\n              {{rev.comments}}\n\n            </ion-col>\n\n          </ion-row>\n\n          <ion-row style="margin-top:10px;">\n\n            <ion-col col-6 text-left style="color:grey">\n\n              <ion-icon name="calendar"></ion-icon>   {{rev.datein | date: "dd MMM yyyy" }}\n\n            </ion-col>\n\n            <ion-col col-6 text-right>\n\n        <b style="font-style:italic;">-{{rev.custName}}</b>\n\n            </ion-col>\n\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-card>\n\n      <button class="wholebutton" (click)="allReviews()" style="margin-bottom:50px;">\n\n        <h3 style="color:lightgreen">See all Reviews</h3>\n\n      </button>\n\n    <!-- <h5 id="menuDetails-heading5" style="color:#000000;font-size:1.6rem;">\n\n      Reviews\n\n    </h5>\n\n    <ion-list id="menuDetails-list2">\n\n      <ion-item color="none" id="menuDetails-list-item14">\n\n        Review 1\n\n      </ion-item>\n\n      <ion-item color="none" id="menuDetails-list-item15">\n\n        Review 2\n\n      </ion-item>\n\n      <ion-item color="none" id="menuDetails-list-item16">\n\n        Review 3\n\n      </ion-item>\n\n    </ion-list> -->\n\n  </div>\n\n</ion-content>\n\n<ion-item class="popup-image" (click)="popupImage()" [class.active]="this.showImage">\n\n  <img src="{{this.popupSrc}}" alt="">\n\n</ion-item>\n\n<div class="book-cta">\n\n  <button class="book-cta-btn" (click)="goToMakeBookingPage($event, this.details)">\n\n    Book Now\n\n  </button>\n\n</div>'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\menu-details\menu-details.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["a" /* HttpClient */]])
+    ], MenuDetailsPage);
+    return MenuDetailsPage;
+}());
+
+//# sourceMappingURL=menu-details.js.map
+
+/***/ }),
+
+/***/ 116:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustSubmitReviewPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(15);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var CustSubmitReviewPage = /** @class */ (function () {
+    function CustSubmitReviewPage(navCtrl, navParams, loadingCtrl, http, loc, storage) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.http = http;
+        this.loc = loc;
+        this.storage = storage;
+        this.isValid = true;
+        this.press = true;
+        this.press1 = true;
+        // arr:SubmitReview[];
+        this.datein = new Date().toISOString().substr(0, 10);
+        this.menuTitle = navParams.get('item');
+    }
+    CustSubmitReviewPage.prototype.hitme = function (point) {
+        this.point = point;
+        this.press = false;
+        if (this.press1 == false && this.press == false) {
+            this.isValid = false;
+        }
+    };
+    CustSubmitReviewPage.prototype.logRatingChange = function (rating) {
+        this.press1 = false;
+        if (this.press1 == false && this.press == false) {
+            this.isValid = false;
+        }
+    };
+    CustSubmitReviewPage.prototype.submitReview = function () {
+        var _this = this;
+        var url = 'https://foodie1234.herokuapp.com/submitReview';
+        var postData;
+        if (this.point == "hygenie") {
+            postData = JSON.stringify({
+                //these fields MUST match the server.js request.body.XXX;
+                menuId: this.menuTitle.menuId,
+                custId: localStorage.getItem("loginid"),
+                rating: this.rating,
+                cleanlinessRating: 1,
+                foodQualityRating: 0,
+                priceRating: 0,
+                comments: this.myText,
+                datein: this.datein,
+            });
+        }
+        else if (this.point == "food") {
+            postData = JSON.stringify({
+                //these fields MUST match the server.js request.body.XXX;
+                menuId: this.menuTitle.menuId,
+                custId: localStorage.getItem("loginid"),
+                rating: this.rating,
+                cleanlinessRating: 0,
+                foodQualityRating: 1,
+                priceRating: 0,
+                comments: this.myText,
+                datein: this.datein,
+            });
+        }
+        else {
+            postData = JSON.stringify({
+                //these fields MUST match the server.js request.body.XXX;
+                menuId: this.menuTitle.menuId,
+                custId: localStorage.getItem("loginid"),
+                rating: this.rating,
+                cleanlinessRating: 0,
+                foodQualityRating: 0,
+                priceRating: 1,
+                comments: this.myText,
+                datein: this.datein,
+            });
+        }
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            if (data == true) {
+                _this.navCtrl.pop();
+                var loading_1 = _this.loadingCtrl.create({
+                    content: 'Please wait...'
+                });
+                loading_1.present();
+                setTimeout(function () {
+                    loading_1.dismiss();
+                }, 2000);
+            }
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    CustSubmitReviewPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-submitReview',template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-submitReview\submitReview.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      <label>Rate {{menuTitle.menuName}} </label>\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page5" class="body">\n\n    <ion-label text-center class="text">Rate my Service</ion-label>\n\n    <div>\n\n      <ion-grid>\n\n        <ion-col col-12>\n\n          <ionic3-star-rating [(ngModel)]="rating" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n          defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="40px" (ratingChanged)="logRatingChange($event)"> \n\n        </ionic3-star-rating>\n\n        </ion-col>\n\n      </ion-grid>\n\n\n\n    </div>\n\n    <!-- <ion-label text-center class="text">Food Quality</ion-label> -->\n\n      <!-- <ionic3-star-rating [(ngModel)]="rating2" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"\n\n        defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px">\n\n      </ionic3-star-rating> -->\n\n      <div text-center>\n\n        <ion-label text-center class="text1">Category</ion-label>\n\n        <div style="width:30%;display:inline-block;">\n\n        <label>\n\n          <input type="radio" name="point" (click)="hitme(\'hygenie\')">\n\n          <img src="../../assets/icon/broom.png">       \n\n        </label>\n\n        <p class="p-text" text-center>Hygiene</p>\n\n      </div>\n\n      <div style="width:30%;display:inline-block;">\n\n        <label>\n\n        <input type="radio" name="point" (click)="hitme(\'food\')">\n\n        <img src="../../assets/icon/food.png">\n\n      </label>\n\n      <p class="p-text" text-center>Food</p>\n\n    </div>\n\n    <div style="width:30%;display:inline-block;">\n\n      <label>\n\n        <input type="radio" name="point" (click)="hitme(\'money\')">\n\n        <img src="../../assets/icon/money.png">\n\n      </label>\n\n      <p class="p-text" text-center>Price</p>\n\n    </div>\n\n    </div>\n\n      <!-- <div text-center class="upup">\n\n        <ion-label text-center class="text">My Strongest point</ion-label>\n\n        <label>\n\n          <input type="radio" name="point" (click)="hitme(\'hygenie\')">\n\n          <img class="btn-img" src="../../assets/icon/broom.png">\n\n          <p style="display:none;">aaa</p>         \n\n        </label>\n\n        <label>\n\n        <input type="radio" name="point" (click)="hitme(\'food\')">\n\n        <img class="btn-img" src="../../assets/icon/food.png">\n\n      </label>\n\n      <label>\n\n        <input type="radio" name="point" (click)="hitme(\'money\')">\n\n        <img class="btn-img" src="../../assets/icon/money.png">\n\n      </label>\n\n    </div> -->\n\n    <!-- <ion-label text-center class="text">Price</ion-label>\n\n    <ion-item class="no-border ">\n\n      <ionic3-star-rating [(ngModel)]="rating3" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"\n\n        defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px">\n\n      </ionic3-star-rating>\n\n    </ion-item> -->\n\n\n\n    <ion-item class="border-text">\n\n      <ion-textarea [(ngModel)]="myText" [maxlength]="100" autoGrow="true" placeholder="Describe your experience (optional)"></ion-textarea>\n\n    </ion-item>\n\n      <ion-label class="right">Characters Remaining: {{myText?.length || 0}}/100</ion-label>\n\n    <button class="center" ion-button [disabled]="isValid" color="positive" (click)="submitReview()">Submit Review</button>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-submitReview\submitReview.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__angular_common__["e" /* Location */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
+    ], CustSubmitReviewPage);
+    return CustSubmitReviewPage;
+}());
+
+//# sourceMappingURL=submitReview.js.map
+
+/***/ }),
+
+/***/ 117:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustReviewsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var CustReviewsPage = /** @class */ (function () {
+    function CustReviewsPage(navCtrl, navParams, loadingCtrl, http) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.loadingCtrl = loadingCtrl;
+        this.http = http;
+        this.details = navParams.get('item');
+    }
+    // ngOnInit(){
+    //   let loading = this.loadingCtrl.create({
+    //     content: 'Please wait...'
+    //   });
+    //   loading.present();
+    //   setTimeout(() => {
+    //     loading.dismiss();
+    //   }, 2000);
+    // }
+    CustReviewsPage.prototype.getPDP = function () {
+        var _this = this;
+        var url = 'https://foodie1234.herokuapp.com/getReviewName';
+        var postData = JSON.stringify({
+            //these fields MUST match the server.js request.body.XXX;  
+            menuId: this.details.menuId,
+        });
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            console.log('postData:', postData);
+            console.log(data);
+            _this.allReview = data;
+            for (var i = 0; i < _this.allReview.length; i++) {
+                if (data[i].cleanlinessRating == 1) {
+                    data[i].cleanlinessRating = "../../assets/icon/broom.png";
+                }
+                else if (data[i].foodQualityRating == 1) {
+                    data[i].cleanlinessRating = "../../assets/icon/food.png";
+                }
+                else if (data[i].priceRating == 1) {
+                    data[i].cleanlinessRating = "../../assets/icon/money.png";
+                }
+            }
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    CustReviewsPage.prototype.ionViewWillEnter = function () {
+        this.getPDP();
+    };
+    CustReviewsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-reviews',template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-reviews\reviews.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Reviews\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page6">\n\n  <ion-card *ngFor="let rev of allReview">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-12 >\n\n          <ion-avatar style="width:90px;height:90px;margin:0 auto;">\n\n            <img src="{{rev.cleanlinessRating}}">\n\n          </ion-avatar>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row >\n\n        <ion-col col-12 text-center style="margin-top:-15px;">         \n\n            <ionic3-star-rating rating="{{rev.rating}}" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n            defaultColor="#aaaaaa" readonly="true" fontSize="28px" (ratingChanged)="logRatingChange($event)">\n\n          </ionic3-star-rating>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col col-12> \n\n          {{rev.comments}}\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row style="margin-top:10px;">\n\n        <ion-col col-6 text-left style="color:grey">\n\n          <ion-icon name="calendar"></ion-icon>   {{rev.datein | date: "dd MMM yyyy" }}\n\n        </ion-col>\n\n        <ion-col col-6 text-right>\n\n    <b style="font-style:italic;">-{{rev.custName}}</b>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-reviews\reviews.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
+    ], CustReviewsPage);
+    return CustReviewsPage;
+}());
+
+//# sourceMappingURL=reviews.js.map
+
+/***/ }),
+
+/***/ 118:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustMenuInfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_reviews_reviews__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CUST_submitReview_submitReview__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_reviews_reviews__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CUST_submitReview_submitReview__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -789,17 +1214,14 @@ var CustMenuInfoPage = /** @class */ (function () {
                     if (data[i].cleanlinessRating == 1) {
                         console.log("1", data[i].cleanlinessRating);
                         data[i].cleanlinessRating = "../../assets/icon/broom.png";
-                        console.log("11", _this.imgInfo);
                     }
                     else if (data[i].foodQualityRating == 1) {
                         console.log("2", data[i].foodQualityRating);
                         data[i].cleanlinessRating = "../../assets/icon/food.png";
-                        console.log("22", _this.imgInfo);
                     }
                     else if (data[i].priceRating == 1) {
                         console.log("3", data[i].priceRating);
                         data[i].cleanlinessRating = "../../assets/icon/money.png";
-                        console.log("33", _this.imgInfo);
                     }
                 }
             }
@@ -885,7 +1307,7 @@ var CustMenuInfoPage = /** @class */ (function () {
     };
     CustMenuInfoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menuinfo',template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-menuinfo\menuinfo.html"*/'<ion-header>\n\n  \n\n  <ion-toolbar>\n\n    <ion-title text-center>\n\n      {{data1}} Details\n\n    </ion-title>\n\n    <!-- <ion-buttons slot="end" >\n\n      <button [ngStyle]="" class="heartbutton" (click)="favmenu(friend)">\n\n      <ion-icon size="large" [name]="visible ? \'heart\' : \'heart-empty\'"></ion-icon>\n\n    </button>\n\n    </ion-buttons> -->\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="favmenu()">\n\n        <ion-icon [name]="visible ? \'heart\' : \'heart-outline\'"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n  \n\n</ion-header>\n\n<ion-content>\n\n  <h3><Menu></Menu> INFO</h3>\n\n  <ion-list>\n\n    <ion-item *ngFor="let pdp of menuInfo">\n\n      <p>{{pdp.fName}}</p>\n\n      <p>{{pdp.menuName}}</p>\n\n    </ion-item>\n\n    <ion-item class="side-side">\n\n      <ionic3-star-rating [(ngModel)]="rating" style="width:auto;" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n        defaultColor="#aaaaaa" readonly="true" fontSize="32px" (ratingChanged)="logRatingChange($event)">\n\n      </ionic3-star-rating>\n\n      <input class="rate" [(ngModel)]="ratingNum" type="decimal" disabled="true" size="3"/>\n\n    </ion-item>\n\n  </ion-list>\n\n  <button class="wholebutton" (click)="navSubmitReview(data1)">\n\n    <h3 style="color:lightgreen">Write a Review</h3>\n\n  </button>\n\n  <h1 text-center>Reviews</h1>\n\n  <ion-card *ngFor="let rev of TopReview;let img of imgInfo" [hidden]="hvInfo">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-12 >\n\n          <ion-avatar style="width:90px;height:90px;margin:0 auto;">\n\n            <img src="{{rev.cleanlinessRating}}">\n\n          </ion-avatar>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row >\n\n        <ion-col col-12 text-center style="margin-top:-15px;">         \n\n            <ionic3-star-rating [(ngModel)]="rating2" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n            defaultColor="#aaaaaa" readonly="true" fontSize="28px" (ratingChanged)="logRatingChange($event)">\n\n          </ionic3-star-rating>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col col-12> \n\n          {{rev.comments}}\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row style="margin-top:10px;">\n\n        <ion-col col-6 text-left style="color:grey">\n\n          <ion-icon name="calendar"></ion-icon>   {{rev.datein | date: "dd MMM yyyy" }}\n\n        </ion-col>\n\n        <ion-col col-6 text-right>\n\n    <b style="font-style:italic;">-{{rev.custName}}</b>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-card>\n\n  <!-- <ion-grid *ngFor="let rev of TopReview" [hidden]="hvInfo">\n\n    <ion-row justify-content-start>\n\n      <ion-col col-5>\n\n        <div class="text-name"><label>{{rev.custName}}</label></div>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row justify-content-start>\n\n      <ion-col col-6>\n\n        <div>          \n\n          <ionic3-star-rating [(ngModel)]="rating2" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n          defaultColor="#aaaaaa" readonly="true" fontSize="15px" (ratingChanged)="logRatingChange($event)">\n\n        </ionic3-star-rating>\n\n      </div>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <div style="margin-top:7px;font-size:12px;">{{rev.datein | date: "dd/MMM/yyyy" }}</div>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row justify-content-start>\n\n      <ion-col col-12>\n\n        <div style="margin-left:4px;">{{rev.comments}}</div>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid> -->\n\n  <button class="wholebutton" (click)="allReviews()">\n\n    <h3 style="color:lightgreen">See all Reviews</h3>\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-menuinfo\menuinfo.html"*/,
+            selector: 'page-menuinfo',template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-menuinfo\menuinfo.html"*/'<ion-header>\n\n  \n\n  <ion-toolbar>\n\n    <ion-title text-center>\n\n      {{data1}} Details\n\n    </ion-title>\n\n    <!-- <ion-buttons slot="end" >\n\n      <button [ngStyle]="" class="heartbutton" (click)="favmenu(friend)">\n\n      <ion-icon size="large" [name]="visible ? \'heart\' : \'heart-empty\'"></ion-icon>\n\n    </button>\n\n    </ion-buttons> -->\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="favmenu()">\n\n        <ion-icon [name]="visible ? \'heart\' : \'heart-outline\'"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-toolbar>\n\n  \n\n</ion-header>\n\n<ion-content>\n\n  <h3><Menu></Menu> INFO</h3>\n\n  <ion-list>\n\n    <ion-item *ngFor="let pdp of menuInfo">\n\n      <p>{{pdp.fName}}</p>\n\n      <p>{{pdp.menuName}}</p>\n\n    </ion-item>\n\n    <ion-item class="side-side">\n\n      <ionic3-star-rating [(ngModel)]="rating" style="width:auto;" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n        defaultColor="#aaaaaa" readonly="true" fontSize="32px" (ratingChanged)="logRatingChange($event)">\n\n      </ionic3-star-rating>\n\n      <input class="rate" [(ngModel)]="ratingNum" type="decimal" disabled="true" size="3"/>\n\n    </ion-item>\n\n  </ion-list>\n\n  <button class="wholebutton" (click)="navSubmitReview(data1)">\n\n    <h3 style="color:lightgreen">Write a Review</h3>\n\n  </button>\n\n  <h1 text-center>Reviews</h1>\n\n  <ion-card *ngFor="let rev of TopReview;let img of imgInfo" [hidden]="hvInfo">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-12 >\n\n          <ion-avatar style="width:90px;height:90px;margin:0 auto;">\n\n            <img src="{{rev.cleanlinessRating}}">\n\n          </ion-avatar>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row >\n\n        <ion-col col-12 text-center style="margin-top:-15px;">         \n\n            <ionic3-star-rating [(ngModel)]="rating2" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n            defaultColor="#aaaaaa" readonly="true" fontSize="28px" (ratingChanged)="logRatingChange($event)">\n\n          </ionic3-star-rating>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col col-12> \n\n          {{rev.comments}}\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row style="margin-top:10px;">\n\n        <ion-col col-6 text-left style="color:grey">\n\n          <ion-icon name="calendar"></ion-icon>   {{rev.datein | date: "dd MMM yyyy" }}\n\n        </ion-col>\n\n        <ion-col col-6 text-right>\n\n    <b style="font-style:italic;">-{{rev.custName}}</b>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-card>\n\n  <button class="wholebutton" (click)="allReviews()">\n\n    <h3 style="color:lightgreen">See all Reviews</h3>\n\n  </button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-menuinfo\menuinfo.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]])
     ], CustMenuInfoPage);
@@ -896,7 +1318,7 @@ var CustMenuInfoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 116:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -904,7 +1326,7 @@ var CustMenuInfoPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -964,7 +1386,7 @@ var CustMenuPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 127:
+/***/ 130:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -977,11 +1399,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 127;
+webpackEmptyAsyncContext.id = 130;
 
 /***/ }),
 
-/***/ 169:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -1001,12 +1423,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 169;
+webpackAsyncContext.id = 172;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 212:
+/***/ 215:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1055,7 +1477,7 @@ var PDPTabsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 213:
+/***/ 216:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1077,16 +1499,16 @@ var Booking = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 215:
+/***/ 218:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_new_dish_PDP_new_dish__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_edit_menu_PDP_edit_menu__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PDP_edit_dish_PDP_edit_dish__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_new_dish_PDP_new_dish__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_edit_menu_PDP_edit_menu__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PDP_edit_dish_PDP_edit_dish__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_PDP_menuData__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(8);
@@ -1245,7 +1667,7 @@ var MenuPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 216:
+/***/ 219:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1417,7 +1839,7 @@ var NewDishPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 217:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1639,7 +2061,7 @@ var EditMenuPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 218:
+/***/ 221:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1791,7 +2213,7 @@ var EditDishPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 219:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1958,7 +2380,7 @@ var NewMenuPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 220:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2117,14 +2539,14 @@ var EditProfilePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 221:
+/***/ 224:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsControllerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__discover_discover__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__discover_discover__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_favourites_favourites__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__bookings_bookings__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__CUST_profile_profile__ = __webpack_require__(228);
@@ -2166,7 +2588,7 @@ var TabsControllerPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 222:
+/***/ 225:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2174,7 +2596,7 @@ var TabsControllerPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_details_menu_details__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_details_menu_details__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2236,86 +2658,7 @@ var DiscoverPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 223:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuDetailsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_make_booking_make_booking__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(8);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var MenuDetailsPage = /** @class */ (function () {
-    function MenuDetailsPage(navCtrl, navParams, http) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.http = http;
-        this.showImage = false;
-        this.details = navParams.get("item");
-    }
-    MenuDetailsPage.prototype.ngOnInit = function () {
-        this.getMenu();
-    };
-    MenuDetailsPage.prototype.ionViewWillEnter = function () {
-        var body = document.getElementsByTagName("BODY")[0];
-        body.classList.add("details-active");
-    };
-    MenuDetailsPage.prototype.ionViewWillLeave = function () {
-        var body = document.getElementsByTagName("BODY")[0];
-        body.classList.remove("details-active");
-    };
-    MenuDetailsPage.prototype.goToMakeBookingPage = function (event, item) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_make_booking_make_booking__["a" /* MakeBookingPage */], {
-            item: item
-        });
-    };
-    MenuDetailsPage.prototype.getMenu = function () {
-        var _this = this;
-        var url = "https://elp-tutorial.herokuapp.com/getmenu";
-        this.menuData = this.http.get(url);
-        this.menuData.subscribe(function (data) {
-            _this.menuList = data.filter(function (word) {
-                if (word.menuName == _this.details.menuName) {
-                    return word;
-                }
-            });
-        });
-    };
-    MenuDetailsPage.prototype.popupImage = function (event) {
-        if (!this.showImage == true) {
-            var imgSrc = event.srcElement.src;
-            this.popupSrc = imgSrc;
-            console.log(this.popupSrc);
-        }
-        this.showImage = !this.showImage;
-    };
-    MenuDetailsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-menu-details",template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\menu-details\menu-details.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      {{this.details.fName}}\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content id="page6">\n\n  <div class="details-image">\n\n    <img src="{{this.details.menu_image}}" alt="" />\n\n  </div>\n\n  <div padding>\n\n    <h4 id="menuDetails-heading3" style="color:#232323;font-weight:600;margin-bottom:5px;">\n\n      {{this.details.menuName}}\n\n    </h4>\n\n    <div style="margin-bottom:15px;color:#232323;">{{this.details.description}}</div>\n\n    <div class="details-info-list">\n\n      <div\n\n        id="menuDetails-markdown5"\n\n        class="show-list-numbers-and-dots details-info-each"\n\n      >\n\n        <ion-icon name="pin"></ion-icon>\n\n        <p ion-text>{{this.details.location}}</p>\n\n      </div>\n\n      <div\n\n        id="menuDetails-markdown6"\n\n        class="show-list-numbers-and-dots details-info-each"\n\n      >\n\n        <ion-icon name="pricetag"></ion-icon>\n\n        <p ion-text>{{this.details.menu_tags}}</p>\n\n      </div>\n\n      <div\n\n        id="menuDetails-markdown6"\n\n        class="show-list-numbers-and-dots details-info-each"\n\n      >\n\n        <ion-icon name="list-box"></ion-icon>\n\n        <p ion-text>~${{this.details.menu_price}}/pax</p>\n\n      </div>\n\n      <div\n\n        id="menuDetails-markdown6"\n\n        class="show-list-numbers-and-dots details-info-each"\n\n      >\n\n        <ion-icon name="call"></ion-icon>\n\n        <a href="tel:{{this.details.phone}}">{{this.details.phone}}</a>\n\n      </div>\n\n    </div>\n\n    <h5 id="menuDetails-heading4" style="color:#000000;font-size:1.6rem;">\n\n      Menu\n\n    </h5>\n\n    <ion-list id="menuDetails-list1" class="menu-list">\n\n      <ion-item color="none" id="menuDetails-list-item8" class="menu-item-each active" *ngFor="let item of menuList">\n\n        <img src="{{item.menuImg}}" alt="" (click)="popupImage($event)" />\n\n        <p ion-text color="black">{{item.menuItem}}</p>\n\n      </ion-item>\n\n    </ion-list>\n\n    <h5 id="menuDetails-heading5" style="color:#000000;font-size:1.6rem;">\n\n      Reviews\n\n    </h5>\n\n    <ion-list id="menuDetails-list2">\n\n      <ion-item color="none" id="menuDetails-list-item14">\n\n        Review 1\n\n      </ion-item>\n\n      <ion-item color="none" id="menuDetails-list-item15">\n\n        Review 2\n\n      </ion-item>\n\n      <ion-item color="none" id="menuDetails-list-item16">\n\n        Review 3\n\n      </ion-item>\n\n    </ion-list>\n\n  </div>\n\n</ion-content>\n\n<ion-item class="popup-image" (click)="popupImage()" [class.active]="this.showImage">\n\n  <img src="{{this.popupSrc}}" alt="">\n\n</ion-item>\n\n<div class="book-cta">\n\n  <button class="book-cta-btn" (click)="goToMakeBookingPage($event, this.details)">\n\n    Book Now\n\n  </button>\n\n</div>'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\menu-details\menu-details.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClient */]])
-    ], MenuDetailsPage);
-    return MenuDetailsPage;
-}());
-
-//# sourceMappingURL=menu-details.js.map
-
-/***/ }),
-
-/***/ 224:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2463,215 +2806,6 @@ var MakeBookingPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 225:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustReviewsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var CustReviewsPage = /** @class */ (function () {
-    function CustReviewsPage(navCtrl, loadingCtrl, http) {
-        this.navCtrl = navCtrl;
-        this.loadingCtrl = loadingCtrl;
-        this.http = http;
-    }
-    CustReviewsPage.prototype.ngOnInit = function () {
-        var loading = this.loadingCtrl.create({
-            content: 'Please wait...'
-        });
-        loading.present();
-        setTimeout(function () {
-            loading.dismiss();
-        }, 2000);
-    };
-    CustReviewsPage.prototype.getPDP = function () {
-        var _this = this;
-        var url = 'https://foodie1234.herokuapp.com/getReviewName';
-        var postData = JSON.stringify({
-            //these fields MUST match the server.js request.body.XXX;  
-            menuId: localStorage.getItem("cust_menuid"),
-        });
-        var httpOptions = {
-            headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
-            })
-        };
-        this.http.post(url, postData, httpOptions).subscribe(function (data) {
-            console.log('postData:', postData);
-            console.log(data);
-            _this.allReview = data;
-            for (var i = 0; i < _this.allReview.length; i++) {
-                _this.rating2 = data[i].rating;
-                if (data[i].cleanlinessRating == 1) {
-                    console.log("1", data[i].cleanlinessRating);
-                    data[i].cleanlinessRating = "../../assets/icon/broom.png";
-                }
-                else if (data[i].foodQualityRating == 1) {
-                    console.log("2", data[i].foodQualityRating);
-                    data[i].cleanlinessRating = "../../assets/icon/food.png";
-                }
-                else if (data[i].priceRating == 1) {
-                    console.log("3", data[i].priceRating);
-                    data[i].cleanlinessRating = "../../assets/icon/money.png";
-                }
-            }
-        }, function (error) {
-            console.log(error);
-        });
-    };
-    CustReviewsPage.prototype.ionViewWillEnter = function () {
-        this.getPDP();
-    };
-    CustReviewsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-reviews',template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-reviews\reviews.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Reviews\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page6">\n\n  <ion-card *ngFor="let rev of allReview">\n\n    <ion-grid>\n\n      <ion-row>\n\n        <ion-col col-12 >\n\n          <ion-avatar style="width:90px;height:90px;margin:0 auto;">\n\n            <img src="{{rev.cleanlinessRating}}">\n\n          </ion-avatar>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row >\n\n        <ion-col col-12 text-center style="margin-top:-15px;">         \n\n            <ionic3-star-rating [(ngModel)]="rating2" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n            defaultColor="#aaaaaa" readonly="true" fontSize="28px" (ratingChanged)="logRatingChange($event)">\n\n          </ionic3-star-rating>\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n        <ion-col col-12> \n\n          {{rev.comments}}\n\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row style="margin-top:10px;">\n\n        <ion-col col-6 text-left style="color:grey">\n\n          <ion-icon name="calendar"></ion-icon>   {{rev.datein | date: "dd MMM yyyy" }}\n\n        </ion-col>\n\n        <ion-col col-6 text-right>\n\n    <b style="font-style:italic;">-{{rev.custName}}</b>\n\n        </ion-col>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-reviews\reviews.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]])
-    ], CustReviewsPage);
-    return CustReviewsPage;
-}());
-
-//# sourceMappingURL=reviews.js.map
-
-/***/ }),
-
-/***/ 226:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustSubmitReviewPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__(34);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(15);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var CustSubmitReviewPage = /** @class */ (function () {
-    function CustSubmitReviewPage(navCtrl, navParams, loadingCtrl, http, loc, storage) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.loadingCtrl = loadingCtrl;
-        this.http = http;
-        this.loc = loc;
-        this.storage = storage;
-        this.isValid = true;
-        // arr:SubmitReview[];
-        this.datein = new Date().toISOString().substr(0, 10);
-        this.menuTitle = navParams.get('item');
-    }
-    CustSubmitReviewPage.prototype.hitme = function (point) {
-        this.point = point;
-    };
-    CustSubmitReviewPage.prototype.logRatingChange = function (rating) {
-        this.isValid = false;
-    };
-    CustSubmitReviewPage.prototype.submitReview = function () {
-        var _this = this;
-        var url = 'https://foodie1234.herokuapp.com/submitReview';
-        var postData;
-        if (this.point == "hygenie") {
-            postData = JSON.stringify({
-                //these fields MUST match the server.js request.body.XXX;
-                menuId: localStorage.getItem("cust_menuid"),
-                custId: localStorage.getItem("loginid"),
-                rating: this.rating,
-                cleanlinessRating: 1,
-                foodQualityRating: 0,
-                priceRating: 0,
-                comments: this.myText,
-                datein: this.datein,
-            });
-        }
-        else if (this.point == "food") {
-            postData = JSON.stringify({
-                //these fields MUST match the server.js request.body.XXX;
-                menuId: localStorage.getItem("cust_menuid"),
-                custId: localStorage.getItem("loginid"),
-                rating: this.rating,
-                cleanlinessRating: 0,
-                foodQualityRating: 1,
-                priceRating: 0,
-                comments: this.myText,
-                datein: this.datein,
-            });
-        }
-        else {
-            postData = JSON.stringify({
-                //these fields MUST match the server.js request.body.XXX;
-                menuId: localStorage.getItem("cust_menuid"),
-                custId: localStorage.getItem("loginid"),
-                rating: this.rating,
-                cleanlinessRating: 0,
-                foodQualityRating: 0,
-                priceRating: 1,
-                comments: this.myText,
-                datein: this.datein,
-            });
-        }
-        var httpOptions = {
-            headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
-            })
-        };
-        this.http.post(url, postData, httpOptions).subscribe(function (data) {
-            if (data == true) {
-                _this.navCtrl.pop();
-                var loading_1 = _this.loadingCtrl.create({
-                    content: 'Please wait...'
-                });
-                loading_1.present();
-                setTimeout(function () {
-                    loading_1.dismiss();
-                }, 2000);
-            }
-        }, function (error) {
-            console.log(error);
-        });
-    };
-    CustSubmitReviewPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-submitReview',template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-submitReview\submitReview.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      <label>Rate {{menuTitle}} </label>\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page5" class="body">\n\n    <ion-label text-center class="text">Rate my Service</ion-label>\n\n    <div>\n\n      <ion-grid>\n\n        <ion-col col-12>\n\n          <ionic3-star-rating [(ngModel)]="rating" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"\n\n          defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="40px" (ratingChanged)="logRatingChange($event)"> \n\n        </ionic3-star-rating>\n\n        </ion-col>\n\n      </ion-grid>\n\n\n\n    </div>\n\n    <!-- <ion-label text-center class="text">Food Quality</ion-label> -->\n\n      <!-- <ionic3-star-rating [(ngModel)]="rating2" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"\n\n        defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px">\n\n      </ionic3-star-rating> -->\n\n      <div text-center>\n\n        <ion-label text-center class="text1">Category</ion-label>\n\n        <div style="width:30%;display:inline-block;">\n\n        <label>\n\n          <input type="radio" name="point" (click)="hitme(\'hygenie\')">\n\n          <img src="../../assets/icon/broom.png">       \n\n        </label>\n\n        <p class="p-text" text-center>Hygiene</p>\n\n      </div>\n\n      <div style="width:30%;display:inline-block;">\n\n        <label>\n\n        <input type="radio" name="point" (click)="hitme(\'food\')">\n\n        <img src="../../assets/icon/food.png">\n\n      </label>\n\n      <p class="p-text" text-center>Food</p>\n\n    </div>\n\n    <div style="width:30%;display:inline-block;">\n\n      <label>\n\n        <input type="radio" name="point" (click)="hitme(\'money\')">\n\n        <img src="../../assets/icon/money.png">\n\n      </label>\n\n      <p class="p-text" text-center>Price</p>\n\n    </div>\n\n    </div>\n\n      <!-- <div text-center class="upup">\n\n        <ion-label text-center class="text">My Strongest point</ion-label>\n\n        <label>\n\n          <input type="radio" name="point" (click)="hitme(\'hygenie\')">\n\n          <img class="btn-img" src="../../assets/icon/broom.png">\n\n          <p style="display:none;">aaa</p>         \n\n        </label>\n\n        <label>\n\n        <input type="radio" name="point" (click)="hitme(\'food\')">\n\n        <img class="btn-img" src="../../assets/icon/food.png">\n\n      </label>\n\n      <label>\n\n        <input type="radio" name="point" (click)="hitme(\'money\')">\n\n        <img class="btn-img" src="../../assets/icon/money.png">\n\n      </label>\n\n    </div> -->\n\n    <!-- <ion-label text-center class="text">Price</ion-label>\n\n    <ion-item class="no-border ">\n\n      <ionic3-star-rating [(ngModel)]="rating3" class="center" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#F2F92F"\n\n        defaultColor="#aaaaaa" readonly="false" rating="0" fontSize="32px">\n\n      </ionic3-star-rating>\n\n    </ion-item> -->\n\n\n\n    <ion-item class="border-text">\n\n      <ion-textarea [(ngModel)]="myText" [maxlength]="100" autoGrow="true" placeholder="Describe your experience (optional)"></ion-textarea>\n\n    </ion-item>\n\n      <ion-label class="right">Characters Remaining: {{myText?.length || 0}}/100</ion-label>\n\n    <button class="center" ion-button [disabled]="isValid" color="positive" (click)="submitReview()">Submit Review</button>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-submitReview\submitReview.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_3__angular_common__["e" /* Location */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
-    ], CustSubmitReviewPage);
-    return CustSubmitReviewPage;
-}());
-
-//# sourceMappingURL=submitReview.js.map
-
-/***/ }),
-
 /***/ 227:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2775,38 +2909,38 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_PDP_booking_details_PDP_booking_details__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_tabs_tabs__ = __webpack_require__(310);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_tabs2_tabs2__ = __webpack_require__(314);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_CUST_menuinfo_menuinfo__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_CUST_menuinfo_menuinfo__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_create_menu_create_menu__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_CUST_favourites_favourites__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_discover_discover__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_discover_discover__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_bookings_bookings__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tabs_controller_tabs_controller__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_menu_details_menu_details__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_make_booking_make_booking__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_CUST_menu_menu__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_CUST_reviews_reviews__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_CUST_submitReview_submitReview__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tabs_controller_tabs_controller__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_menu_details_menu_details__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_make_booking_make_booking__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_CUST_menu_menu__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_CUST_reviews_reviews__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_CUST_submitReview_submitReview__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_CUST_tabs_tabs2__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ionic3_star_rating__ = __webpack_require__(317);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_status_bar__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_splash_screen__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__angular_common_http__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_PDP_bookingData__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__ionic_storage__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_PDP_new_menu_PDP_new_menu__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__pages_PDP_new_menu_PDP_new_menu__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__pages_login_page_login_page__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_PDP_menuData__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_PDP_profileData__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_PDP_dashboardData__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_camera_ngx__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_PDP_tabs_PDP_tabs__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_PDP_tabs_PDP_tabs__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_PDP_profile_PDP_profile__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_CUST_profile_profile__ = __webpack_require__(228);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_PDP_menu_PDP_menu__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_PDP_edit_menu_PDP_edit_menu__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_PDP_edit_profile_PDP_edit_profile__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_PDP_new_dish_PDP_new_dish__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_PDP_edit_dish_PDP_edit_dish__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_PDP_menu_PDP_menu__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_PDP_edit_menu_PDP_edit_menu__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_PDP_edit_profile_PDP_edit_profile__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_PDP_new_dish_PDP_new_dish__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_PDP_edit_dish_PDP_edit_dish__ = __webpack_require__(221);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3000,8 +3134,8 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_page_login_page__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3334,7 +3468,7 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CUST_favourites_favourites__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3414,7 +3548,7 @@ var CreateMenuPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CUST_favourites_favourites__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(119);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3456,8 +3590,8 @@ var CustTabsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenusPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_menu_PDP_menu__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_new_menu_PDP_new_menu__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PDP_menu_PDP_menu__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PDP_new_menu_PDP_new_menu__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3529,8 +3663,9 @@ var MenusPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__menu_details_menu_details__ = __webpack_require__(115);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3540,6 +3675,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -3560,25 +3696,32 @@ var CustFavouritesPage = /** @class */ (function () {
         this.storage = storage;
     }
     CustFavouritesPage.prototype.ngOnInit = function () {
+    };
+    CustFavouritesPage.prototype.ionViewWillEnter = function () {
+        this.getFavs();
         var loading = this.loadingCtrl.create({
             content: 'Please wait...'
         });
         loading.present();
         setTimeout(function () {
             loading.dismiss();
-        }, 2000);
-    };
-    CustFavouritesPage.prototype.ionViewWillEnter = function () {
-        this.getFavs();
+        }, 1000);
     };
     CustFavouritesPage.prototype.goToMenuPage = function (menuId) {
         //this.router.navigateByUrl('/pdpMenuPage/' + this.custId + '/' + menuId);
         localStorage.setItem('cust_menuid', menuId);
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__["a" /* CustMenuInfoPage */]);
     };
+    CustFavouritesPage.prototype.goToMenuDetailsPage = function (event, item) {
+        localStorage.setItem('cust_menuid', item.menuId);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__menu_details_menu_details__["a" /* MenuDetailsPage */], {
+            item: item
+        });
+        console.log(item);
+    };
     CustFavouritesPage.prototype.getFavs = function () {
         var _this = this;
-        var url = 'https://foodie1234.herokuapp.com/getFavs';
+        var url = 'https://foodie1234.herokuapp.com/findFavs';
         var postData = JSON.stringify({
             //these fields MUST match the server.js request.body.XXX;  
             custId: localStorage.getItem("loginid"),
@@ -3599,18 +3742,42 @@ var CustFavouritesPage = /** @class */ (function () {
                 _this.ishidden = false;
                 _this.ishiddenimg = true;
                 _this.favs = data;
+                for (var i = 0; i < _this.favs.length; i++) {
+                    _this.getTotalReviews(_this.favs[i].menuId);
+                }
             }
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    CustFavouritesPage.prototype.getTotalReviews = function (menuId) {
+        var _this = this;
+        var url = 'https://foodie1234.herokuapp.com/getTotalReviews';
+        var postData = JSON.stringify({
+            //these fields MUST match the server.js request.body.XXX;  
+            menuId: menuId,
+        });
+        var httpOptions = {
+            headers: new __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["c" /* HttpHeaders */]({
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+            })
+        };
+        this.http.post(url, postData, httpOptions).subscribe(function (data) {
+            _this.totalReviews = data;
         }, function (error) {
             console.log(error);
         });
     };
     CustFavouritesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-favourites',template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-favourites\favourites.html"*/'<!--\n\n  Generated template for the FavouritesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>Favourites</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content style="width:100%;" [hidden]="ishidden">\n\n  <ion-list>\n\n    <ion-item *ngFor="let menu of favs" >\n\n      <ion-label class="fulllabel" >\n\n        <button class="wholebutton" item-right (click)="goToMenuPage(menu.menuId)">\n\n          <h3 text-left>{{menu.fName}} </h3>\n\n          <p text-left style="color:grey;">{{menu.menuName}} </p>\n\n          <p text-left>{{menu.menu_category}} </p>\n\n        </button>\n\n      </ion-label>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n<ion-content style="width:100%;" [hidden]="ishiddenimg">\n\n  <ion-label class="fulllabel" >\n\n    <img src="../../assets/imgs/fav_ss.jpg"/> \n\n    </ion-label>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-favourites\favourites.html"*/,
+            selector: 'page-favourites',template:/*ion-inline-start:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-favourites\favourites.html"*/'<!--\n\n  Generated template for the FavouritesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>Favourites</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<!-- <ion-content style="width:100%;" [hidden]="ishidden">\n\n  <ion-list>\n\n    <ion-item *ngFor="let menu of favs" >\n\n      <ion-label class="fulllabel" >\n\n        <button class="wholebutton" item-right (click)="goToMenuPage(menu.menuId)">\n\n          <h3 text-left>{{menu.fName}} </h3>\n\n          <p text-left style="color:grey;">{{menu.menuName}} </p>\n\n          <p text-left>{{menu.menu_category}} </p>\n\n        </button>\n\n      </ion-label>\n\n    </ion-item>\n\n  </ion-list>\n\n\n\n</ion-content>\n\n<ion-content style="width:100%;" [hidden]="ishiddenimg">\n\n  <ion-label class="fulllabel" >\n\n    <img src="../../assets/imgs/fav_ss.jpg"/> \n\n    </ion-label>\n\n</ion-content> -->\n\n<ion-content padding id="page2" [hidden]="ishidden">\n\n  <ion-card\n\n    id="discover-card21"\n\n    class="discover-card-each"\n\n    *ngFor="let profile of favs"\n\n  >\n\n    <ion-list>\n\n      <ion-item color="none" id="discover-list-item3">\n\n        <ion-avatar item-left>\n\n          <img src="{{profile.img}}" />\n\n        </ion-avatar>\n\n        <h2\n\n          style="margin-bottom:0;font-weight:500;"\n\n          (click)="goToMenuDetailsPage($event, profile)"\n\n        >\n\n          {{profile.fName}}\n\n        </h2>\n\n      </ion-item>\n\n      <div class="discover-image">\n\n        <img src="{{profile.menu_image}}" alt="" />\n\n      </div>\n\n      <div class="discover-info">\n\n        <h5\n\n          id="discover-heading2"\n\n          class="discover-menuname"\n\n          style="color:#000000;font-weight:600;"\n\n          (click)="goToMenuDetailsPage($event, profile)"\n\n        >\n\n          {{profile.menuName}}\n\n        </h5>\n\n        <div class="show-list-numbers-and-dots">\n\n          <p style="color:#000000;">\n\n            ~${{profile.menu_price}}/pax\n\n          </p>\n\n        </div>\n\n        <div id="discover-markdown3" class="show-list-numbers-and-dots">\n\n          <p style="color:#000000;">\n\n            {{profile.location}}\n\n          </p>\n\n        </div>\n\n        <div id="discover-markdown4" class="show-list-numbers-and-dots">\n\n          <p style="color:#000000;font-size:1.3rem;">\n\n            {{profile.menu_tags}}\n\n          </p>\n\n        </div>\n\n        <div class="discover-ratings" *ngFor="let review of totalReviews">\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : review.avgRating > 0}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : review.avgRating > 1}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : review.avgRating > 2}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : review.avgRating > 3}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span\n\n            class="each-star"\n\n            [ngClass]="{\'active\' : review.avgRating > 4}"\n\n          >\n\n            <svg\n\n              xmlns="http://www.w3.org/2000/svg"\n\n              width="24"\n\n              height="24"\n\n              viewBox="0 0 24 24"\n\n            >\n\n              <path\n\n                d="M12 5.173l2.335 4.817 5.305.732-3.861 3.71.942 5.27-4.721-2.524-4.721 2.525.942-5.27-3.861-3.71 5.305-.733 2.335-4.817zm0-4.586l-3.668 7.568-8.332 1.151 6.064 5.828-1.48 8.279 7.416-3.967 7.416 3.966-1.48-8.279 6.064-5.827-8.332-1.15-3.668-7.569z"\n\n              />\n\n            </svg>\n\n          </span>\n\n          <span class="rating-amount">{{review.totalReviews}} reviews</span>\n\n        </div>\n\n      </div>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>\n\n<ion-content style="width:100%;" [hidden]="ishiddenimg">\n\n    <ion-label class="fulllabel" >\n\n      <img src="../../assets/imgs/fav_ss.jpg"/> \n\n      </ion-label>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\19B772K\Documents\Test\ELP\src\pages\CUST-favourites\favourites.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]) === "function" && _e || Object])
     ], CustFavouritesPage);
     return CustFavouritesPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=favourites.js.map

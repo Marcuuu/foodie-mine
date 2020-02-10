@@ -17,7 +17,7 @@
       </ion-row>
       <ion-row >
         <ion-col col-12 text-center style="margin-top:-15px;">         
-            <ionic3-star-rating [(ngModel)]="rating2" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"
+            <ionic3-star-rating rating="{{rev.rating}}" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"
             defaultColor="#aaaaaa" readonly="true" fontSize="28px" (ratingChanged)="logRatingChange($event)">
           </ionic3-star-rating>
         </ion-col>

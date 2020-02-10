@@ -16,6 +16,8 @@ export class CustSubmitReviewPage {
   myText: String;
   menuInfo:any[];
   isValid:boolean=true;
+  press:boolean=true;
+  press1:boolean=true;
   // arr:SubmitReview[];
   datein: any = new Date().toISOString().substr(0,10);
   menuTitle:any;
@@ -24,12 +26,19 @@ export class CustSubmitReviewPage {
     this.menuTitle=navParams.get('item');
 
   }
-  hitme(point){
+  hitme(point){   
     this.point =point;
+    this.press =false;
+    if(this.press1 ==false && this.press == false){
+      this.isValid=false;
+    }
   }
 
   logRatingChange(rating){
-    this.isValid=false;
+    this.press1=false;
+    if(this.press1 ==false && this.press == false){
+      this.isValid=false;
+    }
 }
   submitReview() {
     var url = 'https://foodie1234.herokuapp.com/submitReview';
@@ -37,7 +46,7 @@ export class CustSubmitReviewPage {
     if(this.point == "hygenie"){
        postData = JSON.stringify({
         //these fields MUST match the server.js request.body.XXX;
-        menuId: localStorage.getItem("cust_menuid"),  
+        menuId: this.menuTitle.menuId,  
         custId: localStorage.getItem("loginid"),
         rating: this.rating,
         cleanlinessRating: 1,
@@ -50,7 +59,7 @@ export class CustSubmitReviewPage {
     else if(this.point == "food"){
         postData = JSON.stringify({
         //these fields MUST match the server.js request.body.XXX;
-        menuId: localStorage.getItem("cust_menuid"),  
+        menuId: this.menuTitle.menuId,  
         custId: localStorage.getItem("loginid"),
         rating: this.rating,
         cleanlinessRating: 0,
@@ -64,7 +73,7 @@ export class CustSubmitReviewPage {
     {
         postData = JSON.stringify({
         //these fields MUST match the server.js request.body.XXX;
-        menuId: localStorage.getItem("cust_menuid"),  
+        menuId: this.menuTitle.menuId,  
         custId: localStorage.getItem("loginid"),
         rating: this.rating,
         cleanlinessRating: 0,

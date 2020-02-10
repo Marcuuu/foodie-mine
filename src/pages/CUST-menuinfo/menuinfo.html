@@ -66,30 +66,6 @@
       </ion-row>
     </ion-grid>
   </ion-card>
-  <!-- <ion-grid *ngFor="let rev of TopReview" [hidden]="hvInfo">
-    <ion-row justify-content-start>
-      <ion-col col-5>
-        <div class="text-name"><label>{{rev.custName}}</label></div>
-      </ion-col>
-    </ion-row>
-    <ion-row justify-content-start>
-      <ion-col col-6>
-        <div>          
-          <ionic3-star-rating [(ngModel)]="rating2" halfStar="false" activeIcon="ios-star" defaultIcon="ios-star-outline" activeColor="#FFC300"
-          defaultColor="#aaaaaa" readonly="true" fontSize="15px" (ratingChanged)="logRatingChange($event)">
-        </ionic3-star-rating>
-      </div>
-      </ion-col>
-      <ion-col col-6>
-        <div style="margin-top:7px;font-size:12px;">{{rev.datein | date: "dd/MMM/yyyy" }}</div>
-      </ion-col>
-    </ion-row>
-    <ion-row justify-content-start>
-      <ion-col col-12>
-        <div style="margin-left:4px;">{{rev.comments}}</div>
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
   <button class="wholebutton" (click)="allReviews()">
     <h3 style="color:lightgreen">See all Reviews</h3>
   </button>

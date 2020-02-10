@@ -15,4 +15,109 @@ page-favourites {
         height:100%;
         padding: 2px 2px 0px 0px;
     }
+    .searchbar-md {
+        padding: {
+          left: 0;
+          right: 0;
+        }
+        margin: {
+          bottom: 10px;
+        }
+        .searchbar-search-icon {
+          left: 10px;
+        }
+        .searchbar-input {
+          padding: {
+            left: 40px;
+            right: 40px;
+          }
+        }
+      }
+      .discover-filter {
+        padding: {
+          left: 0;
+        }
+        margin: {
+          bottom: 30px;
+        }
+        .input-wrapper {
+          display: block;
+        }
+        .item-inner {
+          padding: {
+            left: 10px;
+          }
+        }
+        ion-label {
+          display: inline-block;
+          width: 20%;
+        }
+        ion-select {
+          display: inline-block;
+          width: 70%;
+          max-width: 70%;
+        }
+        .select-text {
+          width: 100%;
+        }
+        .select-icon {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+        }
+      }
+      .discover-card-each {
+        width: 100%;
+        margin: {
+          left: 0;
+          right: 0;
+        }
+        &:not(:last-child) {
+          margin: {
+            bottom: 20px;
+          }
+        }
+      }
+      .discover-info {
+        padding: 15px;
+      }
+      .discover-ratings {
+        display: flex;
+        align-items: center;
+        margin: {
+          top: 5px;
+        }
+        .each-star {
+          margin: {
+            right: 2px;
+          }
+          &:last-child {
+            margin: {
+              right: 5px;
+            }
+          }
+          &.active {
+            svg {
+              fill: #dba420;
+            }
+          }
+        }
+        svg {
+          display: block;
+          width: 18px;
+          height: 18px;
+        }
+        .rating-amount {
+          padding: {
+            top: 2px;
+          }
+        }
+      }
+      .discover-menuname {
+        @extend .header-s;
+        margin: {
+          bottom: 10px;
+        }
+      }
 }

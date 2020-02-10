@@ -129,19 +129,16 @@ imgInfo:any;
           {
             console.log("1",data[i].cleanlinessRating);
             data[i].cleanlinessRating = "../../assets/icon/broom.png";
-            console.log("11",this.imgInfo);
           }
           else if(data[i].foodQualityRating == 1)
           {
             console.log("2",data[i].foodQualityRating);
             data[i].cleanlinessRating = "../../assets/icon/food.png";
-            console.log("22",this.imgInfo);
           }
           else if(data[i].priceRating == 1)
           {
             console.log("3",data[i].priceRating);
             data[i].cleanlinessRating = "../../assets/icon/money.png";
-            console.log("33",this.imgInfo);
           }
         }
       }

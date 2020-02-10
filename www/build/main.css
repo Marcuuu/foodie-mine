@@ -36500,7 +36500,7 @@ body.details-active .book-cta {
   bottom: 0;
 }
 
-.header-s, page-discover .discover-menuname {
+.header-s, page-favourites .discover-menuname, page-discover .discover-menuname {
   font-size: 1.5rem;
 }
 
@@ -36549,6 +36549,109 @@ page-favourites .fulllabel {
   width: 100%;
   height: 100%;
   padding: 2px 2px 0px 0px;
+}
+
+page-favourites .searchbar-md {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 10px;
+}
+
+page-favourites .searchbar-md .searchbar-search-icon {
+  left: 10px;
+}
+
+page-favourites .searchbar-md .searchbar-input {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+page-favourites .discover-filter {
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+page-favourites .discover-filter .input-wrapper {
+  display: block;
+}
+
+page-favourites .discover-filter .item-inner {
+  padding-left: 10px;
+}
+
+page-favourites .discover-filter ion-label {
+  display: inline-block;
+  width: 20%;
+}
+
+page-favourites .discover-filter ion-select {
+  display: inline-block;
+  width: 70%;
+  max-width: 70%;
+}
+
+page-favourites .discover-filter .select-text {
+  width: 100%;
+}
+
+page-favourites .discover-filter .select-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+page-favourites .discover-card-each {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+page-favourites .discover-card-each:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+page-favourites .discover-info {
+  padding: 15px;
+}
+
+page-favourites .discover-ratings {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 5px;
+}
+
+page-favourites .discover-ratings .each-star {
+  margin-right: 2px;
+}
+
+page-favourites .discover-ratings .each-star:last-child {
+  margin-right: 5px;
+}
+
+page-favourites .discover-ratings .each-star.active svg {
+  fill: #dba420;
+}
+
+page-favourites .discover-ratings svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+page-favourites .discover-ratings .rating-amount {
+  padding-top: 2px;
+}
+
+page-favourites .discover-menuname {
+  margin-bottom: 10px;
 }
 
 page-menu .wholebutton {
@@ -37069,4 +37172,13 @@ page-menu-details .popup-image img {
   display: none;
   margin-left: auto;
   margin-right: auto;
+}
+
+page-menu-details .wholebutton {
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: column !important;
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+  background-color: transparent !important;
 }
