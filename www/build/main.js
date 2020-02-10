@@ -611,7 +611,7 @@ var ProfilePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_PDP_Profile__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_PDP_Profile__ = __webpack_require__(318);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1387,74 +1387,6 @@ var CustMenuInfoPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustMenuPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(11);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the MenuPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var CustMenuPage = /** @class */ (function () {
-    function CustMenuPage(navCtrl, navParams, http, storage) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.http = http;
-        this.storage = storage;
-    }
-    CustMenuPage.prototype.getPDP = function () {
-        var _this = this;
-        var url = 'https://foodie1234.herokuapp.com/getMenu';
-        this.data = this.http.get(url);
-        this.data.subscribe(function (data) {
-            _this.menuPage = data;
-        });
-    };
-    CustMenuPage.prototype.goToMenuPage = function (menuid, menuname) {
-        // this.getFavanotData(menuid,localStorage.getItem("loginid"));
-        localStorage.setItem("cust_menuid", menuid);
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__["a" /* CustMenuInfoPage */], {
-            item: menuname
-        });
-    };
-    CustMenuPage.prototype.ngOnInit = function () {
-        this.getPDP();
-    };
-    CustMenuPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\CUST-menu\menu.html"*/'<!--\n\n  Generated template for the MenuPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>Menu</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-list>\n\n      <ion-item *ngFor="let menu of menuPage">\n\n        <ion-label class="fulllabel">\n\n          <button class="wholebutton" item-right (click)="goToMenuPage(menu.menuId,menu.menuName)">\n\n            <h3 text-left>{{menu.fName}} </h3>\n\n            <p text-left style="color:grey;">{{menu.menuName}} </p>\n\n            <p text-left>{{menu.menu_category}} </p>\n\n          </button>\n\n        </ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\CUST-menu\menu.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
-    ], CustMenuPage);
-    return CustMenuPage;
-}());
-
-//# sourceMappingURL=menu.js.map
-
-/***/ }),
-
-/***/ 121:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustRescheduleBookingPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
@@ -1495,7 +1427,7 @@ var CustRescheduleBookingPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 122:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1560,7 +1492,7 @@ var CustBookData = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 123:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1621,6 +1553,74 @@ var CustPBookData = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=Cust-pastBookingData.js.map
+
+/***/ }),
+
+/***/ 123:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustMenuPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common_http__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the MenuPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CustMenuPage = /** @class */ (function () {
+    function CustMenuPage(navCtrl, navParams, http, storage) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.http = http;
+        this.storage = storage;
+    }
+    CustMenuPage.prototype.getPDP = function () {
+        var _this = this;
+        var url = 'https://foodie1234.herokuapp.com/getMenu';
+        this.data = this.http.get(url);
+        this.data.subscribe(function (data) {
+            _this.menuPage = data;
+        });
+    };
+    CustMenuPage.prototype.goToMenuPage = function (menuid, menuname) {
+        // this.getFavanotData(menuid,localStorage.getItem("loginid"));
+        localStorage.setItem("cust_menuid", menuid);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__CUST_menuinfo_menuinfo__["a" /* CustMenuInfoPage */], {
+            item: menuname
+        });
+    };
+    CustMenuPage.prototype.ngOnInit = function () {
+        this.getPDP();
+    };
+    CustMenuPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-menu',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\CUST-menu\menu.html"*/'<!--\n\n  Generated template for the MenuPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar>\n\n    <ion-title text-center>Menu</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-list>\n\n      <ion-item *ngFor="let menu of menuPage">\n\n        <ion-label class="fulllabel">\n\n          <button class="wholebutton" item-right (click)="goToMenuPage(menu.menuId,menu.menuName)">\n\n            <h3 text-left>{{menu.fName}} </h3>\n\n            <p text-left style="color:grey;">{{menu.menuName}} </p>\n\n            <p text-left>{{menu.menu_category}} </p>\n\n          </button>\n\n        </ion-label>\n\n      </ion-item>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\CUST-menu\menu.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
+    ], CustMenuPage);
+    return CustMenuPage;
+}());
+
+//# sourceMappingURL=menu.js.map
 
 /***/ }),
 
@@ -2779,8 +2779,8 @@ var EditProfilePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__discover_discover__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_favourites_favourites__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cust_bookings_cust_bookings__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__CUST_profile_profile__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cust_bookings_cust_bookings__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__CUST_profile_profile__ = __webpack_require__(237);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2810,10 +2810,9 @@ var TabsControllerPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-tabs-controller',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\tabs-controller\tabs-controller.html"*/'<ion-tabs id="tabsController-tabs1 main-tabs"> \n\n  <ion-tab [root]="tab1Root" tabTitle="Discover" tabIcon="compass" id="tabsController-tab1"></ion-tab>\n\n  <ion-tab [root]="tab2Root" tabTitle="Favourites" tabIcon="heart-outline" id="tabsController-tab2"></ion-tab>\n\n  <ion-tab [root]="tab3Root" tabTitle="Bookings" tabIcon="calendar" id="tabsController-tab3"></ion-tab>\n\n  <ion-tab [root]="tab4Root" tabTitle="Profile" tabIcon="contact" id="tabsController-tab4"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\tabs-controller\tabs-controller.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
     ], TabsControllerPage);
     return TabsControllerPage;
-    var _a;
 }());
 
 //# sourceMappingURL=tabs-controller.js.map
@@ -3103,9 +3102,12 @@ var MakeBookingPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustProfilePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustBookingsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_ongoing_bookings_cust_ongoing_bookings__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cust_past_bookings_cust_past_bookings__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_Cust_bookingData__ = __webpack_require__(121);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3117,22 +3119,152 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var CustProfilePage = /** @class */ (function () {
-    // this tells the tabs component which Pages
-    // should be each tab's root Page
-    function CustProfilePage(navCtrl) {
+
+
+
+var CustBookingsPage = /** @class */ (function () {
+    // this tells the tabs component which Pages should be each tab's root Page
+    function CustBookingsPage(navCtrl, custBookData) {
         this.navCtrl = navCtrl;
+        this.custBookData = custBookData;
     }
-    CustProfilePage = __decorate([
+    CustBookingsPage.prototype.goToCOnBook = function (custBook) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__cust_ongoing_bookings_cust_ongoing_bookings__["a" /* CustOngoingBookingsPage */], {
+            data: custBook
+        });
+    };
+    CustBookingsPage.prototype.goToCPBook = function (custPBook) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__cust_past_bookings_cust_past_bookings__["a" /* CustPastBookingsPage */], {
+            data: custPBook
+        });
+    };
+    CustBookingsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\CUST-profile\profile.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Profile\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page5"></ion-content>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\CUST-profile\profile.html"*/
+            selector: 'page-cust-bookings',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\cust-bookings\cust-bookings.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Bookings\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page3">\n\n  <ion-list id="bookings-list8">\n\n    <ion-item color="none" id="bookings-list-item17" on-click="goToCOnBook()">\n\n      Ongoing\n\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n\n    </ion-item>\n\n    <ion-item color="none" id="bookings-list-item18" on-click="goToCPBook()">\n\n      Past\n\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\cust-bookings\cust-bookings.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
-    ], CustProfilePage);
-    return CustProfilePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_Cust_bookingData__["a" /* CustBookData */]])
+    ], CustBookingsPage);
+    return CustBookingsPage;
 }());
 
-//# sourceMappingURL=profile.js.map
+//# sourceMappingURL=cust-bookings.js.map
+
+/***/ }),
+
+/***/ 232:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustOngoingBookingsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_booking_details_cust_booking_details__ = __webpack_require__(233);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(7);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+// import { CustBookData } from '../../providers/Cust-bookingData';
+
+
+
+var CustOngoingBookingsPage = /** @class */ (function () {
+    // this tells the tabs component which Pages should be each tab's root Page
+    function CustOngoingBookingsPage(navCtrl, http, navParams, storage) {
+        this.navCtrl = navCtrl;
+        this.http = http;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.hideCard = false;
+    }
+    CustOngoingBookingsPage.prototype.ionViewWillEnter = function () {
+        this.getCustBookings();
+    };
+    CustOngoingBookingsPage.prototype.getCustBookings = function () {
+        var _this = this;
+        var url = "https://foodie1234.herokuapp.com/getCustBookings";
+        this.data = this.http.get(url);
+        this.subscription = this.data.subscribe(function (data) {
+            _this.custBookings = data;
+            console.log(data);
+        });
+    };
+    // getOnBook() {
+    //   console.log("entered", "here");
+    //   var url = 'https://foodie1234.herokuapp.com/getCustBookings';
+    //   var postData = JSON.stringify({
+    //     // post data MUSt match the request.body.userID;
+    //     bookingID: localStorage.getItem("loginid")
+    //   });
+    //   const httpOptions = {
+    //     headers: new HttpHeaders({
+    //       'Content-Type':  'application/json',
+    //       'Access-Control-Allow-Origin': '*',
+    //       'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
+    //     })
+    //   };
+    //   this.http.post(url, postData, httpOptions).subscribe((data) => {
+    //     console.log('postData:', postData);
+    //     console.log("ongoing", data);
+    //     this.cBooks = data;
+    //   }, error => {
+    //     console.log(error);
+    //   });
+    // }
+    // ionViewWillEnter() {
+    //   let id = localStorage.getItem('loginid');
+    //   console.log("getcustid", id);
+    //   this.storage.get('CUSTBook').then((val) => {
+    //     console.log(val);
+    //     this.cBooks = val;
+    //     for (var i=0;i<this.cBooks.length;i++){
+    //       if (this.cBooks[i].custID == id){
+    //         this.custBook = this.cBooks[i];
+    //       }
+    //     }
+    //     console.log('Get Ongoing Bookings completed');
+    //     console.log(this.custBook);
+    //   });
+    // }
+    // ionViewWillEnter(){
+    //   this.cBooks = this.navParams.get('data');
+    //   this.storage.get('CUSTBook').then((val) => {
+    //     if (val[0].bookID == 0 || val[0].bookID == null) {
+    //       this.hideCard = true;
+    //     }
+    //     console.log("hideCardStat", this.hideCard);
+    //     this.cBooks = val;
+    //     console.log("Ongoing", this.cBooks);
+    //     console.log('Get Customer Ongoing Bookings');
+    //   });
+    // }
+    //to push Booking Details page after selecting on specific bookings
+    CustOngoingBookingsPage.prototype.goToCustBookDetails = function (bookItem) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__cust_booking_details_cust_booking_details__["a" /* CustBookingDetailsPage */], {
+            data: bookItem
+        });
+    };
+    CustOngoingBookingsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: "page-cust-ongoing-bookings",template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\cust-ongoing-bookings\cust-ongoing-bookings.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ongoing Bookings\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page11">\n\n  <ion-card id="ongoingBookings-card22" *ngFor = "let bookItem of cBooks" (click)="goToCustBookDetails(bookItem)">\n\n    <ion-list>\n\n      <ion-item color="none" id="ongoingBookings-list-item61">\n\n        <ion-avatar item-left>\n\n          <img src="{{bookItem?.img}}" />\n\n        </ion-avatar>\n\n        <h2>\n\n          {{bookItem?.fName}}\n\n        </h2>\n\n        <ion-icon name="arrow-forward" item-right></ion-icon>\n\n      </ion-item>\n\n      <ion-item color="none" id="ongoingBookings-list-item62">\n\n        <ion-icon name="calendar" item-left></ion-icon>\n\n        {{bookItem?.bookDate}}, {{bookItem?.bookTime}}\n\n      </ion-item>\n\n      <ion-item color="none" id="ongoingBookings-list-item63">\n\n        <ion-icon name="information-circle" item-left></ion-icon>\n\n        {{bookItem?.bookStatus}}\n\n      </ion-item>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\cust-ongoing-bookings\cust-ongoing-bookings.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
+    ], CustOngoingBookingsPage);
+    return CustOngoingBookingsPage;
+}());
+
+//# sourceMappingURL=cust-ongoing-bookings.js.map
 
 /***/ }),
 
@@ -3143,8 +3275,8 @@ var CustProfilePage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustBookingDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_Cust_bookingData__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_Cust_bookingData__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3309,10 +3441,75 @@ var custBooking = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustPastBookingsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_Cust_pastBookingData__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cust_past_booking_details_cust_past_booking_details__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var CustPastBookingsPage = /** @class */ (function () {
+    // this tells the tabs component which Pages should be each tab's root Page
+    function CustPastBookingsPage(navCtrl, navParams, storage, custPBookData) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.storage = storage;
+        this.custPBookData = custPBookData;
+        this.hideCard = false;
+    }
+    CustPastBookingsPage.prototype.ionViewWillEnter = function () {
+        var _this = this;
+        this.cPBooks = this.navParams.get('data');
+        this.storage.get('CUSTPBook').then(function (val) {
+            if (val[0].bookID == 0 || val[0].bookID == null) {
+                _this.hideCard = true;
+            }
+            console.log("hideCardStat", _this.hideCard);
+            _this.cPBooks = val;
+            console.log("Past", _this.cPBooks);
+            console.log('Get Customer Ongoing Bookings');
+        });
+    };
+    //to push Booking Details page after selecting on specific bookings
+    CustPastBookingsPage.prototype.goToCustPBookDetails = function (bookItem) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__cust_past_booking_details_cust_past_booking_details__["a" /* CustPastBookingDetailsPage */], {
+            data: bookItem
+        });
+    };
+    CustPastBookingsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-cust-past-bookings',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\cust-past-bookings\cust-past-bookings.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Past Bookings\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page12">\n\n  <ion-card id="pastBookings-card23" *ngFor = "let bookItem of cPBooks" (click)="goToCustPBookDetails(bookItem)" [hidden]="hideCard">\n\n    <ion-list>\n\n      <ion-item color="none" id="pastBookings-list-item64">\n\n        <ion-avatar item-left>\n\n          <img src="{{bookItem?.img}}"/>\n\n        </ion-avatar>\n\n        <h2>\n\n          {{bookItem?.fName}}\n\n        </h2>\n\n        <ion-icon name="arrow-forward" item-right></ion-icon>\n\n      </ion-item>\n\n      <ion-item color="none" id="pastBookings-list-item65">\n\n        <ion-icon name="calendar" item-left></ion-icon>\n\n        {{bookItem?.bookDate}}, {{bookItem?.bookTime}}\n\n      </ion-item>\n\n      <ion-item color="none" id="pastBookings-list-item66">\n\n        <ion-icon name="information-circle" item-left></ion-icon>\n\n        {{bookItem?.bookStatus}}\n\n      </ion-item>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\cust-past-bookings\cust-past-bookings.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2__providers_Cust_pastBookingData__["a" /* CustPBookData */]])
+    ], CustPastBookingsPage);
+    return CustPastBookingsPage;
+}());
+
+//# sourceMappingURL=cust-past-bookings.js.map
+
+/***/ }),
+
+/***/ 236:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustPastBookingDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_Cust_pastBookingData__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_Cust_pastBookingData__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3379,133 +3576,13 @@ var CustPastBookingDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 236:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustOngoingBookingsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_booking_details_cust_booking_details__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common_http__ = __webpack_require__(7);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-// import { CustBookData } from '../../providers/Cust-bookingData';
-
-
-
-var CustOngoingBookingsPage = /** @class */ (function () {
-    // this tells the tabs component which Pages should be each tab's root Page
-    function CustOngoingBookingsPage(navCtrl, http, navParams, storage) {
-        this.navCtrl = navCtrl;
-        this.http = http;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.hideCard = false;
-    }
-    CustOngoingBookingsPage.prototype.ionViewWillEnter = function () {
-        this.getCustBookings();
-    };
-    CustOngoingBookingsPage.prototype.getCustBookings = function () {
-        var _this = this;
-        var url = "https://foodie1234.herokuapp.com/getCustBookings";
-        this.data = this.http.get(url);
-        this.subscription = this.data.subscribe(function (data) {
-            _this.custBookings = data;
-            console.log(data);
-        });
-    };
-    // getOnBook() {
-    //   console.log("entered", "here");
-    //   var url = 'https://foodie1234.herokuapp.com/getCustBookings';
-    //   var postData = JSON.stringify({
-    //     // post data MUSt match the request.body.userID;
-    //     bookingID: localStorage.getItem("loginid")
-    //   });
-    //   const httpOptions = {
-    //     headers: new HttpHeaders({
-    //       'Content-Type':  'application/json',
-    //       'Access-Control-Allow-Origin': '*',
-    //       'Access-Control-Allow-Methods': 'GET,HEAD,PUT,PATCH,POST,DELETE'
-    //     })
-    //   };
-    //   this.http.post(url, postData, httpOptions).subscribe((data) => {
-    //     console.log('postData:', postData);
-    //     console.log("ongoing", data);
-    //     this.cBooks = data;
-    //   }, error => {
-    //     console.log(error);
-    //   });
-    // }
-    // ionViewWillEnter() {
-    //   let id = localStorage.getItem('loginid');
-    //   console.log("getcustid", id);
-    //   this.storage.get('CUSTBook').then((val) => {
-    //     console.log(val);
-    //     this.cBooks = val;
-    //     for (var i=0;i<this.cBooks.length;i++){
-    //       if (this.cBooks[i].custID == id){
-    //         this.custBook = this.cBooks[i];
-    //       }
-    //     }
-    //     console.log('Get Ongoing Bookings completed');
-    //     console.log(this.custBook);
-    //   });
-    // }
-    // ionViewWillEnter(){
-    //   this.cBooks = this.navParams.get('data');
-    //   this.storage.get('CUSTBook').then((val) => {
-    //     if (val[0].bookID == 0 || val[0].bookID == null) {
-    //       this.hideCard = true;
-    //     }
-    //     console.log("hideCardStat", this.hideCard);
-    //     this.cBooks = val;
-    //     console.log("Ongoing", this.cBooks);
-    //     console.log('Get Customer Ongoing Bookings');
-    //   });
-    // }
-    //to push Booking Details page after selecting on specific bookings
-    CustOngoingBookingsPage.prototype.goToCustBookDetails = function (bookItem) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__cust_booking_details_cust_booking_details__["a" /* CustBookingDetailsPage */], {
-            data: bookItem
-        });
-    };
-    CustOngoingBookingsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: "page-cust-ongoing-bookings",template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\cust-ongoing-bookings\cust-ongoing-bookings.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ongoing Bookings\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page11">\n\n  <ion-card id="ongoingBookings-card22" *ngFor = "let bookItem of cBooks" (click)="goToCustBookDetails(bookItem)">\n\n    <ion-list>\n\n      <ion-item color="none" id="ongoingBookings-list-item61">\n\n        <ion-avatar item-left>\n\n          <img src="{{bookItem?.img}}" />\n\n        </ion-avatar>\n\n        <h2>\n\n          {{bookItem?.fName}}\n\n        </h2>\n\n        <ion-icon name="arrow-forward" item-right></ion-icon>\n\n      </ion-item>\n\n      <ion-item color="none" id="ongoingBookings-list-item62">\n\n        <ion-icon name="calendar" item-left></ion-icon>\n\n        {{bookItem?.bookDate}}, {{bookItem?.bookTime}}\n\n      </ion-item>\n\n      <ion-item color="none" id="ongoingBookings-list-item63">\n\n        <ion-icon name="information-circle" item-left></ion-icon>\n\n        {{bookItem?.bookStatus}}\n\n      </ion-item>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\cust-ongoing-bookings\cust-ongoing-bookings.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_common_http__["a" /* HttpClient */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
-    ], CustOngoingBookingsPage);
-    return CustOngoingBookingsPage;
-}());
-
-//# sourceMappingURL=cust-ongoing-bookings.js.map
-
-/***/ }),
-
 /***/ 237:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustPastBookingsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_Cust_pastBookingData__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cust_past_booking_details_cust_past_booking_details__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(11);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3517,57 +3594,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
-var CustPastBookingsPage = /** @class */ (function () {
-    // this tells the tabs component which Pages should be each tab's root Page
-    function CustPastBookingsPage(navCtrl, navParams, storage, custPBookData) {
+var CustProfilePage = /** @class */ (function () {
+    // this tells the tabs component which Pages
+    // should be each tab's root Page
+    function CustProfilePage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.storage = storage;
-        this.custPBookData = custPBookData;
-        this.hideCard = false;
     }
-    CustPastBookingsPage.prototype.ionViewWillEnter = function () {
-        var _this = this;
-        this.cPBooks = this.navParams.get('data');
-        this.storage.get('CUSTPBook').then(function (val) {
-            if (val[0].bookID == 0 || val[0].bookID == null) {
-                _this.hideCard = true;
-            }
-            console.log("hideCardStat", _this.hideCard);
-            _this.cPBooks = val;
-            console.log("Past", _this.cPBooks);
-            console.log('Get Customer Ongoing Bookings');
-        });
-    };
-    //to push Booking Details page after selecting on specific bookings
-    CustPastBookingsPage.prototype.goToCustPBookDetails = function (bookItem) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__cust_past_booking_details_cust_past_booking_details__["a" /* CustPastBookingDetailsPage */], {
-            data: bookItem
-        });
-    };
-    CustPastBookingsPage = __decorate([
+    CustProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cust-past-bookings',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\cust-past-bookings\cust-past-bookings.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Past Bookings\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page12">\n\n  <ion-card id="pastBookings-card23" *ngFor = "let bookItem of cPBooks" (click)="goToCustPBookDetails(bookItem)" [hidden]="hideCard">\n\n    <ion-list>\n\n      <ion-item color="none" id="pastBookings-list-item64">\n\n        <ion-avatar item-left>\n\n          <img src="{{bookItem?.img}}"/>\n\n        </ion-avatar>\n\n        <h2>\n\n          {{bookItem?.fName}}\n\n        </h2>\n\n        <ion-icon name="arrow-forward" item-right></ion-icon>\n\n      </ion-item>\n\n      <ion-item color="none" id="pastBookings-list-item65">\n\n        <ion-icon name="calendar" item-left></ion-icon>\n\n        {{bookItem?.bookDate}}, {{bookItem?.bookTime}}\n\n      </ion-item>\n\n      <ion-item color="none" id="pastBookings-list-item66">\n\n        <ion-icon name="information-circle" item-left></ion-icon>\n\n        {{bookItem?.bookStatus}}\n\n      </ion-item>\n\n    </ion-list>\n\n  </ion-card>\n\n</ion-content>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\cust-past-bookings\cust-past-bookings.html"*/
+            selector: 'page-profile',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\CUST-profile\profile.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Profile\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page5"></ion-content>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\CUST-profile\profile.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_2__providers_Cust_pastBookingData__["a" /* CustPBookData */]])
-    ], CustPastBookingsPage);
-    return CustPastBookingsPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]])
+    ], CustProfilePage);
+    return CustProfilePage;
 }());
 
-//# sourceMappingURL=cust-past-bookings.js.map
+//# sourceMappingURL=profile.js.map
 
 /***/ }),
 
-/***/ 238:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(260);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -3575,7 +3627,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3583,7 +3635,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(302);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_PDP_dashboard_PDP_dashboard__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_PDP_bookings_PDP_bookings__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_PDP_menus_PDP_menus__ = __webpack_require__(54);
@@ -3595,7 +3647,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_tabs_controller_tabs_controller__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_menu_details_menu_details__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_make_booking_make_booking__ = __webpack_require__(230);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_CUST_menu_menu__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_CUST_menu_menu__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_CUST_reviews_reviews__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_CUST_submitReview_submitReview__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_CUST_tabs_tabs2__ = __webpack_require__(320);
@@ -3613,21 +3665,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ionic_native_camera_ngx__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__pages_PDP_tabs_PDP_tabs__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__pages_PDP_profile_PDP_profile__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_CUST_profile_profile__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__pages_CUST_profile_profile__ = __webpack_require__(237);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_PDP_menu_PDP_menu__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_PDP_edit_menu_PDP_edit_menu__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_PDP_edit_profile_PDP_edit_profile__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_PDP_new_dish_PDP_new_dish__ = __webpack_require__(223);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_PDP_edit_dish_PDP_edit_dish__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__pages_cust_booking_details_cust_booking_details__ = __webpack_require__(233);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_cust_past_booking_details_cust_past_booking_details__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__pages_cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pages_cust_past_booking_details_cust_past_booking_details__ = __webpack_require__(236);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pages_custb_view_menu_custb_view_menu__ = __webpack_require__(323);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_cust_bookings_cust_bookings__ = __webpack_require__(324);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_cust_ongoing_bookings_cust_ongoing_bookings__ = __webpack_require__(236);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_cust_past_bookings_cust_past_bookings__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_Cust_bookingData__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__providers_Cust_pastBookingData__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pages_cust_bookings_cust_bookings__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_cust_ongoing_bookings_cust_ongoing_bookings__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__pages_cust_past_bookings_cust_past_bookings__ = __webpack_require__(235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_46__providers_Cust_bookingData__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__providers_Cust_pastBookingData__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3830,7 +3882,7 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 301:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3884,8 +3936,8 @@ var MyApp = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_PDP_Menus__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_PDP_MenuItems__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_PDP_Menus__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__models_PDP_MenuItems__ = __webpack_require__(317);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3956,7 +4008,7 @@ var MenusData = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 315:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3976,7 +4028,7 @@ var Menu = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 316:
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3996,7 +4048,7 @@ var MenuItems = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 317:
+/***/ 318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4026,7 +4078,7 @@ var Profile = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CUST_favourites_favourites__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4069,7 +4121,7 @@ var Tabs2Page = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CUST_favourites_favourites__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CUST_menu_menu__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4111,7 +4163,7 @@ var CustTabsPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustbViewMenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_reschedule_booking_cust_reschedule_booking__ = __webpack_require__(120);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4145,59 +4197,6 @@ var CustbViewMenuPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=custb-view-menu.js.map
-
-/***/ }),
-
-/***/ 324:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustBookingsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cust_ongoing_bookings_cust_ongoing_bookings__ = __webpack_require__(236);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cust_past_bookings_cust_past_bookings__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_Cust_bookingData__ = __webpack_require__(122);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var CustBookingsPage = /** @class */ (function () {
-    // this tells the tabs component which Pages should be each tab's root Page
-    function CustBookingsPage(navCtrl, custBookData) {
-        this.navCtrl = navCtrl;
-        this.custBookData = custBookData;
-    }
-    CustBookingsPage.prototype.goToCOnBook = function (custBook) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__cust_ongoing_bookings_cust_ongoing_bookings__["a" /* CustOngoingBookingsPage */], {
-            data: custBook
-        });
-    };
-    CustBookingsPage.prototype.goToCPBook = function (custPBook) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__cust_past_bookings_cust_past_bookings__["a" /* CustPastBookingsPage */], {
-            data: custPBook
-        });
-    };
-    CustBookingsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cust-bookings',template:/*ion-inline-start:"D:\School Project\Latest\ELP\src\pages\cust-bookings\cust-bookings.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Bookings\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding id="page3">\n\n  <ion-list id="bookings-list8">\n\n    <ion-item color="none" id="bookings-list-item17" on-click="goToCOnBook()">\n\n      Ongoing\n\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n\n    </ion-item>\n\n    <ion-item color="none" id="bookings-list-item18" on-click="goToCPBook()">\n\n      Past\n\n      <ion-icon name="arrow-forward" item-right></ion-icon>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"D:\School Project\Latest\ELP\src\pages\cust-bookings\cust-bookings.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__providers_Cust_bookingData__["a" /* CustBookData */]])
-    ], CustBookingsPage);
-    return CustBookingsPage;
-}());
-
-//# sourceMappingURL=cust-bookings.js.map
 
 /***/ }),
 
@@ -4405,5 +4404,5 @@ var CustFavouritesPage = /** @class */ (function () {
 
 /***/ })
 
-},[238]);
+},[239]);
 //# sourceMappingURL=main.js.map
