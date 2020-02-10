@@ -65,6 +65,11 @@ page-menu-details {
       padding: {
         left: 0;
       }
+      @media only screen and (min-width: 768px) {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+      }
       ion-label {
         display: flex;
         align-items: center;
@@ -113,6 +118,9 @@ page-menu-details {
       margin: {
         left: auto;
         right: auto;
+      }
+      @media only screen and (min-width: 768px) {
+        width: 50vw;
       }
     }
   }

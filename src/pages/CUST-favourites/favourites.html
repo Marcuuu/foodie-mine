@@ -28,7 +28,12 @@
     <img src="../../assets/imgs/fav_ss.jpg"/>
     </ion-label>
 </ion-content> -->
-<ion-content padding id="page2" [hidden]="ishidden">
+<ion-content
+  padding
+  id="page2"
+  [hidden]="ishidden"
+  (window:resize)="resizeEvent($event)"
+>
   <ion-card
     id="discover-card21"
     class="discover-card-each"
@@ -46,7 +51,7 @@
           {{profile.fName}}
         </h2>
       </ion-item>
-      <div class="discover-image">
+      <div class="favourites-image">
         <img src="{{profile.menu_image}}" alt="" />
       </div>
       <div class="discover-info">

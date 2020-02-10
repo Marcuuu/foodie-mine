@@ -116,7 +116,6 @@ import { CustPBookData } from "../providers/Cust-pastBookingData";
     CustRescheduleBookingPage,
     CustPastBookingDetailsPage,
     CustbViewMenuPage,
-    CustBookingsPage,
     CustOngoingBookingsPage,
     CustPastBookingsPage,
     CustTabsPage
@@ -134,6 +133,7 @@ import { CustPBookData } from "../providers/Cust-pastBookingData";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    CustBookingsPage,
     DiscoverPage,
     CustFavouritesPage,
     BookingsPage,
@@ -149,7 +149,6 @@ import { CustPBookData } from "../providers/Cust-pastBookingData";
     LoginPage,
     TabsControllerPage,
     MenuDetailsPage,
-    CustBookingsPage,
     MakeBookingPage,
     DashboardPage,
     PDPTabsPage,
@@ -163,7 +162,6 @@ import { CustPBookData } from "../providers/Cust-pastBookingData";
     CustRescheduleBookingPage,
     CustPastBookingDetailsPage,
     CustbViewMenuPage,
-    CustBookingsPage,
     CustOngoingBookingsPage,
     CustPastBookingsPage,
     CustTabsPage

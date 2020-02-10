@@ -1,8 +1,25 @@
 page-pdp-dashboard {
+  .upcoming-bookings-con {
+    @media only screen and (min-width: 768px) {
+      margin: {
+        left: -0.5%;
+        right: -0.5%;
+      }
+    }
+  }
   .each-booking-con {
     width: 100%;
     background: #ffd369;
     margin: 0;
+    @media only screen and (min-width: 768px) {
+      width: 49%;
+      display: inline-block;
+      vertical-align: top;
+      margin: {
+        left: 0.5%;
+        right: 0.5%;
+      }
+    }
     &:not(:last-child) {
       margin: {
         bottom: 20px;

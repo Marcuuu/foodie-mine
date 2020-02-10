@@ -36606,10 +36606,31 @@ page-favourites .discover-filter .select-icon {
   transform: translateY(-50%);
 }
 
+page-favourites .favourites-image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) {
+  page-favourites .discover-cards-con {
+    margin-left: -0.5%;
+    margin-right: -0.5%;
+  }
+}
+
 page-favourites .discover-card-each {
   width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  page-favourites .discover-card-each {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
 }
 
 page-favourites .discover-card-each:not(:last-child) {
@@ -36846,10 +36867,27 @@ page-pdp-booking-details .cancel-booking-btn {
   margin-top: 20px;
 }
 
+@media only screen and (min-width: 768px) {
+  page-pdp-dashboard .upcoming-bookings-con {
+    margin-left: -0.5%;
+    margin-right: -0.5%;
+  }
+}
+
 page-pdp-dashboard .each-booking-con {
   width: 100%;
   background: #ffd369;
   margin: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  page-pdp-dashboard .each-booking-con {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
 }
 
 page-pdp-dashboard .each-booking-con:not(:last-child) {
@@ -36879,6 +36917,50 @@ page-pdp-dashboard .each-booking-con .button-inner {
 
 page-pdp-dashboard .each-booking-con .button-clear-md:hover:not(.disable-hover) {
   background-color: #ffd369;
+}
+
+page-pdp-menu .menu-item-con {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  page-pdp-menu .menu-item-con {
+    margin-left: -0.5%;
+    margin-right: -0.5%;
+  }
+}
+
+page-pdp-menu .menu-item-each {
+  margin: 0;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  page-pdp-menu .menu-item-each {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  page-pdp-menus .menu-cards-con {
+    margin-left: -0.5%;
+    margin-right: -0.5%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  page-pdp-menus .menu-card-each {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
 }
 
 page-pdp-menus .manage-menu-btn {
@@ -37248,6 +37330,14 @@ page-menu-details .menu-list .menu-item-each {
   padding-left: 0;
 }
 
+@media only screen and (min-width: 768px) {
+  page-menu-details .menu-list .menu-item-each {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
 page-menu-details .menu-list .menu-item-each ion-label {
   display: -webkit-box;
   display: -webkit-flex;
@@ -37305,6 +37395,12 @@ page-menu-details .popup-image img {
   display: none;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  page-menu-details .popup-image img {
+    width: 50vw;
+  }
 }
 
 page-menu-details .reviews-con {

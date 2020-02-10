@@ -1,13 +1,32 @@
 page-pdp-menus {
-    .manage-menu-btn {
-        background: #ffd369;
-        color: #000;
-        height: 4rem;
-        margin: {
-            bottom: 0; 
-        }
+  .menu-cards-con {
+    @media only screen and (min-width: 768px) {
+      margin: {
+        left: -0.5%;
+        right: -0.5%;
+      }
     }
-    .button-clear-md:hover:not(.disable-hover){
-        background-color: #ffd369;
+  }
+  .menu-card-each {
+    @media only screen and (min-width: 768px) {
+      width: 49%;
+      display: inline-block;
+      vertical-align: top;
+      margin: {
+        left: 0.5%;
+        right: 0.5%;
+      }
     }
+  }
+  .manage-menu-btn {
+    background: #ffd369;
+    color: #000;
+    height: 4rem;
+    margin: {
+      bottom: 0;
+    }
+  }
+  .button-clear-md:hover:not(.disable-hover) {
+    background-color: #ffd369;
+  }
 }
