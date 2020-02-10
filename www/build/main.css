@@ -36731,6 +36731,7 @@ page-submitReview [type=radio]:checked + img {
 page-discover .searchbar-md {
   padding-left: 0;
   padding-right: 0;
+  padding-top: 0;
   margin-bottom: 10px;
 }
 
@@ -36787,6 +36788,26 @@ page-discover .discover-card-each {
 
 page-discover .discover-card-each:not(:last-child) {
   margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  page-discover .discover-card-each {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+  }
+  page-discover .discover-card-each:nth-child(odd) {
+    margin-right: 1%;
+  }
+  page-discover .discover-card-each:nth-child(even) {
+    margin-left: 1%;
+  }
+}
+
+page-discover .discover-image img {
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 page-discover .discover-info {

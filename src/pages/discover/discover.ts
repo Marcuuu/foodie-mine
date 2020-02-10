@@ -3,6 +3,7 @@ import { NavController } from "ionic-angular";
 import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { MenuDetailsPage } from "../menu-details/menu-details";
+import * as $ from 'jquery';
 
 @Component({
   selector: "page-discover",
@@ -24,7 +25,20 @@ export class DiscoverPage {
     this.subscription = this.data.subscribe(data => {
       this.profileList = data;
       console.log(data)
+      this.setCardHeight()
     });
+  }
+
+  setCardHeight() {
+    setTimeout(function() {
+      let tallest = -1
+      $(".discover-card-each .discover-image img").each(function() {
+        tallest = $(this).outerHeight() > tallest ? $(this).outerHeight() : tallest
+      })
+      $(".discover-card-each .discover-image img").each(function() {
+        $(this).css("height", tallest)
+      })
+    }, 2000)
   }
 
   getItems(ev: any) {
