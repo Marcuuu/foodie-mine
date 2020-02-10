@@ -10,12 +10,10 @@ import { MenusPage } from '../pages/PDP-menus/PDP-menus';
 import { BookingDetailsPage } from '../pages/PDP-booking-details/PDP-booking-details';
 // import { DashboardPage } from '../pages/dashboard/dashboard';
 // import { MenusPage } from '../pages/menus/menus';
-import { TabsPage } from '../pages/tabs/tabs';
 import { Tabs2Page } from '../pages/tabs2/tabs2';
 // import { BookingDetailsPage } from '../pages/booking-details/booking-details';
 // import { CustMenuPage } from '../pages/CUST-menu/menu';
 import { CustMenuInfoPage } from '../pages/CUST-menuinfo/menuinfo';
-import { CreateMenuPage } from '../pages/create-menu/create-menu';
 // // import { EditMenuPage } from '../pages/edit-menu/edit-menu';
 // // import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 // // import { NewDishPage } from '../pages/new-dish/new-dish';
@@ -81,12 +79,10 @@ import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
     CustFavouritesPage,
     BookingsPage,
     MenusPage,
-    TabsPage,
     Tabs2Page,
     BookingDetailsPage,
     CustMenuPage,
     CustMenuInfoPage,
-    CreateMenuPage,
     EditMenuPage,
     EditProfilePage,
     NewDishPage,
@@ -126,12 +122,10 @@ import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
     CustFavouritesPage,
     BookingsPage,
     MenusPage,
-    TabsPage,
     Tabs2Page,
     BookingDetailsPage,
     CustMenuPage,
     CustMenuInfoPage,
-    CreateMenuPage,
     EditMenuPage,
     EditProfilePage,
     NewDishPage,
