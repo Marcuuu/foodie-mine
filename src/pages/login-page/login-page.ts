@@ -6,6 +6,7 @@ import { ProfileData } from '../../providers/PDP-profileData';
 import { BookingsData } from '../../providers/PDP-bookingData';
 import { DashboardData } from '../../providers/PDP-dashboardData';
 import { CustTabsPage } from '../CUST-tabs/tabs2';
+import { TabsControllerPage } from '../tabs-controller/tabs-controller';
 import { MenusData } from '../../providers/PDP-menuData';
 
 
@@ -59,7 +60,7 @@ export class LoginPage {
       //customer
       if (data[0].custID == 2) {
         localStorage.setItem("loginid","2")
-        this.navCtrl.push(CustTabsPage);
+        this.navCtrl.push(TabsControllerPage);
         this.loading.dismiss();
       } 
       else if (data == false){

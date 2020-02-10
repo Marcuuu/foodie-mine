@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { MenuPage } from '../cust_menu/menu';
+import { CustMenuPage } from '../CUST-menu/menu';
 import { NewDishPage } from '../new-dish/new-dish';
 import { EditDishPage } from '../edit-dish/edit-dish';
 
@@ -15,7 +15,7 @@ export class MenusPage {
   }
   goToMenu(params){
     if (!params) params = {};
-    this.navCtrl.push(MenuPage);
+    this.navCtrl.push(CustMenuPage);
   }goToNewDish(params){
     if (!params) params = {};
     this.navCtrl.push(NewDishPage);

@@ -2,23 +2,27 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { DashboardPage } from '../pages/dashboard/dashboard';
-import { MenusPage } from '../pages/menus/menus';
+// import { DashboardPage } from '../pages/dashboard/dashboard';
+import { DashboardPage } from '../pages/PDP-dashboard/PDP-dashboard';
+import { BookingsPage } from '../pages/PDP-bookings/PDP-bookings';
+import { MenusPage } from '../pages/PDP-menus/PDP-menus';
+// import { MenusPage } from '../pages/menus/menus';
+import { BookingDetailsPage } from '../pages/PDP-booking-details/PDP-booking-details';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Tabs2Page } from '../pages/tabs2/tabs2';
-import { BookingDetailsPage } from '../pages/booking-details/booking-details';
+// import { BookingDetailsPage } from '../pages/booking-details/booking-details';
 import { CustMenuPage } from '../pages/CUST-menu/menu';
 import { CustMenuInfoPage } from '../pages/CUST-menuinfo/menuinfo';
 import { CreateMenuPage } from '../pages/create-menu/create-menu';
-import { EditMenuPage } from '../pages/edit-menu/edit-menu';
-import { EditProfilePage } from '../pages/edit-profile/edit-profile';
-import { NewDishPage } from '../pages/new-dish/new-dish';
-import { EditDishPage } from '../pages/edit-dish/edit-dish';
+// import { EditMenuPage } from '../pages/edit-menu/edit-menu';
+// import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+// import { NewDishPage } from '../pages/new-dish/new-dish';
+// import { EditDishPage } from '../pages/edit-dish/edit-dish';
 import { CustFavouritesPage } from '../pages/CUST-favourites/favourites';
 import { LoginPage } from '../pages/login-page/login-page';
 import { StarRatingModule } from 'ionic3-star-rating';
 import { DiscoverPage } from "../pages/discover/discover";
-import { BookingsPage } from "../pages/bookings/bookings";
+// import { BookingsPage } from "../pages/bookings/bookings";
 import { TabsControllerPage } from "../pages/tabs-controller/tabs-controller";
 import { MenuDetailsPage } from "../pages/menu-details/menu-details";
 import { MakeBookingPage } from "../pages/make-booking/make-booking";
@@ -37,7 +41,12 @@ import { DashboardData } from '../providers/PDP-dashboardData';
 import { Camera } from '@ionic-native/camera/ngx';
 import { PDPTabsPage } from '../pages/PDP-tabs/PDP-tabs';
 import { ProfilePage } from '../pages/PDP-profile/PDP-profile';
+import { CustProfilePage } from '../pages/CUST-profile/profile';
 import { MenuPage } from '../pages/PDP-menu/PDP-menu';
+import { EditMenuPage } from '../pages/PDP-edit-menu/PDP-edit-menu';
+import { EditProfilePage } from '../pages/PDP-edit-profile/PDP-edit-profile';
+import { NewDishPage } from '../pages/PDP-new-dish/PDP-new-dish';
+import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
 
 @NgModule({
   declarations: [
@@ -62,7 +71,12 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     MenusPage,
     PDPTabsPage,
     ProfilePage,
+    CustProfilePage,
+    MenuPage,
     NewMenuPage,
+    TabsControllerPage,
+    MenuDetailsPage,
+    MakeBookingPage,
     CustFavouritesPage,
     CustReviewsPage,
     CustSubmitReviewPage,
@@ -73,9 +87,10 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     HttpClientModule,
     StarRatingModule,
     IonicModule.forRoot(MyApp),
-    TabsControllerPage,
-    MenuDetailsPage,
-    MakeBookingPage
+    IonicStorageModule.forRoot()
+    // TabsControllerPage,
+    // MenuDetailsPage,
+    // MakeBookingPage
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -101,6 +116,7 @@ import { MenuPage } from '../pages/PDP-menu/PDP-menu';
     DashboardPage,
     PDPTabsPage,
     ProfilePage,
+    CustProfilePage,
     MenuPage,
     NewMenuPage,
     CustReviewsPage,

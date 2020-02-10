@@ -36646,10 +36646,19 @@ page-submitReview .center {
 page-submitReview .text {
   margin: 7px 0px 0px 0px;
   font-weight: 600;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   position: relative;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
-  font-size: 20px;
+  font-size: 16px;
+  color: #355681;
+  text-transform: uppercase;
+}
+
+page-submitReview .text1 {
+  margin: 10px 0px 0px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  font-size: 14px;
   color: #355681;
   text-transform: uppercase;
 }
@@ -36695,10 +36704,8 @@ page-submitReview .p-text {
   -webkit-margin-end: 0px;
   margin-inline-end: 0px;
   margin-bottom: 10px;
-  font-weight: 300;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
   font-size: 16px;
 }
 
