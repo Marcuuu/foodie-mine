@@ -121,35 +121,25 @@ app.route("/addUser", cors(corsOptions)).post(function(request, response) {
 });
 
 app.route("/makeBooking", cors(corsOptions)).post(function(request, response) {
-  // Values from JSON in editStudent.page.ts
   var bookDate = request.body.bookDate;
   var bookTime = request.body.bookTime;
   var bookPax = request.body.bookPax;
-  var bookNotes = request.body.bookNotes;
-
-  db.query("SELECT * FROM booking_detail", function(error, result, fields) {
+  var bookNotes = request.body.bookNotes != null ? request.body.bookNotes : "No food allergies or special requests!";
+  var pdpId = request.body.pdpID;
+  var menuId = request.body.menuID;
+  db.query("INSERT INTO foodie.booking_detail (bookDate, bookTime, bookPax, bookNotes, bookStatus, custID, pdpID, menuID) VALUES (?,?,?,?,?,?,?,?);",
+  [bookDate, bookTime, bookPax, bookNotes, "Ongoing", 1, pdpId, menuId], function(error, result, fields) {
     if (!error) {
-      if (result.length == 0) {
-        response.send(false);
-      } else {
-        db.query(
-          "INSERT INTO booking_detail (bookDate, bookTime, bookPax, bookNotes) VALUES (?,?,?,?);",
-          [bookDate, bookTime, bookPax, bookNotes],
-          function(error, result, fields) {
-            if (!error) {
-              var string = JSON.stringify(result);
-              var json = JSON.parse(string);
-              console.log("Row inserted: ", json);
-            } else {
-              response.send(true);
-            }
-          }
-        );
-      }
+      var string = JSON.stringify(result);
+      var json = JSON.parse(string);
+      console.log("Row inserted: ", json);
+      response.send(true);
     } else {
       console.log(error);
+      throw error;
     }
-  });
+  })
+})
 
   // db.query(
   //   "UPDATE userInfo SET userName = ?,userPassword = ?,userType = ? WHERE userID = ?;",
