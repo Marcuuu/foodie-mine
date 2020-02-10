@@ -22,7 +22,6 @@ import { CustFavouritesPage } from '../pages/CUST-favourites/favourites';
 // import { LoginPage } from '../pages/login-page/login-page';
 // import { StarRatingModule } from 'ionic3-star-rating';
 import { DiscoverPage } from "../pages/discover/discover";
-import { CustBookingsPage } from "../pages/bookings/bookings";
 import { TabsControllerPage } from "../pages/tabs-controller/tabs-controller";
 import { MenuDetailsPage } from "../pages/menu-details/menu-details";
 import { MakeBookingPage } from "../pages/make-booking/make-booking";
@@ -72,6 +71,16 @@ import { EditMenuPage } from '../pages/PDP-edit-menu/PDP-edit-menu';
 import { EditProfilePage } from '../pages/PDP-edit-profile/PDP-edit-profile';
 import { NewDishPage } from '../pages/PDP-new-dish/PDP-new-dish';
 import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
+import { CustBookingDetailsPage } from '../pages/cust-booking-details/cust-booking-details';
+import { CustRescheduleBookingPage } from '../pages/cust-reschedule-booking/cust-reschedule-booking';
+import { CustPastBookingDetailsPage } from '../pages/cust-past-booking-details/cust-past-booking-details';
+import { CustbViewMenuPage } from '../pages/custb-view-menu/custb-view-menu';
+import { CustBookingsPage } from '../pages/cust-bookings/cust-bookings';
+import { CustOngoingBookingsPage } from '../pages/cust-ongoing-bookings/cust-ongoing-bookings';
+import { CustPastBookingsPage } from '../pages/cust-past-bookings/cust-past-bookings';
+import { CustBookData } from '../providers/Cust-bookingData';
+import { CustPBookData } from '../providers/Cust-pastBookingData';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -103,6 +112,13 @@ import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
     CustFavouritesPage,
     CustReviewsPage,
     CustSubmitReviewPage,
+    CustBookingDetailsPage,
+    CustRescheduleBookingPage,
+    CustPastBookingDetailsPage,
+    CustbViewMenuPage,
+    CustBookingsPage,
+    CustOngoingBookingsPage,
+    CustPastBookingsPage,
     CustTabsPage
   ],
   imports: [
@@ -143,6 +159,13 @@ import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
     NewMenuPage,
     CustReviewsPage,
     CustSubmitReviewPage,
+    CustBookingDetailsPage,
+    CustRescheduleBookingPage,
+    CustPastBookingDetailsPage,
+    CustbViewMenuPage,
+    CustBookingsPage,
+    CustOngoingBookingsPage,
+    CustPastBookingsPage,
     CustTabsPage
   ],
   providers: [
@@ -153,6 +176,8 @@ import { EditDishPage } from '../pages/PDP-edit-dish/PDP-edit-dish';
     BookingsData,
     ProfileData,
     MenusData,
+    CustBookData,
+    CustPBookData,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
