@@ -48,7 +48,7 @@ export class DiscoverPage {
     console.log(item)
   }
 
-  discoverFilter($event) {
+  sortProfiles($event) {
     if ($event == "distance_closest") {
       this.profileList.sort((a, b) => (a.location_distance > b.location_distance) ? 1 : -1)
     }
@@ -60,6 +60,12 @@ export class DiscoverPage {
     }
     else if ($event == "price_high_low") {
       this.profileList.sort((a, b) => (b.menu_price > a.menu_price) ? 1 : -1)
+    }
+    else if ($event == "reviews_low_high") {
+      this.profileList.sort((a, b) => (a.menu_ratings > b.menu_ratings) ? 1 : -1)
+    }
+    else if ($event == "reviews_high_low") {
+      this.profileList.sort((a, b) => (a.menu_ratings < b.menu_ratings) ? 1 : -1)
     }
   }
 }
