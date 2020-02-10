@@ -117,8 +117,10 @@ export class MenuPage {
       console.log("In /deleteDish");
       console.log('SQL Result: ', data);
       this.menusData.getMenuItemsData();
-      this.deleting.dismiss();
-      this.deleteAlert();
+      setTimeout(() => {
+        this.deleting.dismiss();
+        this.deleteAlert();
+      }, 500);
     });
   }
 

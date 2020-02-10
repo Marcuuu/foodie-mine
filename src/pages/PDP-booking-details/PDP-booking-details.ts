@@ -93,9 +93,11 @@ export class BookingDetailsPage {
       console.log('SQL Result: ', data);
       this.dashboardData.getDashboardData();
       this.bookingData.getBookingsData();
-      this.loading.dismiss();
-      this.presentAlert();
       this.booking.bookStatus = "Cancelled";
+      setTimeout(() => {
+        this.loading.dismiss();
+        this.presentAlert();
+      }, 500);
     });
   }
 }

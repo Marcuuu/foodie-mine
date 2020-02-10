@@ -124,8 +124,10 @@ export class EditProfilePage {
       console.log('postData:', postData);
       console.log('SQL Result: ', data);
       this.profileData.getProfileData();
-      this.loading.dismiss();
-      this.presentAlert();
+      setTimeout(() => {
+        this.loading.dismiss();
+        this.presentAlert();
+      }, 500);
     });
   }
 }

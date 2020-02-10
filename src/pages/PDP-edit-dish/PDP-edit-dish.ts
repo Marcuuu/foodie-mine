@@ -116,8 +116,10 @@ export class EditDishPage {
       console.log('postData:', postData);
       console.log('SQL Result: ', data);
       this.menusData.getMenuItemsData();
-      this.loading.dismiss();
-      this.presentAlert();
+      setTimeout(() => {
+        this.loading.dismiss();
+        this.presentAlert();
+      }, 500);
     });
   }
 }
