@@ -54,16 +54,15 @@
     >
       <ion-label class="label-text" color="black">Time</ion-label>
       <ion-select
-        value="1300-1500"
         okText="Okay"
         cancelText="Cancel"
         placeholder="Select a time"
         class="select-field"
         (ionChange)="updateMyTime($event)"
       >
-        <ion-option value="1300-1500">1300 - 1500</ion-option>
-        <ion-option value="1600-1800">1600 - 1800</ion-option>
-        <ion-option value="1900-2100">1900 - 2100</ion-option>
+        <ion-option value="13:00:00">1300 - 1500</ion-option>
+        <ion-option value="16:00:00">1600 - 1800</ion-option>
+        <ion-option value="19:00:00">1900 - 2100</ion-option>
       </ion-select>
     </ion-item>
     <ion-item
